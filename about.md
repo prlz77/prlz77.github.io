@@ -1,11 +1,22 @@
 ---
 layout: page
-title: About
+title: About me
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I am Pau Rodríguez, an AI Master Student in KULeuven.  
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+### Contact me
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Find me on [Google+][google] / [Github][github] / [Twitter][Twitter] or just say hi at 
+pau.rodri1 at gmail.com.
+
+
+[tf]: http://template-factory.nl
+[m]: http://mearch.com
+[pw]: http://processwire.com
+[pwf]: http://processwire.com/talk
+[jekyll]: http://jekyllrb.com
+[github]: https://github.com/gayanvirajith
+[google]: https://plus.google.com/+GayanVirajith
+[twitter]: https://twitter.com/gayanvirajith

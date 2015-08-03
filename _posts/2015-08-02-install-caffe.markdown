@@ -1,12 +1,31 @@
 ---
 layout: post
 title:  "How I installed Caffe in OS X Yosemite"
-date:   2014-11-20 10:04:45
+date:   2015-08-02 23:00:00
 description: How I installed Caffe in OS X 10.10 Yosemite
+comments: true
 categories:
 - blog
 permalink: install-caffe
 ---
+
+## Update
+
+-------------
+
+Last time I had to compile it was much easier by using Cmake. It was as easy as creating a build folder and executing (after installing the dependencies):
+
+> cmake -D CMAKE_BUILD_TYPE=RELEASE -D WITH_CUDA=OFF -D CMAKE_INSTALL_PREFIX=$PWD ..
+
+Then compiling with:
+
+> make -j
+
+Of course keep track of their webpage to get updated installation instructions.
+
+-------------
+
+*Original post (2014):*
 
 I've had to install [Caffe](http://caffe.berkeleyvision.org) on my mac book with OS X Yosemite. However the installing instructions are for Mac OS 10.9 and I've discovered it's much more difficult if you do it in Mac OS 10.10.
 
@@ -60,3 +79,4 @@ Even though it compiles correctly, there might be some linking errors such as py
 > export DYLD_FALLBACK_LIBRARY_PATH=~/anaconda/lib:/usr/local/Cellar/protobuf241/2.4.1/lib/
 
 That's how I managed it to work after struggling for a lot of time. I hope this helps some people to lose less time than I did.
+

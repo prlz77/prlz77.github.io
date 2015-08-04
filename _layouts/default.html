@@ -31,22 +31,7 @@
                 {% include header-links.html %}                
             </div>
         </header>
-        <div class="wc-container">
-            <ul>
-
-              {% for post in site.posts %}
-                <div style="padding:10px; padding-right:0px; border-style: dashed; border-width: 1px;">
-                <li>
-                  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1> | {{ post.date | date: "%-d %B %Y" }}
-                    {{ post.content | truncatewords:75}}
-
-                </li>
-                </div>
-                <br>
-
-              {% endfor %}
-            </ul>
-        </div>
+        {{content}}
         <footer class="main-footer">
             <div class="wc-container">
                 <div class="column one">

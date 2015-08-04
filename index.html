@@ -13,10 +13,10 @@ layout: default
 
     			<span class="post-date">{{ post.date | date_to_string }}</span>    			
   				{% if forloop.first %}
-          {{ post.content }}
+          {{ post.content | truncatewords:75 }}
           {% else %}
           <p>
-	  				{{ post.excerpt }}	
+	  				{{ post.content | truncatewords:50 }}	
   				</p>
   				<p>
   					<a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title}}">

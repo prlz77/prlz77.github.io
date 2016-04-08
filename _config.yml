@@ -1,4 +1,4 @@
-# Harmony Jekyll theme general configurations 
+# Harmony Jekyll theme general configurations
 
 # Base URL
 baseurl:
@@ -6,16 +6,16 @@ baseurl:
 # Site live URL
 url: http://prlz77.github.io
 
-# Localhost 
-#url: http://127.0.0.1:4000  
+# Localhost
+#url: http://127.0.0.1:4000
 
 # Harmony theme configuration. Please change accordingly.
 harmony:
-  name: My Projects
+  name: prlz77
   # Little description about your site
-  description: A person's endeavors in a pale blue dot.
+  description: An information compressor in a pale blue dot.
   # 'meta_description:' Write an awesome description for your new site here.
-  # It will appear in your document head meta (for Google search results) and 
+  # It will appear in your document head meta (for Google search results) and
   # in your feed.xml site description.
   meta_description: Solutions I found, projects i found interesting, etc.
   basetheme: theme-base-01 # pre defined thmes are darken, blue-water, redish.
@@ -28,24 +28,24 @@ harmony:
   google_analytics_key: UA-65884397-1
 
   # Profile links, leave blank to ignore
-  social: 
+  social:
     github: prlz77
     twitter: prlz77
     facebook:
     gplus: 113126019576725081194
     dribble:
-    pinterest: 
+    pinterest:
   # Toggle disclaimer in footer
   show_disclaimer: true
 
-# Conversion / Build settings 
+# Conversion / Build settings
 markdown:    kramdown
 highlighter: pygments # this is how you put pygments config in jekyll 2.0 instead of pygments: true
 
 # Permalinks
 permalink:        pretty
 
-exclude: 
+exclude:
   - CNAME
   - Gemfile
   - Rakefile

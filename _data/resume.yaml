@@ -11,11 +11,11 @@ studies:
     when: 2015 - present
   - name: Advanced master of Artificial Intelligence
     where: KU Leuven
-    description: Got Magna Cum Laude.Topics: Artificial Neural Networks, Machine learning, SVM, Data Mining, Cybernetics and more.
+    description: "Magna Cum Laude. Topics: Artificial Neural Networks, Machine learning, SVM, Data Mining, Cybernetics and more."
     when: 2014 - 2015
   - name: Computer Engineering (5 years)
     where: Universitat Autònoma de Barcelona
-    description: With honors. Topics: Artificial Intelligence, Networks, HPC and more.
+    description: "With honors. Topics: Artificial Intelligence, Networks, HPC and more."
     when: 2009 - 2014
 work:
   - name: Research Assistant

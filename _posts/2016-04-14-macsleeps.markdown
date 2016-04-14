@@ -9,6 +9,6 @@ categories:
 permalink: macsleeps
 ---
 
-Magnets can make your Mac to sleep. This was diving me mad since I always put it on a sleeve that closes with a magnet.
+Magnets can make your Mac to sleep. This was driving me mad since I always put it on a sleeve that closes with a magnet.
 
 Here is the solution page: [Apple support](https://support.apple.com/en-us/HT203315)

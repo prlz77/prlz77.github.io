@@ -13,7 +13,7 @@ I decided to share this script I was using in order to accelerate the training o
 
 ## Dependencies
 
-It depends on the following libraries (can be installed with luarocks):
+It depends on the following libraries (they can be installed with luarocks):
 
 * threads
 * hdf5
@@ -45,4 +45,4 @@ This will initialize the class and copy the necessary information to the thread 
 
 At the point where we need the data, the blocking call `asyncReader:getNextBatch()` can be used in order to get the data and labels tensors. Memory is allocated once at the class initialization and thus the returned tensors always reuse the same memory. In fact, tensors are duplicated so that one can read and write the retreived ones while a thread is filling the other ones.
 
-If any error, doubt, etc. please tell me.
+If any error, doubt, etc. please tell me. 

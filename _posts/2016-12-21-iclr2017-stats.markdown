@@ -1,0 +1,21 @@
+---
+layout: post
+title: Some early visualizations from ICLR2017
+date: 2016-12-21 00:41:00
+description:  Some early visualizations from data extracted from ICLR2017
+(OpenReview)
+comments: true
+categories:
+- blog
+permalink: iclr2017-stats
+---
+
+Machine learning is accelerating, we have an idea and it is on arxiv the next
+day, NIPS2016 was bigger than ever and it is difficult to keep track of all the
+new interesting work.
+
+Given that this is the first time I submit to ICLR, and taking advantage from
+all the data available of OpenReview, I have decided to make some data
+visualizations. I hope these visualizations help to build a mental idea of which
+papers are the best rated, the ones with better reviews, who is submitting them,
+which is the score distribution, etc.

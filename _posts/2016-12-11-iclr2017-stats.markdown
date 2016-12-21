@@ -25,8 +25,9 @@ in the paper abstracts:
 
 {% include iclr2017/embedding.html %}
 
-As expected, *network, architecture, data, learning* are in the most frequent
-words. Note that although I performed a rough pre-processing, removing words
+As expected, *network, architecture, data, learning, ...* are in the most frequent
+words. On the other hand, *reward, attention* and *adversarial* do also appear as important, following the current trends of deep reinforcement learning, models with memory/attention and GANS. 
+Note that although I performed a rough pre-processing, removing words
 like *it*, *and*, *but*, etc. there are still some common words that should be
 prunned.
 

@@ -6,7 +6,7 @@ description: First release of the matconv2caffe utility to import matconvnet mod
 comments: true
 categories:
 - blog
-permalink: matconv2caffe0.1
+permalink: matconv2caffe0.1/
 ---
 
 ## Convert Matconvnet models to Caffe with matconv2caffe.

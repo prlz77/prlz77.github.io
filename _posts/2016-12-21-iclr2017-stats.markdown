@@ -2,12 +2,11 @@
 layout: post
 title: Some early visualizations from ICLR2017
 date: 2016-12-21 00:41:00
-description:  Some early visualizations from data extracted from ICLR2017
-(OpenReview)
+description: Some early visualizations from data extracted from ICLR2017 (OpenReview)
 comments: true
 categories:
 - blog
-permalink: iclr2017-stats
+permalink: iclr2017-stats/
 ---
 
 Machine learning is accelerating, we have an idea and it is on arxiv the next

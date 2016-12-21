@@ -1,0 +1,64 @@
+---
+layout: post
+title: Some early visualizations from ICLR2017
+date: 2016-12-20 00:41:00
+description: Some early visualizations from data extracted from ICLR2017 (OpenReview)
+comments: true
+categories:
+- blog
+permalink: iclr2017-stats/
+---
+
+Machine learning is accelerating, we have an idea and it is on arxiv the next
+day, NIPS2016 was bigger than ever and it is difficult to keep track of all the
+new interesting work.
+
+Given that this is the first time I submit to ICLR, and taking advantage from
+all the data available of OpenReview, I have decided to make some data
+visualizations. I hope these visualizations help to build a mental idea of which
+papers are the best rated, the ones with better reviews, who is submitting them,
+which is the score distribution, etc.
+
+So, let's first what is people saying in their abstracts in order to warm up.
+The next plot is a t-sne visualization of the GloVe embedding of the words found
+in the paper abstracts:
+
+<script
+    src="{{ site.url }}/assets/js/iclr2017/embedding.js"
+    id="94a1eb66-0b3d-4068-8339-4ecda754efed"
+    data-bokeh-model-id="0dedb00b-8ce4-4623-aba6-112d640ba338"
+    data-bokeh-doc-id="a9e2e642-2773-49f1-8bd2-70da6d585e33"
+></script>
+
+As expected, *network, architecture, data, learning* are in the most frequent
+words. Note that although I performed a rough pre-processing, removing words
+like *it*, *and*, *but*, etc. there are still some common words that should be
+prunned.
+
+What about which are the most prolific organizations? In order to make a
+histogram of the submissions per organization, we can use the *affiliations*
+field in each submission:
+
+<script
+    src="{{ site.url }}/assets/js/iclr2017/affiliations.js"
+    id="35fc0ea4-b891-407e-a4d6-dccffe6ce88a"
+    data-bokeh-model-id="b5010e94-9cc4-4445-948a-2883ed0e89be"
+    data-bokeh-doc-id="09a173e6-9244-4219-8283-5d320396fcbe"
+></script>
+
+As it can be seen, *google* leads the top-50 most prolific organizations,
+followed by the university of *Montreal*, *Berkeley*, and *Microsoft*. I merged
+some domains like *fb.com* and *facebook.com* but there might still be some
+duplicities. Interestingly, the top is populated by a lot of companies, and in
+especial, new ones like openai surpass other well established organizations.
+
+Quantity does not always mean quality, so for all the organizations we plot
+their paper count (bubble size) by mean review score.
+
+<script
+    src="{{ site.url }}/assets/js/iclr2017/scatter_rating_hist.js"
+    id="f4f2ad09-fca8-4b0a-a6f6-a1067ba31f78"
+    data-bokeh-model-id="af1f5b0f-994f-4b33-af4c-ddba9c271586"
+    data-bokeh-doc-id="d9cedb5f-d602-4a5d-b1ed-de7db414c486"
+></script>
+

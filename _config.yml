@@ -4,10 +4,10 @@
 baseurl:
 
 # Site live URL
-url: http://prlz77.github.io
+#url: http://prlz77.github.io
 
 # Localhost
-#url: http://127.0.0.1:4000
+url: http://127.0.0.1:4000
 
 # Harmony theme configuration. Please change accordingly.
 harmony:
@@ -40,6 +40,7 @@ harmony:
 
 # Conversion / Build settings
 markdown:    kramdown
+timezone: Europe/Madrid
 #highlighter: rouge
  # this is how you put pygments config in jekyll 2.0 instead of pygments: true
 

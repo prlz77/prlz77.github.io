@@ -25,9 +25,9 @@ in the paper abstracts:
 
 <script
     src="{{ site.url }}/assets/js/iclr2017/embedding.js"
-    id="94a1eb66-0b3d-4068-8339-4ecda754efed"
-    data-bokeh-model-id="0dedb00b-8ce4-4623-aba6-112d640ba338"
-    data-bokeh-doc-id="a9e2e642-2773-49f1-8bd2-70da6d585e33"
+    id="de5c2088-5ee1-41c1-a8a5-f192f71749b1"
+    data-bokeh-model-id="e5e1c6a2-ecf6-4b8d-87cb-2c09a3957042"
+    data-bokeh-doc-id="ff099790-e924-4677-a892-a6c3dc771c1f"
 ></script>
 
 As expected, *network, architecture, data, learning* are in the most frequent

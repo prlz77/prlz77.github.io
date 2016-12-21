@@ -62,3 +62,8 @@ Given the former three parameters, we can finde some interesting papers such as 
 
 Data was extracted the *17th December*, so there might be some variations in the numbers. I will update it, as well as adding more plots, as soon as possible.
 
+## Acknowledgements
+I would like to thank [@pepgonfaus](https://twitter.com/pepgonfaus) for helping to obtain the data and sharing new ideas.
+
+
+

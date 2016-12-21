@@ -19,7 +19,7 @@ visualizations. I hope these visualizations help to build a mental idea of which
 papers are the best rated, the ones with better reviews, who is submitting them,
 which is the score distribution, etc.
 
-So, let's first what is people saying in their abstracts in order to warm up.
+So, let's first see what is people saying in their abstracts in order to warm up.
 The next plot is a t-sne visualization of the GloVe embedding of the words found
 in the paper abstracts:
 

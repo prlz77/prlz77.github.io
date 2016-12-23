@@ -50,7 +50,7 @@ their paper count (bubble size) by mean review score.
 
 As it can be seen *google* has 9 submissions with an average score of 7.5, and the biggest cluster is of 13 submissions with an average score of 6. Note that the *google* domain may contain *deep mind, google brain* and *google research* submissions. In case of doubt, I would like to clarify that I am not vinculated to *google*.
 
-Given the acceptance rate of ICLR2016, which was close to 20%, we can make a histogram for each score value to visualize the acceptance threshold:
+Given the acceptance rate of ICLR2016, which was close to 30%, we can make a histogram for each score value to visualize the acceptance threshold:
 
 {% include iclr2017/rating-hist.html %}
 

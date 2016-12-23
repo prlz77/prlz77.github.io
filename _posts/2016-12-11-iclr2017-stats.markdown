@@ -73,6 +73,6 @@ Data was extracted on *21st December*, so there might be some variations in the 
 ## Acknowledgements
 I would like to thank [@pepgonfaus](https://twitter.com/pepgonfaus) for helping to obtain the data and sharing new ideas.
 
-I would also like to thank the Reddit ML community for helping me to improve this page.:w
+I would also like to thank the Reddit ML community for helping me to improve this page.
 
 

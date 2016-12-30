@@ -59,7 +59,7 @@ Finally, let's see what interesting papers are there. For that, we can use a sca
 
 {% include iclr2017/confidence-replies-score.html %}
 
-Given the former three parameters, we can finde some interesting papers such as [Bidirectional Attention Flow for Machine Comprehension](https://arxiv.org/abs/1611.01603), [Neural Architecture Search with Reinforcement Learning](https://arxiv.org/abs/1611.01578), and [Discrete Variational Autoencoders](https://arxiv.org/abs/1609.02200). Bubbles are **clickable**, linked to the respective openreview pages, and I added some jitter so that they are separated when zooming in. I encourage the reader to browse through the data to find the gems hidden in there.
+Given the former three parameters, we can find some interesting papers such as [Bidirectional Attention Flow for Machine Comprehension](https://arxiv.org/abs/1611.01603), [Neural Architecture Search with Reinforcement Learning](https://arxiv.org/abs/1611.01578), and [Discrete Variational Autoencoders](https://arxiv.org/abs/1609.02200). Bubbles are **clickable**, linked to the respective openreview pages, and I added some jitter so that they are separated when zooming in. I encourage the reader to browse through the data to find the gems hidden in there.
 
 For a more explicit visualization I also include a top-10 papers sorted first by average score and then by confidence (score is the raw average, not ponderated).
 

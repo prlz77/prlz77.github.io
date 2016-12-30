@@ -70,6 +70,17 @@ This unveils the top rated paper, which is [Understanding deep learning requires
 
 Data was extracted on *21st December*, so there might be some variations in the numbers. I will update it, as well as adding more plots, as soon as possible.
 
+## About the data
+Openreview loads the data asynchronously using javascript, thus python and 
+[urllib](https://docs.python.org/3/library/urllib.html) are not an option. In
+these cases it is necessary to use
+[selenium](http://selenium-python.readthedocs.io/), which allows us to use the
+chromium engine (or any other one) to execute the scripts and to get the data.
+Nevertheless, I will pack the data into json format and upload it here so that
+anyone interested in it can skip all the previous steps (and to avoid
+overloading OpenReview).
+
+
 ## Acknowledgements
 I would like to thank [@pepgonfaus](https://twitter.com/pepgonfaus) for helping to obtain the data and sharing new ideas.
 

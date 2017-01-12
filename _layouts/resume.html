@@ -55,7 +55,7 @@ b {
       </tr>
     {% endfor %}
   </table>
-  <h3><i class="fa fa-book"></i> Projects</h3>
+  <h3><i class="fa fa-pencil"></i> Projects</h3>
   <hr style="margin-top:0px;">
   <table>
     {% for project in site.data.resume.projects %}
@@ -106,5 +106,7 @@ b {
       </tr>
     {% endfor %}
   </table>
-
+  <h3><i class="fa fa-book"></i> Publications</h3>
+  <hr style="margin-top:0px;">
+  {% bibliography %}
 </div>

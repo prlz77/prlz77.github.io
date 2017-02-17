@@ -1,0 +1,83 @@
+# Copyright 2016 by Pau Rodríguez
+# This is personal data, all rights reserved.
+name: Pau Rodríguez López
+description: PhD researcher on AI and Computer Vision.
+mail: pau.rodri1 at gmail.com
+github: prlz77
+studies:
+  - name: PhD researcher
+    where: Computer Vision Center, Universitat Autònoma de Barcelona
+    description: On bio-inspired machine learning techniques applied to computer vision and social media.
+    when: 2015 - present
+  - name: Advanced master of Artificial Intelligence
+    where: KU Leuven
+    description: "Magna Cum Laude. Topics: Artificial Neural Networks, Machine learning, SVM, Data Mining, Cybernetics and more."
+    when: 2014 - 2015
+  - name: Computer Engineering (5 years)
+    where: Universitat Autònoma de Barcelona
+    description: "With honors. Topics: Artificial Intelligence, Networks, HPC and more."
+    when: 2009 - 2014
+work:
+  - name: Research Assistant
+    where: Visual Tagging Services
+    when: "May 2014 - Aug. 2014"
+    where: Computer Vision Center, Universitat Autònoma de Barcelona
+    description: Developing learning algorithms for image classification.
+  - name: Research Assistant
+    where: Universitat Autònoma de Barcelona
+    when: Oct 2013 - May 2014
+    description: Engineering on large scale image classification and retrieval with deep learning techniques.
+  - name: Member of the Chalearn Organization Committee
+    where: Computer Vision Center, Universitat Autònoma de Barcelona
+    when: Jun. 2013 - Oct. 2013
+    description: Research assistant, organizing the human gesture databases used in the ChaLearn Multimodal Gesture Recognition Challenge 2013, and in the ChaLearn Looking at People 2014 @gesture.chalearn.org, co-organized by CVC, UAB, UB, UOC, Coplinet (California) and Microsoft.
+  - name: Research Assistant
+    where: Department of Information and Communications Engineering, Universitat Autònoma de Barcelona.
+    when: Sep. 2012
+    description: Extending proposal of standard for the Consultative Commitee for Space Data Systems for the Group on Interactive Coding of Images. Working over an implementation based on the Nasa’s CSSDS-122 Public Release Version.
+projects:
+  - name: "MASTER THESIS - Reducing Redundancy in Convolutional Neural Networks"
+    where: STADIUS, KU Leuven
+    director: Prof. Bart de Moor
+    supervisor: Peter Roelants
+    description: Creation of a framework for assessing and dealing with the redundancy present in the neural network weights.
+    when: Jun. 2015
+  - name: "DEGREE THESIS - A Big Data approximation with deep neural networks"
+    where: Computer Science department, Universitat Autònoma de Barcelona
+    director: Jordi Gonzàlez Sabaté
+    supervisor: Pep Gonfaus
+    when: Jun. 2014
+    description: Application of deep learning for big data applications, including the participation in a Kaggle Competition.
+seminars:
+  - name: "Deep learning 101"
+    where: "Vall d'Hebron Research Institute (VHIR), Barcelona"
+    when: Oct. 14th 2015
+awards:
+  - name: "FI Doctoral scholarship"
+    who: "Government of Catalonia"
+    description: "Government fundings for the PhD studies."
+    when: 2016
+  - name: "PIF Doctoral scholarship"
+    who: "Universitat Autònoma de Barcelona"
+    when: 2015
+    description: Waived.
+  - name: "First-of-class honours"
+    who: "Universitat Autònoma de Barcelona"
+    when: 2015
+    description: "Distinction for the best grade in the class."
+  - name: "Kaggle Galaxy Zoo"
+    who: "kaggle.com"
+    description: "15th out of +300, signed as prlz77."
+    when: 2014
+  - name: "Santander Grants for SME Internships"
+    who: "Santander Bank"
+    description: "For an internship in Visual Tagging Services."
+    when: May 2014 - Aug. 2014
+  - name: "Scholarship for collaboration in a University department."
+    who: "Spanish Ministry of Education"
+    when: "May 2014"
+courses:
+  - name: "Machine Learning"
+    where: "Coursera - Standford, Andrew NG."
+    description: "Machine Learning course on coursera. Max. score."
+    when: "2014"

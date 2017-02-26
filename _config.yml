@@ -4,10 +4,10 @@
 baseurl:
 
 # Site live URL
-url: http://prlz77.github.io
+#url: http://prlz77.github.io
 
 # Localhost
-#url: http://127.0.0.1:4000
+url: http://127.0.0.1:4000
 
 gems: ['jekyll/scholar']
 

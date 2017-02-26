@@ -19,9 +19,9 @@ studies:
     when: 2009 - 2014
 work:
   - name: Research Assistant
-    where: Visual Tagging Services
+    where: Visual Tagging Services, Computer Vision Center, Universitat Autònoma
+        de Barcelona.
     when: "May 2014 - Aug. 2014"
-    where: Computer Vision Center, Universitat Autònoma de Barcelona
     description: Developing learning algorithms for image classification.
   - name: Research Assistant
     where: Universitat Autònoma de Barcelona

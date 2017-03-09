@@ -223,4 +223,3 @@ function start() {
         }
     }, 200) 
 }
-document.onload(start());

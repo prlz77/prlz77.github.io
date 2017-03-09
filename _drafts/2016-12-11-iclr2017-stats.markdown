@@ -1,0 +1,36 @@
+---
+layout: post
+title: Paper accepted at ICLR2017
+date: 2017-03-09 16:20
+description: Regularizing CNNs with Locally Constrained Decorrelations
+comments: true
+categories:
+- blog
+permalink: iclr2017-paper/
+---
+
+<script type="text/javascript" src="{{ site.url }}/assets/js/d3.v4.min.js"></script>
+<script type="text/javascript" src="{{ site.url }}/assets/js/numeric-1.2.6.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/iclr2017/main.css">
+<div class="graph-container">
+<div id="baseline" class="three-column" >Baseline</div>
+<div id="orthoreg" class="three-column" >OrthoReg</div>
+<div id="controls" class="three-column-3" >
+<b>Dataset Size</b>
+<input id="N" type="text" name="size" value="10" maxlength="4">
+<br>
+<b>Step Size</b>
+<input id="alpha" type="text" name="alpha" value="0.1">
+<br>
+<b>Max Iter</b>
+<input id="maxIter" type="text" name="maxIter" value="100">
+<br>
+<b>Delta Stop</b>
+<input id="delta" type="text" name="delta" value="0.001">
+<input type="button" onclick="start();" value="play">
+</div>
+<div id="angle" class="one-column"></div>
+</div>
+<script type="text/javascript" src="{{ site.url }}/assets/js/iclr2017/d3-plots.js"></script>
+
+

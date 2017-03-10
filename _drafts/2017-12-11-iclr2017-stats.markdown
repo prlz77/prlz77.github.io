@@ -9,7 +9,28 @@ categories:
 permalink: iclr2017-paper/
 ---
 
-Deep learning models are becoming increasingly bigger and deeper, becoming state of the art in numerous tasks. But how is it possible to grow these neural net architectures while preventing them from completely memorizing the training data, and showing good performances on unseen examples (overfitting)? The answer to this question includes multiple factors such as having bigger datasets, clever architectures, and good regularization methods. In our work, we focus on the latter, showing that there still is the need to explore new regularizers and the exact effects they have on the models. 
+**TL;DR** We propose to locally decorrelate the feature weights of CNNs. When
+the proposed method, which we call *OrthoReg*, is used to regularize the 40
+layers of Wide Residual Networks, obtaining state of the art results on CIFAR,
+and SVHN.
+
+Deep learning models are becoming increasingly bigger and deeper, beating the
+state of the art in numerous tasks. But how is it possible to grow these neural
+net architectures while preventing them from completely memorizing the training
+data and showing good performances on unseen examples (overfitting)? The answer to
+this question includes multiple factors such as having bigger datasets, clever
+architectures, and good regularization methods. Our work is centered on the
+latter. Concretely, we focus on those regularization methods that prevent the
+co-adaptation of feature detectors, thus reducing the redundancy in the models
+and increasing their generalization power.
+
+Probably, the most popular way to prevent feature co-adaptation is
+[Dropout](https://github.com/szagoruyko/wide-residual-networks). However,
+dropping techniques reduce the capacity of the models, which have to be bigger
+to compensate for this fact. A least used way of preventing co-adaptation is to
+add a regularization term to the loss function of the model so as to penalize
+the correlation between neurons.  
+
 
 Concretely, we focus on *feature decorrelation*, a regularization strategy which was recently revitalized by [Cogswell et al.](https://arxiv.org/abs/1511.06068) at ICLR2016
 

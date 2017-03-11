@@ -26,8 +26,8 @@ and increasing their generalization power.
 
 Probably, the most popular way to prevent feature co-adaptation is
 [Dropout](https://github.com/szagoruyko/wide-residual-networks). However,
-dropping techniques reduce the capacity of the models, which have to be bigger
-to compensate for this fact. A least used way of preventing co-adaptation is to
+dropping techniques such as Dropout or DropConnect reduce the capacity of the
+models, which need to be bigger to compensate for this fact. A least common way of preventing co-adaptation is to
 add a regularization term to the loss function of the model so as to penalize
 the correlation between neurons.  
 

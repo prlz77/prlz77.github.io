@@ -5,8 +5,8 @@
     <description>An information compressor in a pale blue dot.</description>
     <link>http://prlz77.github.io/</link>
     <atom:link href="http://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 12 Mar 2017 15:43:09 +0100</pubDate>
-    <lastBuildDate>Sun, 12 Mar 2017 15:43:09 +0100</lastBuildDate>
+    <pubDate>Sun, 12 Mar 2017 16:07:39 +0100</pubDate>
+    <lastBuildDate>Sun, 12 Mar 2017 16:07:39 +0100</lastBuildDate>
     <generator>Jekyll v3.4.1</generator>
     
       <item>
@@ -17,11 +17,11 @@ the proposed method, which we call
 layers of Wide Residual Networks, we obtain state of the art results on CIFAR,
 and SVHN.&lt;/p&gt;
 
-&lt;script type=&quot;text/javascript&quot; src=&quot;http://prlz77.github.io/assets/js/d3.v4.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/assets/js/d3.v4.min.js&quot;&gt;&lt;/script&gt;
 
-&lt;script type=&quot;text/javascript&quot; src=&quot;http://prlz77.github.io/assets/js/numeric-1.2.6.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/assets/js/numeric-1.2.6.min.js&quot;&gt;&lt;/script&gt;
 
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://prlz77.github.io/assets/css/iclr2017/main.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/iclr2017/main.css&quot; /&gt;
 
 &lt;div class=&quot;controls&quot;&gt;
 &lt;div class=&quot;control-container&quot;&gt;
@@ -166,10 +166,10 @@ result, the linear correlation between feature detectors will decrease,
 resulting in better generalization as it can be seen in the following figure:&lt;/p&gt;
 
 &lt;div class=&quot;graph-container&quot;&gt;&lt;div style=&quot;width:50%; float:left;&quot;&gt;
-&lt;img src=&quot;http://prlz77.github.io/assets/images/iclr2017/Cifar10.svg&quot; /&gt;
+&lt;img src=&quot;/assets/images/iclr2017/Cifar10.svg&quot; /&gt;
 &lt;/div&gt;
 &lt;div style=&quot;width:50%; float:left;&quot;&gt;
-&lt;img src=&quot;http://prlz77.github.io/assets/images/iclr2017/Cifar100.svg&quot; /&gt;
+&lt;img src=&quot;/assets/images/iclr2017/Cifar100.svg&quot; /&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 

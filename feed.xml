@@ -5,8 +5,8 @@
     <description>An information compressor in a pale blue dot.</description>
     <link>http://prlz77.github.io/</link>
     <atom:link href="http://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 12 Mar 2017 11:26:34 +0100</pubDate>
-    <lastBuildDate>Sun, 12 Mar 2017 11:26:34 +0100</lastBuildDate>
+    <pubDate>Sun, 12 Mar 2017 12:50:04 +0100</pubDate>
+    <lastBuildDate>Sun, 12 Mar 2017 12:50:04 +0100</lastBuildDate>
     <generator>Jekyll v3.4.1</generator>
     
       <item>
@@ -23,32 +23,41 @@ and SVHN.&lt;/p&gt;
 
 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://prlz77.github.io/assets/css/iclr2017/main.css&quot; /&gt;
 
-&lt;div class=&quot;graph-container&quot;&gt;
-&lt;div id=&quot;baseline&quot; class=&quot;three-column&quot;&gt;&lt;b style=&quot;color: steelblue;&quot;&gt;Baseline&lt;/b&gt;&lt;/div&gt;
-&lt;div id=&quot;orthoreg&quot; class=&quot;three-column&quot;&gt;&lt;b style=&quot;color: red;&quot;&gt;OrthoReg&lt;/b&gt;&lt;/div&gt;
-&lt;div id=&quot;controls&quot; class=&quot;three-column-3&quot;&gt;
-&lt;b&gt;Dataset Size&lt;/b&gt;
+&lt;div class=&quot;controls&quot;&gt;
+&lt;div class=&quot;control-container&quot;&gt;
+&lt;b&gt;Dataset Size&lt;/b&gt;&lt;br /&gt;
 &lt;input id=&quot;N&quot; type=&quot;text&quot; name=&quot;size&quot; value=&quot;10&quot; maxlength=&quot;4&quot; onkeypress=&quot;if
 (event.keyCode == 13) {scatterStart(); }&quot; /&gt;
-&lt;br /&gt;
-&lt;b&gt;Step Size&lt;/b&gt;
+&lt;/div&gt;
+&lt;div class=&quot;control-container&quot;&gt;
+&lt;b&gt;Step Size&lt;/b&gt;&lt;br /&gt;
 &lt;input id=&quot;alpha&quot; type=&quot;text&quot; name=&quot;alpha&quot; value=&quot;0.1&quot; onkeypress=&quot;if
 (event.keyCode == 13) {scatterStart(); }&quot; /&gt;
-&lt;br /&gt;
-&lt;b&gt;Lambda&lt;/b&gt;
+&lt;/div&gt;
+&lt;div class=&quot;control-container&quot;&gt;
+&lt;b&gt;Lambda&lt;/b&gt;&lt;br /&gt;
 &lt;input id=&quot;lambda&quot; type=&quot;text&quot; name=&quot;lambda&quot; value=&quot;10&quot; maxlength=&quot;4&quot; onkeypress=&quot;if (event.keyCode == 13) {scatterStart(); }&quot; /&gt;
-&lt;br /&gt;
-&lt;b&gt;Max Iter&lt;/b&gt;
+&lt;/div&gt;
+&lt;div class=&quot;control-container&quot;&gt;
+&lt;b&gt;Max Iter&lt;/b&gt;&lt;br /&gt;
 &lt;input id=&quot;maxIter&quot; type=&quot;text&quot; name=&quot;maxIter&quot; value=&quot;20&quot; onkeypress=&quot;if
 (event.keyCode == 13) {scatterStart(); }&quot; /&gt;
-&lt;br /&gt;
-&lt;b&gt;Delta Stop&lt;/b&gt;
+&lt;/div&gt;
+&lt;div class=&quot;control-container&quot;&gt;
+&lt;b&gt;Delta Stop&lt;/b&gt;&lt;br /&gt;
 &lt;input id=&quot;delta&quot; type=&quot;text&quot; name=&quot;delta&quot; value=&quot;0.001&quot; onkeypress=&quot;if
 (event.keyCode == 13) {scatterStart(); }&quot; /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;control-container&quot;&gt;
 &lt;input type=&quot;button&quot; onclick=&quot;scatterStart();&quot; value=&quot;play&quot; /&gt;
 &lt;/div&gt;
-&lt;b&gt;Average nearest neighbor distance&lt;/b&gt;
-&lt;div id=&quot;angle&quot; class=&quot;one-column&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;graph-container&quot;&gt;
+&lt;div id=&quot;baseline&quot; class=&quot;three-column&quot; style=&quot;margin-left:10%; border-right: 1px
+solid lightgray;&quot;&gt;&lt;b style=&quot;color: steelblue;&quot;&gt;Baseline&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;orthoreg&quot; class=&quot;three-column&quot; style=&quot;margin-right:10%;&quot;&gt;&lt;b style=&quot;color: red;&quot;&gt;OrthoReg&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;angle&quot; class=&quot;one-column&quot;&gt; 
+&lt;b&gt;Average nearest neighbor distance&lt;/b&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;http://prlz77.github.io/assets/js/iclr2017/d3-plots-min.js&quot;&gt;&lt;/script&gt;
 
@@ -131,9 +140,9 @@ is worth a thousand words:&lt;/p&gt;
 
 &lt;div class=&quot;graph-container&quot;&gt;
 &lt;div id=&quot;squashing&quot; style=&quot;float:left; width:55%;
-margin-left:23%;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;float:left; margin-top:25%;&quot;&gt;&lt;span style=&quot;color:steelblue&quot;&gt;$cos^2(x)$&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;color:red;&quot;&gt;$\log(1 +
+margin-left:23%;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;position:absolute; left:75%; margin-top:25%;&quot;&gt;&lt;span style=&quot;color:steelblue&quot;&gt;$cos^2(x)$&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;color:red;&quot;&gt;$\log(1 +
 e^{\lambda  (x-1)})$&lt;/span&gt;&lt;/div&gt;
-&lt;div style=&quot;width:40%; margin:15px; margin-left:23%; float:left;&quot; id=&quot;slider&quot;&gt;&lt;/div&gt;&lt;div style=&quot;float:left; width:10%; margin:15px;&quot; type=&quot;text&quot;&gt;$\lambda=$&lt;span id=&quot;slider-value&quot;&gt;10&lt;/span&gt;&lt;/div&gt;
+&lt;div style=&quot;width:40%; margin:15px; margin-left:23%; float:left;&quot; id=&quot;slider&quot;&gt;&lt;/div&gt;&lt;div style=&quot;float:left; margin:15px;&quot; type=&quot;text&quot;&gt;$\lambda=$&lt;span id=&quot;slider-value&quot;&gt;10&lt;/span&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;script&gt;
 var squashingGraph = new SquashingGraph();

@@ -82,32 +82,41 @@ and SVHN.</p>
 
 <link rel="stylesheet" type="text/css" href="http://prlz77.github.io/assets/css/iclr2017/main.css" />
 
-<div class="graph-container">
-<div id="baseline" class="three-column"><b style="color: steelblue;">Baseline</b></div>
-<div id="orthoreg" class="three-column"><b style="color: red;">OrthoReg</b></div>
-<div id="controls" class="three-column-3">
-<b>Dataset Size</b>
+<div class="controls">
+<div class="control-container">
+<b>Dataset Size</b><br />
 <input id="N" type="text" name="size" value="10" maxlength="4" onkeypress="if
 (event.keyCode == 13) {scatterStart(); }" />
-<br />
-<b>Step Size</b>
+</div>
+<div class="control-container">
+<b>Step Size</b><br />
 <input id="alpha" type="text" name="alpha" value="0.1" onkeypress="if
 (event.keyCode == 13) {scatterStart(); }" />
-<br />
-<b>Lambda</b>
+</div>
+<div class="control-container">
+<b>Lambda</b><br />
 <input id="lambda" type="text" name="lambda" value="10" maxlength="4" onkeypress="if (event.keyCode == 13) {scatterStart(); }" />
-<br />
-<b>Max Iter</b>
+</div>
+<div class="control-container">
+<b>Max Iter</b><br />
 <input id="maxIter" type="text" name="maxIter" value="20" onkeypress="if
 (event.keyCode == 13) {scatterStart(); }" />
-<br />
-<b>Delta Stop</b>
+</div>
+<div class="control-container">
+<b>Delta Stop</b><br />
 <input id="delta" type="text" name="delta" value="0.001" onkeypress="if
 (event.keyCode == 13) {scatterStart(); }" />
+</div>
+<div class="control-container">
 <input type="button" onclick="scatterStart();" value="play" />
 </div>
-<b>Average nearest neighbor distance</b>
-<div id="angle" class="one-column"></div>
+</div>
+<div class="graph-container">
+<div id="baseline" class="three-column" style="margin-left:10%; border-right: 1px
+solid lightgray;"><b style="color: steelblue;">Baseline</b></div>
+<div id="orthoreg" class="three-column" style="margin-right:10%;"><b style="color: red;">OrthoReg</b></div>
+<div id="angle" class="one-column"> 
+<b>Average nearest neighbor distance</b></div>
 </div>
 <script type="text/javascript" src="http://prlz77.github.io/assets/js/iclr2017/d3-plots-min.js"></script>
 

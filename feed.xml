@@ -5,8 +5,8 @@
     <description>An information compressor in a pale blue dot.</description>
     <link>http://prlz77.github.io/</link>
     <atom:link href="http://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 12 Mar 2017 12:52:38 +0100</pubDate>
-    <lastBuildDate>Sun, 12 Mar 2017 12:52:38 +0100</lastBuildDate>
+    <pubDate>Sun, 12 Mar 2017 12:56:10 +0100</pubDate>
+    <lastBuildDate>Sun, 12 Mar 2017 12:56:10 +0100</lastBuildDate>
     <generator>Jekyll v3.4.1</generator>
     
       <item>
@@ -56,8 +56,8 @@ and SVHN.&lt;/p&gt;
 &lt;div id=&quot;baseline&quot; class=&quot;three-column&quot; style=&quot;margin-left:10%; border-right: 1px
 solid lightgray;&quot;&gt;&lt;b style=&quot;color: steelblue;&quot;&gt;Baseline&lt;/b&gt;&lt;/div&gt;
 &lt;div id=&quot;orthoreg&quot; class=&quot;three-column&quot; style=&quot;margin-right:10%;&quot;&gt;&lt;b style=&quot;color: red;&quot;&gt;OrthoReg&lt;/b&gt;&lt;/div&gt;
-&lt;div id=&quot;angle&quot; class=&quot;one-column&quot;&gt; 
-&lt;b style=&quot;text-align:left;&quot;&gt;Average nearest neighbor distance&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;angle&quot; class=&quot;one-column&quot; style=&quot;text-align:left;&quot;&gt; 
+&lt;b&gt;Average nearest neighbor distance&lt;/b&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;http://prlz77.github.io/assets/js/iclr2017/d3-plots-min.js&quot;&gt;&lt;/script&gt;
 

@@ -80,7 +80,7 @@ function SquashingGraph() {
         var values = [];
         var inc = (max - min) / samples;
         for (var i = 0; i <= samples; i++) {
-            values.push({x:min+i*inc, y:Math.cos(min+i*inc)**2});
+            values.push({x:min+i*inc, y:Math.pow(Math.cos(min+i*inc), 2)});
         }
         return values;
     }

@@ -46,7 +46,8 @@ onkeypress="if (event.keyCode == 13) {scatterStart(); }">
 <b>Average nearest neighbor distance</b>
 <div id="angle" class="one-column"></div>
 </div>
-<script type="text/javascript" src="{{ site.url }}/assets/js/iclr2017/d3-plots.js"></script>
+<script type="text/javascript" src="{{ site.url
+}}/assets/js/iclr2017/d3-plots-min.js"></script>
 <script> document.onload = scatterStart(); </script>
 
 <!---->

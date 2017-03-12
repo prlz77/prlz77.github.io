@@ -18,33 +18,42 @@ and SVHN.
 <script type="text/javascript" src="{{ site.url }}/assets/js/d3.v4.min.js"></script>
 <script type="text/javascript" src="{{ site.url }}/assets/js/numeric-1.2.6.min.js"></script>
 <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/iclr2017/main.css">
-<div class="graph-container">
-<div id="baseline" class="three-column" ><b style="color: steelblue;">Baseline</b></div>
-<div id="orthoreg" class="three-column" ><b style="color: red;">OrthoReg</b></div>
-<div id="controls" class="three-column-3" >
-<b>Dataset Size</b>
+<div class="controls">
+<div class="control-container" >
+<b>Dataset Size</b><br>
 <input id="N" type="text" name="size" value="10" maxlength="4" onkeypress="if
 (event.keyCode == 13) {scatterStart(); }">
-<br>
-<b>Step Size</b>
+</div>
+<div class="control-container" >
+<b>Step Size</b><br>
 <input id="alpha" type="text" name="alpha" value="0.1" onkeypress="if
 (event.keyCode == 13) {scatterStart(); }">
-<br>
-<b>Lambda</b>
+</div>
+<div class="control-container" >
+<b>Lambda</b><br>
 <input id="lambda" type="text" name="lambda" value="10" maxlength="4"
 onkeypress="if (event.keyCode == 13) {scatterStart(); }">
-<br>
-<b>Max Iter</b>
+</div>
+<div class="control-container" >
+<b>Max Iter</b><br>
 <input id="maxIter" type="text" name="maxIter" value="20" onkeypress="if
 (event.keyCode == 13) {scatterStart(); }">
-<br>
-<b>Delta Stop</b>
+</div>
+<div class="control-container" >
+<b>Delta Stop</b><br>
 <input id="delta" type="text" name="delta" value="0.001" onkeypress="if
 (event.keyCode == 13) {scatterStart(); }">
+</div>
+<div class="control-container" >
 <input type="button" onclick="scatterStart();" value="play">
 </div>
-<b>Average nearest neighbor distance</b>
-<div id="angle" class="one-column"></div>
+</div>
+<div class="graph-container">
+<div id="baseline" class="three-column" style="margin-left:10%; border-right: 1px
+solid lightgray;"><b style="color: steelblue;">Baseline</b></div>
+<div id="orthoreg" class="three-column" style="margin-right:10%;"><b style="color: red;">OrthoReg</b></div>
+<div id="angle" class="one-column"> 
+<b>Average nearest neighbor distance</b></div>
 </div>
 <script type="text/javascript" src="{{ site.url
 }}/assets/js/iclr2017/d3-plots-min.js"></script>
@@ -127,12 +136,12 @@ href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jq
 src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <div class="graph-container">
 <div id="squashing" style="float:left; width:55%;
-margin-left:23%;" ></div><div style="float:left; margin-top:25%;"><span
+margin-left:23%;" ></div><div style="position:absolute; left:75%; margin-top:25%;"><span
 style="color:steelblue">$cos^2(x)$</span><br><span style="color:red;">$\log(1 +
 e^{\lambda  (x-1)})$</span></div>
 <div style="width:40%; margin:15px; margin-left:23%; float:left;"
 id="slider"></div><div
-style="float:left; width:10%; margin:15px;" type="text">$\lambda=$<span
+style="float:left; margin:15px;" type="text">$\lambda=$<span
 id="slider-value">10</span></div>
 </div>
 <script>

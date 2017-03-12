@@ -3,10 +3,10 @@
   <channel>
     <title></title>
     <description>An information compressor in a pale blue dot.</description>
-    <link>http://prlz77.github.io/</link>
-    <atom:link href="http://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 12 Mar 2017 16:18:38 +0100</pubDate>
-    <lastBuildDate>Sun, 12 Mar 2017 16:18:38 +0100</lastBuildDate>
+    <link>https://prlz77.github.io/</link>
+    <atom:link href="https://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 12 Mar 2017 16:29:30 +0100</pubDate>
+    <lastBuildDate>Sun, 12 Mar 2017 16:29:30 +0100</lastBuildDate>
     <generator>Jekyll v3.4.1</generator>
     
       <item>
@@ -17,11 +17,11 @@ the proposed method, which we call
 layers of Wide Residual Networks, we obtain state of the art results on CIFAR,
 and SVHN. Here is an example of the effects of our local regularizer:&lt;/p&gt;
 
-&lt;script type=&quot;text/javascript&quot; src=&quot;http://prlz77.github.io/assets/js/d3.v4.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://prlz77.github.io/assets/js/d3.v4.min.js&quot;&gt;&lt;/script&gt;
 
-&lt;script type=&quot;text/javascript&quot; src=&quot;http://prlz77.github.io/assets/js/numeric-1.2.6.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://prlz77.github.io/assets/js/numeric-1.2.6.min.js&quot;&gt;&lt;/script&gt;
 
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://prlz77.github.io/assets/css/iclr2017/main.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://prlz77.github.io/assets/css/iclr2017/main.css&quot; /&gt;
 
 &lt;div class=&quot;controls&quot;&gt;
 &lt;div class=&quot;control-container&quot;&gt;
@@ -59,7 +59,7 @@ solid lightgray;&quot;&gt;&lt;b style=&quot;color: steelblue;&quot;&gt;Baseline&
 &lt;div id=&quot;angle&quot; class=&quot;one-column&quot; style=&quot;text-align:left;&quot;&gt; 
 &lt;b&gt;Average nearest neighbor distance&lt;/b&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;http://prlz77.github.io/assets/js/iclr2017/d3-plots-min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://prlz77.github.io/assets/js/iclr2017/d3-plots-min.js&quot;&gt;&lt;/script&gt;
 
 &lt;script&gt; document.onload = scatterStart(); &lt;/script&gt;
 
@@ -167,10 +167,10 @@ result, the linear correlation between feature detectors will decrease,
 resulting in better generalization as it can be seen in the following figure:&lt;/p&gt;
 
 &lt;div class=&quot;graph-container&quot;&gt;&lt;div style=&quot;width:50%; float:left;&quot;&gt;
-&lt;img src=&quot;http://prlz77.github.io/assets/images/iclr2017/Cifar10.svg&quot; /&gt;
+&lt;img src=&quot;https://prlz77.github.io/assets/images/iclr2017/Cifar10.svg&quot; /&gt;
 &lt;/div&gt;
 &lt;div style=&quot;width:50%; float:left;&quot;&gt;
-&lt;img src=&quot;http://prlz77.github.io/assets/images/iclr2017/Cifar100.svg&quot; /&gt;
+&lt;img src=&quot;https://prlz77.github.io/assets/images/iclr2017/Cifar100.svg&quot; /&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -186,8 +186,8 @@ spend some moments of your precious time to give a meaning to this work by
 reading it (and I hope you played a little bit too).&lt;/p&gt;
 </description>
         <pubDate>Thu, 09 Mar 2017 16:20:00 +0100</pubDate>
-        <link>http://prlz77.github.io/iclr2017-paper/</link>
-        <guid isPermaLink="true">http://prlz77.github.io/iclr2017-paper/</guid>
+        <link>https://prlz77.github.io/iclr2017-paper/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/iclr2017-paper/</guid>
         
         
         <category>blog</category>
@@ -272,8 +272,8 @@ overloading OpenReview).&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 20 Dec 2016 01:41:00 +0100</pubDate>
-        <link>http://prlz77.github.io/iclr2017-stats/</link>
-        <guid isPermaLink="true">http://prlz77.github.io/iclr2017-stats/</guid>
+        <link>https://prlz77.github.io/iclr2017-stats/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/iclr2017-stats/</guid>
         
         
         <category>blog</category>
@@ -291,8 +291,8 @@ overloading OpenReview).&lt;/p&gt;
 &lt;p&gt;This will first kill all the background processes and then exit the main script (quitting loops as well).&lt;/p&gt;
 </description>
         <pubDate>Tue, 27 Sep 2016 18:20:00 +0200</pubDate>
-        <link>http://prlz77.github.io/killing-process-children</link>
-        <guid isPermaLink="true">http://prlz77.github.io/killing-process-children</guid>
+        <link>https://prlz77.github.io/killing-process-children</link>
+        <guid isPermaLink="true">https://prlz77.github.io/killing-process-children</guid>
         
         
         <category>blog</category>
@@ -315,8 +315,8 @@ to solve this problem for the second time, I post it here so to remember.&lt;/p&
 &lt;p&gt;I hope this is helpful for someone else.&lt;/p&gt;
 </description>
         <pubDate>Sun, 19 Jun 2016 18:18:00 +0200</pubDate>
-        <link>http://prlz77.github.io/fix-viewport-out</link>
-        <guid isPermaLink="true">http://prlz77.github.io/fix-viewport-out</guid>
+        <link>https://prlz77.github.io/fix-viewport-out</link>
+        <guid isPermaLink="true">https://prlz77.github.io/fix-viewport-out</guid>
         
         
         <category>blog</category>
@@ -364,8 +364,8 @@ to solve this problem for the second time, I post it here so to remember.&lt;/p&
 &lt;p&gt;If any error, doubt, etc. please tell me.&lt;/p&gt;
 </description>
         <pubDate>Wed, 20 Apr 2016 13:09:00 +0200</pubDate>
-        <link>http://prlz77.github.io/torchasync</link>
-        <guid isPermaLink="true">http://prlz77.github.io/torchasync</guid>
+        <link>https://prlz77.github.io/torchasync</link>
+        <guid isPermaLink="true">https://prlz77.github.io/torchasync</guid>
         
         
         <category>blog</category>
@@ -379,8 +379,8 @@ to solve this problem for the second time, I post it here so to remember.&lt;/p&
 &lt;p&gt;Here is the solution page: &lt;a href=&quot;https://support.apple.com/en-us/HT203315&quot;&gt;Apple support&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 15 Apr 2016 20:06:00 +0200</pubDate>
-        <link>http://prlz77.github.io/macsleeps</link>
-        <guid isPermaLink="true">http://prlz77.github.io/macsleeps</guid>
+        <link>https://prlz77.github.io/macsleeps</link>
+        <guid isPermaLink="true">https://prlz77.github.io/macsleeps</guid>
         
         
         <category>blog</category>
@@ -402,8 +402,8 @@ to solve this problem for the second time, I post it here so to remember.&lt;/p&
 &lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=prlz77&amp;amp;repo=matconv2caffe&amp;amp;type=follow&amp;amp;count=true&amp;amp;size=large&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;160px&quot; height=&quot;30px&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Wed, 05 Aug 2015 19:29:00 +0200</pubDate>
-        <link>http://prlz77.github.io/matconv2caffe0.1/</link>
-        <guid isPermaLink="true">http://prlz77.github.io/matconv2caffe0.1/</guid>
+        <link>https://prlz77.github.io/matconv2caffe0.1/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/matconv2caffe0.1/</guid>
         
         
         <category>blog</category>
@@ -497,8 +497,8 @@ export DYLD_FALLBACK_LIBRARY_PATH=~/anaconda/lib:/usr/local/Cellar/protobuf241/2
 
 </description>
         <pubDate>Mon, 03 Aug 2015 01:00:00 +0200</pubDate>
-        <link>http://prlz77.github.io/install-caffe</link>
-        <guid isPermaLink="true">http://prlz77.github.io/install-caffe</guid>
+        <link>https://prlz77.github.io/install-caffe</link>
+        <guid isPermaLink="true">https://prlz77.github.io/install-caffe</guid>
         
         
         <category>blog</category>

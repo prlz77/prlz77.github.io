@@ -13,12 +13,19 @@ layout: default
 
                 <span class="post-date">{{ post.date | date_to_string }}</span>                
                 {% if forloop.first %}
+                    <p>
                     {% assign sp = post.content | split: "<!---->" %}
                     {% if sp.size > 1 %}
                         {{ sp | first }}
                     {% else %}
                         {{ post.content | truncatewords:75 }}
                     {% endif %}
+                    </p>
+                    <p>
+                        <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title}}">
+                            Read More
+                        </a>
+                    </p>
                 {% else %}
                     <p>
                           {{ post.content | truncatewords:50 }}    

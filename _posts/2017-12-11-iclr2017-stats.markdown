@@ -12,7 +12,7 @@ permalink: iclr2017-paper/
 **TL;DR** We propose to locally decorrelate the feature weights of CNNs. When
 the proposed method, which we call
 [OrthoReg](https://openreview.net/pdf?id=ByOvsIqeg), is used to regularize the 40
-layers of Wide Residual Networks, obtaining state of the art results on CIFAR,
+layers of Wide Residual Networks, we obtain state of the art results on CIFAR,
 and SVHN.
 
 <script type="text/javascript" src="{{ site.url }}/assets/js/d3.v4.min.js"></script>

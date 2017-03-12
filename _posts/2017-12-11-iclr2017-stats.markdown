@@ -10,7 +10,8 @@ permalink: iclr2017-paper/
 ---
 
 **TL;DR** We propose to locally decorrelate the feature weights of CNNs. When
-the proposed method, which we call *OrthoReg*, is used to regularize the 40
+the proposed method, which we call
+[OrthoReg](https://openreview.net/pdf?id=ByOvsIqeg), is used to regularize the 40
 layers of Wide Residual Networks, obtaining state of the art results on CIFAR,
 and SVHN.
 
@@ -22,19 +23,24 @@ and SVHN.
 <div id="orthoreg" class="three-column" ><b style="color: red;">OrthoReg</b></div>
 <div id="controls" class="three-column-3" >
 <b>Dataset Size</b>
-<input id="N" type="text" name="size" value="10" maxlength="4">
+<input id="N" type="text" name="size" value="10" maxlength="4" onkeypress="if
+(event.keyCode == 13) {scatterStart(); }">
 <br>
 <b>Step Size</b>
-<input id="alpha" type="text" name="alpha" value="0.1">
+<input id="alpha" type="text" name="alpha" value="0.1" onkeypress="if
+(event.keyCode == 13) {scatterStart(); }">
 <br>
 <b>Lambda</b>
-<input id="lambda" type="text" name="lambda" value="10" maxlength="4">
+<input id="lambda" type="text" name="lambda" value="10" maxlength="4"
+onkeypress="if (event.keyCode == 13) {scatterStart(); }">
 <br>
 <b>Max Iter</b>
-<input id="maxIter" type="text" name="maxIter" value="20">
+<input id="maxIter" type="text" name="maxIter" value="20" onkeypress="if
+(event.keyCode == 13) {scatterStart(); }">
 <br>
 <b>Delta Stop</b>
-<input id="delta" type="text" name="delta" value="0.001">
+<input id="delta" type="text" name="delta" value="0.001" onkeypress="if
+(event.keyCode == 13) {scatterStart(); }">
 <input type="button" onclick="scatterStart();" value="play">
 </div>
 <b>Average nearest neighbor distance</b>

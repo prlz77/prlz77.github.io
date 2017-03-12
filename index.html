@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">        
         <meta name="description" content="Solutions I found, projects i found interesting, etc.">
         <link rel="canonical" 
-        href="http://prlz77.github.io/">
+        href="http://127.0.0.1:4000/">
         
         <!-- Harmony styles -->
         <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
@@ -30,16 +30,16 @@
                 <h2>An information compressor in a pale blue dot.</h2>
                 <ul>
 	<li>
-		<a href="http://prlz77.github.io">Home</a><span>/</span>
+		<a href="http://127.0.0.1:4000">Home</a><span>/</span>
 	</li>
 	<li>
-		<a href="http://prlz77.github.io/blog">Blog</a><span>/</span>
+		<a href="http://127.0.0.1:4000/blog">Blog</a><span>/</span>
 	</li>
 	<li>
-		<a href="http://prlz77.github.io/about">About</a><span>/</span>
+		<a href="http://127.0.0.1:4000/about">About</a><span>/</span>
 	</li>
 	<li>
-		<a href="http://prlz77.github.io/resume">Résumé</a><span>/</span>
+		<a href="http://127.0.0.1:4000/resume">Résumé</a><span>/</span>
 	</li>
 	<!--
 	<li>
@@ -57,164 +57,232 @@
             </div>
         </header>
         <div id="home" class="page-content wc-container">
-	<div class="posts">
-  		
-  			<div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
-    			<h3 class="post-title">
-			      <a href="http://prlz77.github.io/iclr2017-stats/">
-			        An early overview of ICLR2017
-			      </a>
-    			</h3>
+    <div class="posts">
+        
+            <div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
+                <h3 class="post-title">
+                    <a href="http://127.0.0.1:4000/iclr2017-paper/">
+                      Paper accepted at ICLR2017
+                    </a>
+                </h3>
 
-    			<span class="post-date">20 Dec 2016</span>    			
-  				
-          <p>Machine learning is accelerating, we have an idea and it is on arxiv the next day, NIPS2016 was bigger than ever and it is difficult to keep track of all the new interesting work.</p> <p>Given that this is the first time I submit to ICLR, and taking advantage from all the data available of OpenReview, I have decided to make some data visualizations. I hope these visualizations help to build a mental idea of which...
-          
-  			</div>
-        <br>
-  		
-  			<div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
-    			<h3 class="post-title">
-			      <a href="http://prlz77.github.io/killing-process-children">
-			        How to kill bash script children when crtl+c
-			      </a>
-    			</h3>
+                <span class="post-date">09 Mar 2017</span>                
+                
+                    
+                    
+                        <p><strong>TL;DR</strong> We propose to locally decorrelate the feature weights of CNNs. When
+the proposed method, which we call
+<a href="https://openreview.net/pdf?id=ByOvsIqeg">OrthoReg</a>, is used to regularize the 40
+layers of Wide Residual Networks, obtaining state of the art results on CIFAR,
+and SVHN.</p>
 
-    			<span class="post-date">27 Sep 2016</span>    			
-  				
-          <p>
-	  				<p>Using a script to run multiple tasks in background can be very handy but it can also be anoying when we press crtl+c to interrupt and the background processes keep working. There are many approaches to solve this but I have found the cleanest one is to simply trap the...	
-  				</p>
-  				<p>
-  					<a href="http://prlz77.github.io/killing-process-children" title="How to kill bash script children when crtl+c">
-  						Read More
-					</a>
-  				</p>
-          
-  			</div>
-        <br>
-  		
-  			<div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
-    			<h3 class="post-title">
-			      <a href="http://prlz77.github.io/fix-viewport-out">
-			        Can not set ViewportOut in nvidia-settings
-			      </a>
-    			</h3>
+<script type="text/javascript" src="http://127.0.0.1:4000/assets/js/d3.v4.min.js"></script>
 
-    			<span class="post-date">19 Jun 2016</span>    			
-  				
-          <p>
-	  				<p>After plugging the second monitor, I could not find the correct resolution in nvidia-settings and it was impossible to do it manually. After having to solve this problem for the second time, I post it here so to remember.</p> <ol> <li>Look at nvidia-settings for the name of the monitors (In...	
-  				</p>
-  				<p>
-  					<a href="http://prlz77.github.io/fix-viewport-out" title="Can not set ViewportOut in nvidia-settings">
-  						Read More
-					</a>
-  				</p>
-          
-  			</div>
-        <br>
-  		
-  			<div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
-    			<h3 class="post-title">
-			      <a href="http://prlz77.github.io/torchasync">
-			        torch.async-hdf5-reader
-			      </a>
-    			</h3>
+<script type="text/javascript" src="http://127.0.0.1:4000/assets/js/numeric-1.2.6.min.js"></script>
 
-    			<span class="post-date">20 Apr 2016</span>    			
-  				
-          <p>
-	  				<p>I decided to share this script I was using in order to accelerate the training of neural nets making them to gather data in parallel. So I wrote some tests to check it performs well its basic functions and commented the code a little bit.</p> <h2 id="dependencies">Dependencies</h2> <p>It depends on...	
-  				</p>
-  				<p>
-  					<a href="http://prlz77.github.io/torchasync" title="torch.async-hdf5-reader">
-  						Read More
-					</a>
-  				</p>
-          
-  			</div>
-        <br>
-  		
-  			<div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
-    			<h3 class="post-title">
-			      <a href="http://prlz77.github.io/macsleeps">
-			        Mac Book Pro randomly goes to sleep fix
-			      </a>
-    			</h3>
+<link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/assets/css/iclr2017/main.css" />
 
-    			<span class="post-date">15 Apr 2016</span>    			
-  				
-          <p>
-	  				<p>Magnets can make your Mac to sleep. This was driving me mad since I always put it on a sleeve that closes with a magnet.</p>
+<div class="graph-container">
+<div id="baseline" class="three-column"><b style="color: steelblue;">Baseline</b></div>
+<div id="orthoreg" class="three-column"><b style="color: red;">OrthoReg</b></div>
+<div id="controls" class="three-column-3">
+<b>Dataset Size</b>
+<input id="N" type="text" name="size" value="10" maxlength="4" onkeypress="if
+(event.keyCode == 13) {scatterStart(); }" />
+<br />
+<b>Step Size</b>
+<input id="alpha" type="text" name="alpha" value="0.1" onkeypress="if
+(event.keyCode == 13) {scatterStart(); }" />
+<br />
+<b>Lambda</b>
+<input id="lambda" type="text" name="lambda" value="10" maxlength="4" onkeypress="if (event.keyCode == 13) {scatterStart(); }" />
+<br />
+<b>Max Iter</b>
+<input id="maxIter" type="text" name="maxIter" value="20" onkeypress="if
+(event.keyCode == 13) {scatterStart(); }" />
+<br />
+<b>Delta Stop</b>
+<input id="delta" type="text" name="delta" value="0.001" onkeypress="if
+(event.keyCode == 13) {scatterStart(); }" />
+<input type="button" onclick="scatterStart();" value="play" />
+</div>
+<b>Average nearest neighbor distance</b>
+<div id="angle" class="one-column"></div>
+</div>
+<script type="text/javascript" src="http://127.0.0.1:4000/assets/js/iclr2017/d3-plots.js"></script>
+
+<script> document.onload = scatterStart(); </script>
+
+
+                    
+                
+            </div>
+            <br>
+         
+            <div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
+                <h3 class="post-title">
+                    <a href="http://127.0.0.1:4000/iclr2017-stats/">
+                      An early overview of ICLR2017
+                    </a>
+                </h3>
+
+                <span class="post-date">20 Dec 2016</span>                
+                
+                    <p>
+                          <p>Machine learning is accelerating, we have an idea and it is on arxiv the next day, NIPS2016 was bigger than ever and it is difficult to keep track of all the new interesting work.</p> <p>Given that this is the first time I submit to ICLR, and taking advantage from all...    
+                    </p>
+                    <p>
+                        <a href="http://127.0.0.1:4000/iclr2017-stats/" title="An early overview of ICLR2017">
+                            Read More
+                        </a>
+                    </p>
+                
+            </div>
+            <br>
+         
+            <div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
+                <h3 class="post-title">
+                    <a href="http://127.0.0.1:4000/killing-process-children">
+                      How to kill bash script children when crtl+c
+                    </a>
+                </h3>
+
+                <span class="post-date">27 Sep 2016</span>                
+                
+                    <p>
+                          <p>Using a script to run multiple tasks in background can be very handy but it can also be anoying when we press crtl+c to interrupt and the background processes keep working. There are many approaches to solve this but I have found the cleanest one is to simply trap the...    
+                    </p>
+                    <p>
+                        <a href="http://127.0.0.1:4000/killing-process-children" title="How to kill bash script children when crtl+c">
+                            Read More
+                        </a>
+                    </p>
+                
+            </div>
+            <br>
+         
+            <div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
+                <h3 class="post-title">
+                    <a href="http://127.0.0.1:4000/fix-viewport-out">
+                      Can not set ViewportOut in nvidia-settings
+                    </a>
+                </h3>
+
+                <span class="post-date">19 Jun 2016</span>                
+                
+                    <p>
+                          <p>After plugging the second monitor, I could not find the correct resolution in nvidia-settings and it was impossible to do it manually. After having to solve this problem for the second time, I post it here so to remember.</p> <ol> <li>Look at nvidia-settings for the name of the monitors (In...    
+                    </p>
+                    <p>
+                        <a href="http://127.0.0.1:4000/fix-viewport-out" title="Can not set ViewportOut in nvidia-settings">
+                            Read More
+                        </a>
+                    </p>
+                
+            </div>
+            <br>
+         
+            <div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
+                <h3 class="post-title">
+                    <a href="http://127.0.0.1:4000/torchasync">
+                      torch.async-hdf5-reader
+                    </a>
+                </h3>
+
+                <span class="post-date">20 Apr 2016</span>                
+                
+                    <p>
+                          <p>I decided to share this script I was using in order to accelerate the training of neural nets making them to gather data in parallel. So I wrote some tests to check it performs well its basic functions and commented the code a little bit.</p> <h2 id="dependencies">Dependencies</h2> <p>It depends on...    
+                    </p>
+                    <p>
+                        <a href="http://127.0.0.1:4000/torchasync" title="torch.async-hdf5-reader">
+                            Read More
+                        </a>
+                    </p>
+                
+            </div>
+            <br>
+         
+            <div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
+                <h3 class="post-title">
+                    <a href="http://127.0.0.1:4000/macsleeps">
+                      Mac Book Pro randomly goes to sleep fix
+                    </a>
+                </h3>
+
+                <span class="post-date">15 Apr 2016</span>                
+                
+                    <p>
+                          <p>Magnets can make your Mac to sleep. This was driving me mad since I always put it on a sleeve that closes with a magnet.</p>
 
 <p>Here is the solution page: <a href="https://support.apple.com/en-us/HT203315">Apple support</a></p>
-	
-  				</p>
-  				<p>
-  					<a href="http://prlz77.github.io/macsleeps" title="Mac Book Pro randomly goes to sleep fix">
-  						Read More
-					</a>
-  				</p>
-          
-  			</div>
-        <br>
-  		
-  			<div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
-    			<h3 class="post-title">
-			      <a href="http://prlz77.github.io/matconv2caffe0.1/">
-			        matconv2caffe v0.1 released
-			      </a>
-    			</h3>
+    
+                    </p>
+                    <p>
+                        <a href="http://127.0.0.1:4000/macsleeps" title="Mac Book Pro randomly goes to sleep fix">
+                            Read More
+                        </a>
+                    </p>
+                
+            </div>
+            <br>
+         
+            <div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
+                <h3 class="post-title">
+                    <a href="http://127.0.0.1:4000/matconv2caffe0.1/">
+                      matconv2caffe v0.1 released
+                    </a>
+                </h3>
 
-    			<span class="post-date">05 Aug 2015</span>    			
-  				
-          <p>
-	  				<h2 id="convert-matconvnet-models-to-caffe-with-matconv2caffe">Convert Matconvnet models to Caffe with matconv2caffe.</h2> <p>There is already a script to import caffe models to matconvnet thanks to <a href="https://github.com/vlfeat/matconvnet/blob/master/utils/import-caffe.py">@vedaldi</a>. However, we needed the oposite so I made a script that converts the .caffemodel and extracts a deplotment .prototxt model definition and the average image. Currently it...	
-  				</p>
-  				<p>
-  					<a href="http://prlz77.github.io/matconv2caffe0.1/" title="matconv2caffe v0.1 released">
-  						Read More
-					</a>
-  				</p>
-          
-  			</div>
-        <br>
-  		
-  			<div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
-    			<h3 class="post-title">
-			      <a href="http://prlz77.github.io/install-caffe">
-			        How I installed Caffe in OS X Yosemite
-			      </a>
-    			</h3>
+                <span class="post-date">05 Aug 2015</span>                
+                
+                    <p>
+                          <h2 id="convert-matconvnet-models-to-caffe-with-matconv2caffe">Convert Matconvnet models to Caffe with matconv2caffe.</h2> <p>There is already a script to import caffe models to matconvnet thanks to <a href="https://github.com/vlfeat/matconvnet/blob/master/utils/import-caffe.py">@vedaldi</a>. However, we needed the oposite so I made a script that converts the .caffemodel and extracts a deplotment .prototxt model definition and the average image. Currently it...    
+                    </p>
+                    <p>
+                        <a href="http://127.0.0.1:4000/matconv2caffe0.1/" title="matconv2caffe v0.1 released">
+                            Read More
+                        </a>
+                    </p>
+                
+            </div>
+            <br>
+         
+            <div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
+                <h3 class="post-title">
+                    <a href="http://127.0.0.1:4000/install-caffe">
+                      How I installed Caffe in OS X Yosemite
+                    </a>
+                </h3>
 
-    			<span class="post-date">03 Aug 2015</span>    			
-  				
-          <p>
-	  				<h2 id="update">Update</h2> <hr /> <p>Last time I had to compile it was much easier by using Cmake. It was as easy as creating a build folder and executing (after installing the dependencies):</p> <blockquote> <p>cmake -D CMAKE_BUILD_TYPE=RELEASE -D WITH_CUDA=OFF -D CMAKE_INSTALL_PREFIX=$PWD ..</p> </blockquote> <p>Then compiling with:</p> <blockquote> <p>make -j</p> </blockquote> <p>Of...	
-  				</p>
-  				<p>
-  					<a href="http://prlz77.github.io/install-caffe" title="How I installed Caffe in OS X Yosemite">
-  						Read More
-					</a>
-  				</p>
-          
-  			</div>
-        <br>
-  		
-	</div>
-	<div class="post-footer">
-		<div class="column-full"><a href="http://prlz77.github.io/blog">Blog archive</a></div>
-	</div>
+                <span class="post-date">03 Aug 2015</span>                
+                
+                    <p>
+                          <h2 id="update">Update</h2> <hr /> <p>Last time I had to compile it was much easier by using Cmake. It was as easy as creating a build folder and executing (after installing the dependencies):</p> <blockquote> <p>cmake -D CMAKE_BUILD_TYPE=RELEASE -D WITH_CUDA=OFF -D CMAKE_INSTALL_PREFIX=$PWD ..</p> </blockquote> <p>Then compiling with:</p> <blockquote> <p>make -j</p> </blockquote> <p>Of...    
+                    </p>
+                    <p>
+                        <a href="http://127.0.0.1:4000/install-caffe" title="How I installed Caffe in OS X Yosemite">
+                            Read More
+                        </a>
+                    </p>
+                
+            </div>
+            <br>
+         
+    </div>
+    <div class="post-footer">
+        <div class="column-full"><a href="http://127.0.0.1:4000/blog">Blog archive</a></div>
+    </div>
 </div>
+
         <footer class="main-footer">
             <div class="wc-container">
                 <div class="column one">
                     <h6>Few more links</h6>
 <ul class="menu">
-    <li><a href="http://prlz77.github.io/about">About</a></li>
-    <li><a href="http://prlz77.github.io/blog">Blog</a></li>
-    <li><a href="http://prlz77.github.io/faq">Help / FAQ</a></li>    
+    <li><a href="http://127.0.0.1:4000/about">About</a></li>
+    <li><a href="http://127.0.0.1:4000/blog">Blog</a></li>
+    <li><a href="http://127.0.0.1:4000/faq">Help / FAQ</a></li>    
 </ul>		                    
                 </div>
                 <div class="column two">
@@ -275,8 +343,8 @@ Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>
           if (raf) raf(cb);
           else window.addEventListener('load', cb);
         </script>
-        <!-- jQuery -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- jQuery 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <!-- When no internet load JQuery from local -->
         <script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>
         <!-- Site js -->

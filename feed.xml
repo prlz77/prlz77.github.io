@@ -3,11 +3,186 @@
   <channel>
     <title></title>
     <description>An information compressor in a pale blue dot.</description>
-    <link>http://prlz77.github.io/</link>
-    <atom:link href="http://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 26 Feb 2017 22:44:08 +0100</pubDate>
-    <lastBuildDate>Sun, 26 Feb 2017 22:44:08 +0100</lastBuildDate>
-    <generator>Jekyll v3.3.1</generator>
+    <link>http://127.0.0.1:4000/</link>
+    <atom:link href="http://127.0.0.1:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 12 Mar 2017 11:15:51 +0100</pubDate>
+    <lastBuildDate>Sun, 12 Mar 2017 11:15:51 +0100</lastBuildDate>
+    <generator>Jekyll v3.4.1</generator>
+    
+      <item>
+        <title>Paper accepted at ICLR2017</title>
+        <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; We propose to locally decorrelate the feature weights of CNNs. When
+the proposed method, which we call
+&lt;a href=&quot;https://openreview.net/pdf?id=ByOvsIqeg&quot;&gt;OrthoReg&lt;/a&gt;, is used to regularize the 40
+layers of Wide Residual Networks, obtaining state of the art results on CIFAR,
+and SVHN.&lt;/p&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://127.0.0.1:4000/assets/js/d3.v4.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://127.0.0.1:4000/assets/js/numeric-1.2.6.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://127.0.0.1:4000/assets/css/iclr2017/main.css&quot; /&gt;
+
+&lt;div class=&quot;graph-container&quot;&gt;
+&lt;div id=&quot;baseline&quot; class=&quot;three-column&quot;&gt;&lt;b style=&quot;color: steelblue;&quot;&gt;Baseline&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;orthoreg&quot; class=&quot;three-column&quot;&gt;&lt;b style=&quot;color: red;&quot;&gt;OrthoReg&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;controls&quot; class=&quot;three-column-3&quot;&gt;
+&lt;b&gt;Dataset Size&lt;/b&gt;
+&lt;input id=&quot;N&quot; type=&quot;text&quot; name=&quot;size&quot; value=&quot;10&quot; maxlength=&quot;4&quot; onkeypress=&quot;if
+(event.keyCode == 13) {scatterStart(); }&quot; /&gt;
+&lt;br /&gt;
+&lt;b&gt;Step Size&lt;/b&gt;
+&lt;input id=&quot;alpha&quot; type=&quot;text&quot; name=&quot;alpha&quot; value=&quot;0.1&quot; onkeypress=&quot;if
+(event.keyCode == 13) {scatterStart(); }&quot; /&gt;
+&lt;br /&gt;
+&lt;b&gt;Lambda&lt;/b&gt;
+&lt;input id=&quot;lambda&quot; type=&quot;text&quot; name=&quot;lambda&quot; value=&quot;10&quot; maxlength=&quot;4&quot; onkeypress=&quot;if (event.keyCode == 13) {scatterStart(); }&quot; /&gt;
+&lt;br /&gt;
+&lt;b&gt;Max Iter&lt;/b&gt;
+&lt;input id=&quot;maxIter&quot; type=&quot;text&quot; name=&quot;maxIter&quot; value=&quot;20&quot; onkeypress=&quot;if
+(event.keyCode == 13) {scatterStart(); }&quot; /&gt;
+&lt;br /&gt;
+&lt;b&gt;Delta Stop&lt;/b&gt;
+&lt;input id=&quot;delta&quot; type=&quot;text&quot; name=&quot;delta&quot; value=&quot;0.001&quot; onkeypress=&quot;if
+(event.keyCode == 13) {scatterStart(); }&quot; /&gt;
+&lt;input type=&quot;button&quot; onclick=&quot;scatterStart();&quot; value=&quot;play&quot; /&gt;
+&lt;/div&gt;
+&lt;b&gt;Average nearest neighbor distance&lt;/b&gt;
+&lt;div id=&quot;angle&quot; class=&quot;one-column&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://127.0.0.1:4000/assets/js/iclr2017/d3-plots.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt; document.onload = scatterStart(); &lt;/script&gt;
+
+&lt;!----&gt;
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+    MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;Deep learning models are becoming increasingly bigger and deeper, beating the
+state of the art in numerous tasks. But how is it possible to grow these neural
+net architectures while preventing them from completely memorizing the training
+data and showing good performances on unseen examples (overfitting)? The answer to
+this question includes multiple factors such as having bigger datasets, clever
+architectures, and good regularization methods. Our work is centered on the
+latter. Concretely, we focus on those regularization methods that prevent the
+co-adaptation of feature detectors, thus reducing the redundancy in the models
+and increasing their generalization power.&lt;/p&gt;
+
+&lt;p&gt;Probably, the most popular way to prevent feature co-adaptation is
+&lt;a href=&quot;https://github.com/szagoruyko/wide-residual-networks&quot;&gt;Dropout&lt;/a&gt;. However,
+dropping techniques such as Dropout or
+&lt;a href=&quot;http://cs.nyu.edu/~wanli/dropc/&quot;&gt;DropConnect&lt;/a&gt; reduce the capacity of the
+models, which need to be bigger to compensate for this fact.
+A least common method for preventing co-adaptation is to
+add a regularization term to the loss function of the model so as to penalize
+the correlation between neurons. This idea has been explored several times for
+supervised learning on neural networks,
+first with the name of &lt;a href=&quot;http://ieeexplore.ieee.org/document/6639015/&quot;&gt;incoherent
+training&lt;/a&gt;, and later as &lt;a href=&quot;https://arxiv.org/abs/1511.06068&quot;&gt;DeCov&lt;/a&gt;
+(Cogswell et al. at ICLR2016).&lt;/p&gt;
+
+&lt;p&gt;Although the presented decorrelation methods proved to perform well, they are
+still far from being commonly used in state of the art models. In part, this is
+because they were applied to rather shallow models, and it is not
+clear that the computational overhead introduced by these regularizers in state
+of the art models will compensate the reduction in overfitting. Our work aims to
+dissipate these inconveniences by:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;reducing the computational cost by regularizing the network weights,&lt;/li&gt;
+  &lt;li&gt;increasing the performance margins by imposing locality constraints,&lt;/li&gt;
+  &lt;li&gt;successfully regularizing all the layers of a state of the art residual network.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Why imposing locality when decorrelating feature detectors? Since a toy is more
+amusing than one thousand words, please &lt;a href=&quot;#baseline&quot;&gt;play&lt;/a&gt; with the example I provide at the
+beginning of the post (if you have not already tried it ;) ). Note that although
+it is a toy example with 2D nice-to-plot features, similar behavior was found in
+actual CNN features, especially in bottleneck layers, when the number of filters
+matches their dimensionality. 
+The intuition is
+that regularizing negatively decorrelated feature detectors is
+counter-productive. Namely, in the &lt;a href=&quot;#baseline&quot;&gt;left plot&lt;/a&gt;, each dot
+(feature detector) “tries to be different” from all the other dots, even those which are in the
+opposite quadrant. We propose to make dots only sensitive to their nearest
+neighbors, thus increasing the average minimum angle (linear correlation) between all the feature
+detectors.  We achieve this locality by means of a squashing function:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;C(\theta) = \sum_{i=1}^{n}\sum_{j=1,j\ne i}^{n} \log(1 + e^{\lambda
+    (cos(\theta_i,\theta_j)-1)}) = \log(1 + e^{\lambda  (\langle
+    \theta_i,\theta_j\rangle -1)}), \ ||\theta_i||=||\theta_j||=1,&lt;/script&gt;
+
+&lt;p&gt;where $\lambda$ is a coefficient that controls the minimum
+angle-of-influence of the regularizer, i.e. the minimum angle between two
+feature weights so that there exists a gradient pushing them apart. Again, a toy
+is worth a thousand words:&lt;/p&gt;
+
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css&quot; /&gt;
+
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;div class=&quot;graph-container&quot;&gt;
+&lt;div id=&quot;squashing&quot; style=&quot;float:left; width:55%;
+margin-left:23%;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;float:left; margin-top:25%;&quot;&gt;&lt;span style=&quot;color:steelblue&quot;&gt;$cos^2(x)$&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;color:red;&quot;&gt;$\log(1 +
+e^{\lambda  (x-1)})$&lt;/span&gt;&lt;/div&gt;
+&lt;div style=&quot;width:40%; margin:15px; margin-left:23%; float:left;&quot; id=&quot;slider&quot;&gt;&lt;/div&gt;&lt;div style=&quot;float:left; width:10%; margin:15px;&quot; type=&quot;text&quot;&gt;$\lambda=$&lt;span id=&quot;slider-value&quot;&gt;10&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var squashingGraph = new SquashingGraph();
+$( function() {
+    $( &quot;#slider&quot; ).slider({
+        min: 2,
+        max: 20,
+        step: 1,
+        value: 10,
+        animate: &quot;fast&quot;,
+        slide: function (event, ui) { squashingGraph.updateGraph(ui.value);
+        $(&quot;#slider-value&quot;).text(ui.value); }
+    });
+} );
+&lt;/script&gt;
+
+&lt;p&gt;As it can be seen, when $\lambda \in [7,10]$, the squashing function gradient
+approximates zero for those features further than $\pi / 2$ (90º). In other
+words, the regularizer will enforce feature weights to be orthogonal. As a
+result, the linear correlation between feature detectors will decrease,
+resulting in better generalization as it can be seen in the following figure:&lt;/p&gt;
+
+&lt;div class=&quot;graph-container&quot;&gt;&lt;div style=&quot;margin-left:10%; width:40%; float:left;&quot;&gt;
+&lt;img src=&quot;http://127.0.0.1:4000/assets/images/iclr2017/Cifar10.svg&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;width:40%; float:left;&quot;&gt;
+&lt;img src=&quot;http://127.0.0.1:4000/assets/images/iclr2017/Cifar100.svg&quot; /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Note that OrthoReg is able to reduce the overfitting in the presence of Dropout
+and &lt;a href=&quot;https://arxiv.org/abs/1502.03167&quot;&gt;BatchNorm&lt;/a&gt; at the same time. A possible
+hypothesis for this fact is that different regularizers act on different
+aspects of the network, exposing how much is still to be explored if we want to
+comprehend how to reach Deep Learning’s full potential.&lt;/p&gt;
+
+&lt;p&gt;I am delighted that you, the reader, have arrived at this line, for it means that I
+have been able to capture your attention and you have decided to
+spend some moments of your precious time to give a meaning to this work by
+reading it (and I hope you played a little bit too).&lt;/p&gt;
+</description>
+        <pubDate>Thu, 09 Mar 2017 16:20:00 +0100</pubDate>
+        <link>http://127.0.0.1:4000/iclr2017-paper/</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/iclr2017-paper/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>An early overview of ICLR2017</title>
@@ -87,8 +262,8 @@ overloading OpenReview).&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 20 Dec 2016 01:41:00 +0100</pubDate>
-        <link>http://prlz77.github.io/iclr2017-stats/</link>
-        <guid isPermaLink="true">http://prlz77.github.io/iclr2017-stats/</guid>
+        <link>http://127.0.0.1:4000/iclr2017-stats/</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/iclr2017-stats/</guid>
         
         
         <category>blog</category>
@@ -106,8 +281,8 @@ overloading OpenReview).&lt;/p&gt;
 &lt;p&gt;This will first kill all the background processes and then exit the main script (quitting loops as well).&lt;/p&gt;
 </description>
         <pubDate>Tue, 27 Sep 2016 18:20:00 +0200</pubDate>
-        <link>http://prlz77.github.io/killing-process-children</link>
-        <guid isPermaLink="true">http://prlz77.github.io/killing-process-children</guid>
+        <link>http://127.0.0.1:4000/killing-process-children</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/killing-process-children</guid>
         
         
         <category>blog</category>
@@ -130,8 +305,8 @@ to solve this problem for the second time, I post it here so to remember.&lt;/p&
 &lt;p&gt;I hope this is helpful for someone else.&lt;/p&gt;
 </description>
         <pubDate>Sun, 19 Jun 2016 18:18:00 +0200</pubDate>
-        <link>http://prlz77.github.io/fix-viewport-out</link>
-        <guid isPermaLink="true">http://prlz77.github.io/fix-viewport-out</guid>
+        <link>http://127.0.0.1:4000/fix-viewport-out</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/fix-viewport-out</guid>
         
         
         <category>blog</category>
@@ -179,8 +354,8 @@ to solve this problem for the second time, I post it here so to remember.&lt;/p&
 &lt;p&gt;If any error, doubt, etc. please tell me.&lt;/p&gt;
 </description>
         <pubDate>Wed, 20 Apr 2016 13:09:00 +0200</pubDate>
-        <link>http://prlz77.github.io/torchasync</link>
-        <guid isPermaLink="true">http://prlz77.github.io/torchasync</guid>
+        <link>http://127.0.0.1:4000/torchasync</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/torchasync</guid>
         
         
         <category>blog</category>
@@ -194,8 +369,8 @@ to solve this problem for the second time, I post it here so to remember.&lt;/p&
 &lt;p&gt;Here is the solution page: &lt;a href=&quot;https://support.apple.com/en-us/HT203315&quot;&gt;Apple support&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 15 Apr 2016 20:06:00 +0200</pubDate>
-        <link>http://prlz77.github.io/macsleeps</link>
-        <guid isPermaLink="true">http://prlz77.github.io/macsleeps</guid>
+        <link>http://127.0.0.1:4000/macsleeps</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/macsleeps</guid>
         
         
         <category>blog</category>
@@ -217,8 +392,8 @@ to solve this problem for the second time, I post it here so to remember.&lt;/p&
 &lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=prlz77&amp;amp;repo=matconv2caffe&amp;amp;type=follow&amp;amp;count=true&amp;amp;size=large&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;160px&quot; height=&quot;30px&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Wed, 05 Aug 2015 19:29:00 +0200</pubDate>
-        <link>http://prlz77.github.io/matconv2caffe0.1/</link>
-        <guid isPermaLink="true">http://prlz77.github.io/matconv2caffe0.1/</guid>
+        <link>http://127.0.0.1:4000/matconv2caffe0.1/</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/matconv2caffe0.1/</guid>
         
         
         <category>blog</category>
@@ -258,8 +433,10 @@ to solve this problem for the second time, I post it here so to remember.&lt;/p&
 &lt;p&gt;The next thing to do is edit some brew formulas because:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;In OS X 10.9, clang++ is the default C++ compiler and uses libc++ as the standard library. However, NVIDIA CUDA (even version 6.0) currently links only with libstdc++. This makes it necessary to change the compilation settings for each of the dependencies.
-- &lt;a href=&quot;http://caffe.berkeleyvision.org&quot;&gt;BVLC&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;In OS X 10.9, clang++ is the default C++ compiler and uses libc++ as the standard library. However, NVIDIA CUDA (even version 6.0) currently links only with libstdc++. This makes it necessary to change the compilation settings for each of the dependencies.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;http://caffe.berkeleyvision.org&quot;&gt;BVLC&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;So follow the instructions in &lt;a href=&quot;http://caffe.berkeleyvision.org/installation.html&quot;&gt;caffe installation&lt;/a&gt; BUT change whe word protobuf by protobuf241 everywhere you see it. This has to be done because Caffe won’t find some functions in the latest version which is installed by brew.&lt;/p&gt;
@@ -310,8 +487,8 @@ export DYLD_FALLBACK_LIBRARY_PATH=~/anaconda/lib:/usr/local/Cellar/protobuf241/2
 
 </description>
         <pubDate>Mon, 03 Aug 2015 01:00:00 +0200</pubDate>
-        <link>http://prlz77.github.io/install-caffe</link>
-        <guid isPermaLink="true">http://prlz77.github.io/install-caffe</guid>
+        <link>http://127.0.0.1:4000/install-caffe</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/install-caffe</guid>
         
         
         <category>blog</category>

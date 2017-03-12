@@ -1,0 +1,55 @@
+.graph-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+.three-column {
+    width: 40%;
+    height: 70%;
+    margin: 0;
+    padding: 20px;
+    float: left;
+    border-right: 1px solid lightgray;
+}
+.three-column-3 {
+    height: 70%;
+    width: 15%;
+    margin: 0;
+    float: right;
+    text-align: center;
+}
+.one-column {
+    height: 30%;
+    width: 80%;
+    float: left;
+}
+path { 
+    stroke-width: 2;
+    fill: none;
+}
+.line {
+    fill: none;
+    stroke-width: 2;
+    /*shape-rendering: crispEdges;*/
+}
+input[type=text] {
+    border: 2px solid red;
+    border-radius: 4px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 16px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+

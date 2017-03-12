@@ -59,7 +59,77 @@ var angleHandler = d3.select("#angle")
             .attr("viewBox", "0 0 " + w_angle + " " + h_angle)
             .attr("preserveAspectRatio", "xMidYMid meet"); 
 
-function initialize_graphics(handler, dataset, colors) {
+function SquashingGraph() { 
+    var w_squashing = 300;
+    var h_squashing = 300;
+    var w_squashing_margin = 30;
+    var h_squashing_margin = 30;
+    var xCosScale = d3.scaleLinear()
+                .domain([-Math.PI, Math.PI])
+                .range([w_squashing_margin, w_squashing - w_squashing_margin]);
+    var yCosScale = d3.scaleLinear()
+                .domain([0,1])
+                .range([h_squashing - h_squashing_margin, h_squashing_margin]);
+    var xSquashingScale = d3.scaleLinear()
+                .domain([-Math.PI, Math.PI])
+                .range([w_squashing_margin, w_squashing-w_squashing_margin]);
+    var ySquashingScale = d3.scaleLinear()
+                .domain([-0.01,0.7])
+                .range([h_squashing-h_squashing_margin, h_squashing_margin]);
+    var cos2 = function(min, max, samples) {
+        var values = [];
+        var inc = (max - min) / samples;
+        for (var i = 0; i <= samples; i++) {
+            values.push({x:min+i*inc, y:Math.cos(min+i*inc)**2});
+        }
+        return values;
+    }
+    var squash = function(min, max, samples, lambda) {
+        var values = [];
+        var inc = (max - min) / samples;
+        for (var i = 0; i <= samples; i++) {
+            values.push({x:min+i*inc,
+                    y:Math.log(1+Math.exp(lambda*Math.cos(min+i*inc)-lambda))});
+        }
+        return values;
+    }
+    var squashingHandler = d3.select("#squashing")
+                .append("svg")
+                .attr("width", "100%")
+                .attr("height", "100%")
+                .attr("viewBox", "0 0 " + w_squashing + " " + h_squashing)
+                .attr("preserveAspectRatio", "xMidYMid meet"); 
+    var cosLine = d3.line()
+        .curve(d3.curveBasis)
+        .x(function(d) { return xCosScale(d.x);})
+        .y(function(d) { return yCosScale(d.y);});
+    var squashLine = d3.line()
+        .curve(d3.curveBasis)
+        .x(function(d) { return xSquashingScale(d.x);})
+        .y(function(d) { return ySquashingScale(d.y);});
+    var cos2Handler = squashingHandler.append("path")
+        .attr("stroke", "steelblue")
+        .attr("class", "line")
+        .attr("d", cosLine(cos2(-Math.PI, Math.PI, 20)));
+    var squashHandler = squashingHandler.append("path")
+        .attr("stroke", "red")
+        .attr("class", "line squash-line")
+        .attr("d", squashLine(squash(-Math.PI, Math.PI, 20, 10)));
+    squashingHandler.append("g")
+        .attr("transform", "translate(" + w_squashing_margin + ", 0)")
+        .call(d3.axisLeft(yCosScale));
+    squashingHandler.append("g")
+        .attr("transform", "translate(0," + (h_squashing -
+                        h_squashing_margin)+ ")")
+        .call(d3.axisBottom(xCosScale)
+                .tickValues([-Math.PI, -Math.PI/2, 0, Math.PI/2, Math.PI])
+                .tickFormat(function(d,i) { return ["-\pi", "\pi / 2", "0",
+                    "pi / 2", "pi"][i]; }));
+    this.updateGraph = function (value) { squashHandler.attr("d",
+            squashLine(squash(-Math.PI, Math.PI, 20, value))); }
+}
+
+function initScatterGraphics(handler, dataset, colors) {
     var lineContent = handler.selectAll("line")
         .data(dataset);
     lineContent.enter()
@@ -83,6 +153,8 @@ function initialize_graphics(handler, dataset, colors) {
         .attr("fill", function(d) { return "rgb(" + d[0] + "," + d[1] + "," + d[2] + ")"; } )
         .attr("opacity", 0.98);
 }
+
+
 /*** Main loop ***/
 function updateData(dataset, orthoreg, alpha, sigma) {
     var orig_norms = dataset.map(numeric.norm2);
@@ -147,18 +219,20 @@ function updateAxis(maxAngle, maxLength) {
         .call(d3.axisLeft(yAngleScale).ticks(5));
 }
 var interval_id = -1;
-function start() {
+function scatterStart() {
     if (interval_id >= 0) {
         clearInterval(interval_id);
     }
     var N = +document.getElementById("N").value;
     var alpha = -1 * document.getElementById("alpha").value;
+    var sigma = +document.getElementById("lambda").value;
+    if (sigma > 30) {
+        document.getElementById("lambda").value = 30;
+    }
     var ret = create_dataset(N);
     var dataset = ret[0];
     var colors = ret[1];
-    var sigma = 10;
     var delta = +document.getElementById("delta").value;
-    console.log(delta);
     var maxIter = +document.getElementById("maxIter").value - 1;
 
     if (regularizers.length == 0) {
@@ -193,7 +267,7 @@ function start() {
         regularizers[1].active = true
     }
     for ( var i = 0; i < regularizers.length; i++) {
-        initialize_graphics(regularizers[i].scatterHandler, regularizers[i].dataset, colors);
+        initScatterGraphics(regularizers[i].scatterHandler, regularizers[i].dataset, colors);
     }
     Regularizer.nactive = 2;
     var currentIter = 0;

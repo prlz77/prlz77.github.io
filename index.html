@@ -2,33 +2,38 @@
 layout: default
 ---
 <div id="home" class="page-content wc-container">
-	<div class="posts">
-  		{% for post in site.posts limit:10 %}
-  			<div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
-    			<h3 class="post-title">
-			      <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
-			        {{ post.title }}
-			      </a>
-    			</h3>
+    <div class="posts">
+        {% for post in site.posts limit:10 %}
+            <div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
+                <h3 class="post-title">
+                    <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
+                      {{ post.title }}
+                    </a>
+                </h3>
 
-    			<span class="post-date">{{ post.date | date_to_string }}</span>    			
-  				{% if forloop.first %}
-          {{ post.content | truncatewords:75 }}
-          {% else %}
-          <p>
-	  				{{ post.content | truncatewords:50 }}	
-  				</p>
-  				<p>
-  					<a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title}}">
-  						Read More
-					</a>
-  				</p>
-          {% endif %}
-  			</div>
-        <br>
-  		{% endfor %}
-	</div>
-	<div class="post-footer">
-		<div class="column-full"><a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog archive</a></div>
-	</div>
+                <span class="post-date">{{ post.date | date_to_string }}</span>                
+                {% if forloop.first %}
+                    {% assign sp = post.content | split: "<!---->" %}
+                    {% if sp.size > 1 %}
+                        {{ sp | first }}
+                    {% else %}
+                        {{ post.content | truncatewords:75 }}
+                    {% endif %}
+                {% else %}
+                    <p>
+                          {{ post.content | truncatewords:50 }}    
+                    </p>
+                    <p>
+                        <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title}}">
+                            Read More
+                        </a>
+                    </p>
+                {% endif %}
+            </div>
+            <br>
+         {% endfor %}
+    </div>
+    <div class="post-footer">
+        <div class="column-full"><a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog archive</a></div>
+    </div>
 </div>

@@ -5,8 +5,8 @@
     <description>An information compressor in a pale blue dot.</description>
     <link>http://prlz77.github.io/</link>
     <atom:link href="http://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 12 Mar 2017 16:11:34 +0100</pubDate>
-    <lastBuildDate>Sun, 12 Mar 2017 16:11:34 +0100</lastBuildDate>
+    <pubDate>Sun, 12 Mar 2017 16:18:38 +0100</pubDate>
+    <lastBuildDate>Sun, 12 Mar 2017 16:18:38 +0100</lastBuildDate>
     <generator>Jekyll v3.4.1</generator>
     
       <item>
@@ -15,7 +15,7 @@
 the proposed method, which we call
 &lt;a href=&quot;https://openreview.net/pdf?id=ByOvsIqeg&quot;&gt;OrthoReg&lt;/a&gt;, is used to regularize the 40
 layers of Wide Residual Networks, we obtain state of the art results on CIFAR,
-and SVHN.&lt;/p&gt;
+and SVHN. Here is an example of the effects of our local regularizer:&lt;/p&gt;
 
 &lt;script type=&quot;text/javascript&quot; src=&quot;http://prlz77.github.io/assets/js/d3.v4.min.js&quot;&gt;&lt;/script&gt;
 
@@ -55,7 +55,7 @@ and SVHN.&lt;/p&gt;
 &lt;div class=&quot;graph-container&quot;&gt;
 &lt;div id=&quot;baseline&quot; class=&quot;three-column&quot; style=&quot;margin-left:10%; border-right: 1px
 solid lightgray;&quot;&gt;&lt;b style=&quot;color: steelblue;&quot;&gt;Baseline&lt;/b&gt;&lt;/div&gt;
-&lt;div id=&quot;orthoreg&quot; class=&quot;three-column&quot; style=&quot;margin-right:10%;&quot;&gt;&lt;b style=&quot;color: red;&quot;&gt;OrthoReg&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;orthoreg&quot; class=&quot;three-column&quot; style=&quot;margin-right:10%;&quot;&gt;&lt;b style=&quot;color: red;&quot;&gt;Ours&lt;/b&gt;&lt;/div&gt;
 &lt;div id=&quot;angle&quot; class=&quot;one-column&quot; style=&quot;text-align:left;&quot;&gt; 
 &lt;b&gt;Average nearest neighbor distance&lt;/b&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -63,15 +63,16 @@ solid lightgray;&quot;&gt;&lt;b style=&quot;color: steelblue;&quot;&gt;Baseline&
 
 &lt;script&gt; document.onload = scatterStart(); &lt;/script&gt;
 
+&lt;p&gt;I encourage the reader to continue reading for better understanding of this
+example.
 &lt;!----&gt;
 &lt;script type=&quot;text/x-mathjax-config&quot;&gt;
     MathJax.Hub.Config({
     tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
     });
 &lt;/script&gt;
-
 &lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
-&lt;/script&gt;
+&lt;/script&gt;&lt;/p&gt;
 
 &lt;p&gt;Deep learning models are becoming increasingly bigger and deeper, beating the
 state of the art in numerous tasks. But how is it possible to grow these neural

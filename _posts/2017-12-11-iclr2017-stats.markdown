@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Paper accepted at ICLR2017
+title: Regularizing CNNs with Locally Constrained Decorrelations 
 date: 2017-03-09 16:20
 description: Regularizing CNNs with Locally Constrained Decorrelations
 comments: true
@@ -20,27 +20,27 @@ and SVHN. Here is an example of the effects of our local regularizer:
 <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/iclr2017/main.css">
 <div class="controls">
 <div class="control-container" >
-<b>Dataset Size</b><br>
+<b title="Number of data points.">Dataset Size</b><br>
 <input id="N" type="text" name="size" value="10" maxlength="4" onkeypress="if
 (event.keyCode == 13) {scatterStart(); }">
 </div>
 <div class="control-container" >
-<b>Step Size</b><br>
+<b title="Size of the steps that the dots make to separate. A large number might cause divergence, and a small number will make the algorithm too slow.">Step Size</b><br>
 <input id="alpha" type="text" name="alpha" value="0.1" onkeypress="if
 (event.keyCode == 13) {scatterStart(); }">
 </div>
 <div class="control-container" >
-<b>Lambda</b><br>
+<b title="The radius of influence of each point. The greater the lambda, the smaller the radius">Lambda</b><br>
 <input id="lambda" type="text" name="lambda" value="10" maxlength="4"
 onkeypress="if (event.keyCode == 13) {scatterStart(); }">
 </div>
 <div class="control-container" >
-<b>Max Iter</b><br>
+<b title="Max number of iterations until stop.">Max Iter</b><br>
 <input id="maxIter" type="text" name="maxIter" value="20" onkeypress="if
 (event.keyCode == 13) {scatterStart(); }">
 </div>
 <div class="control-container" >
-<b>Delta Stop</b><br>
+<b title="Stop the algorithm when the dots move less than a delta (plateau).">Delta Stop</b><br>
 <input id="delta" type="text" name="delta" value="0.001" onkeypress="if
 (event.keyCode == 13) {scatterStart(); }">
 </div>

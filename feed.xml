@@ -5,12 +5,12 @@
     <description>An information compressor in a pale blue dot.</description>
     <link>https://prlz77.github.io/</link>
     <atom:link href="https://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 12 Mar 2017 16:29:30 +0100</pubDate>
-    <lastBuildDate>Sun, 12 Mar 2017 16:29:30 +0100</lastBuildDate>
+    <pubDate>Mon, 13 Mar 2017 11:47:56 +0100</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2017 11:47:56 +0100</lastBuildDate>
     <generator>Jekyll v3.4.1</generator>
     
       <item>
-        <title>Paper accepted at ICLR2017</title>
+        <title>Regularizing CNNs with Locally Constrained Decorrelations</title>
         <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; We propose to locally decorrelate the feature weights of CNNs. When
 the proposed method, which we call
 &lt;a href=&quot;https://openreview.net/pdf?id=ByOvsIqeg&quot;&gt;OrthoReg&lt;/a&gt;, is used to regularize the 40
@@ -25,26 +25,26 @@ and SVHN. Here is an example of the effects of our local regularizer:&lt;/p&gt;
 
 &lt;div class=&quot;controls&quot;&gt;
 &lt;div class=&quot;control-container&quot;&gt;
-&lt;b&gt;Dataset Size&lt;/b&gt;&lt;br /&gt;
+&lt;b title=&quot;Number of data points.&quot;&gt;Dataset Size&lt;/b&gt;&lt;br /&gt;
 &lt;input id=&quot;N&quot; type=&quot;text&quot; name=&quot;size&quot; value=&quot;10&quot; maxlength=&quot;4&quot; onkeypress=&quot;if
 (event.keyCode == 13) {scatterStart(); }&quot; /&gt;
 &lt;/div&gt;
 &lt;div class=&quot;control-container&quot;&gt;
-&lt;b&gt;Step Size&lt;/b&gt;&lt;br /&gt;
+&lt;b title=&quot;Size of the steps that the dots make to separate. A large number might cause divergence, and a small number will make the algorithm too slow.&quot;&gt;Step Size&lt;/b&gt;&lt;br /&gt;
 &lt;input id=&quot;alpha&quot; type=&quot;text&quot; name=&quot;alpha&quot; value=&quot;0.1&quot; onkeypress=&quot;if
 (event.keyCode == 13) {scatterStart(); }&quot; /&gt;
 &lt;/div&gt;
 &lt;div class=&quot;control-container&quot;&gt;
-&lt;b&gt;Lambda&lt;/b&gt;&lt;br /&gt;
+&lt;b title=&quot;The radius of influence of each point. The greater the lambda, the smaller the radius&quot;&gt;Lambda&lt;/b&gt;&lt;br /&gt;
 &lt;input id=&quot;lambda&quot; type=&quot;text&quot; name=&quot;lambda&quot; value=&quot;10&quot; maxlength=&quot;4&quot; onkeypress=&quot;if (event.keyCode == 13) {scatterStart(); }&quot; /&gt;
 &lt;/div&gt;
 &lt;div class=&quot;control-container&quot;&gt;
-&lt;b&gt;Max Iter&lt;/b&gt;&lt;br /&gt;
+&lt;b title=&quot;Max number of iterations until stop.&quot;&gt;Max Iter&lt;/b&gt;&lt;br /&gt;
 &lt;input id=&quot;maxIter&quot; type=&quot;text&quot; name=&quot;maxIter&quot; value=&quot;20&quot; onkeypress=&quot;if
 (event.keyCode == 13) {scatterStart(); }&quot; /&gt;
 &lt;/div&gt;
 &lt;div class=&quot;control-container&quot;&gt;
-&lt;b&gt;Delta Stop&lt;/b&gt;&lt;br /&gt;
+&lt;b title=&quot;Stop the algorithm when the dots move less than a delta (plateau).&quot;&gt;Delta Stop&lt;/b&gt;&lt;br /&gt;
 &lt;input id=&quot;delta&quot; type=&quot;text&quot; name=&quot;delta&quot; value=&quot;0.001&quot; onkeypress=&quot;if
 (event.keyCode == 13) {scatterStart(); }&quot; /&gt;
 &lt;/div&gt;

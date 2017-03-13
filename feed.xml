@@ -5,190 +5,13 @@
     <description>An information compressor in a pale blue dot.</description>
     <link>https://prlz77.github.io/</link>
     <atom:link href="https://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 13 Mar 2017 11:59:32 +0100</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 11:59:32 +0100</lastBuildDate>
+    <pubDate>Mon, 13 Mar 2017 15:03:27 +0100</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2017 15:03:27 +0100</lastBuildDate>
     <generator>Jekyll v3.4.1</generator>
     
       <item>
         <title>Regularizing CNNs with Locally Constrained Decorrelations</title>
-        <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; We propose to locally decorrelate the feature weights of CNNs. When
-the proposed method, which we call
-&lt;a href=&quot;https://openreview.net/pdf?id=ByOvsIqeg&quot;&gt;OrthoReg&lt;/a&gt;, is used to regularize the 40
-layers of Wide Residual Networks, we obtain state of the art results on CIFAR,
-and SVHN. Here is an example of the effects of our local regularizer:&lt;/p&gt;
-
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://prlz77.github.io/assets/js/d3.v4.min.js&quot;&gt;&lt;/script&gt;
-
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://prlz77.github.io/assets/js/numeric-1.2.6.min.js&quot;&gt;&lt;/script&gt;
-
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://prlz77.github.io/assets/css/iclr2017/main.css&quot; /&gt;
-
-&lt;div class=&quot;controls&quot;&gt;
-&lt;div class=&quot;control-container&quot;&gt;
-&lt;b title=&quot;Number of data points.&quot;&gt;Dataset Size&lt;/b&gt;&lt;br /&gt;
-&lt;input id=&quot;N&quot; type=&quot;text&quot; name=&quot;size&quot; value=&quot;10&quot; maxlength=&quot;4&quot; onkeypress=&quot;if
-(event.keyCode == 13) {scatterStart(); }&quot; /&gt;
-&lt;/div&gt;
-&lt;div class=&quot;control-container&quot;&gt;
-&lt;b title=&quot;Size of the steps that the dots make to separate. A large number might cause divergence, and a small number will make the algorithm too slow.&quot;&gt;Step Size&lt;/b&gt;&lt;br /&gt;
-&lt;input id=&quot;alpha&quot; type=&quot;text&quot; name=&quot;alpha&quot; value=&quot;0.1&quot; onkeypress=&quot;if
-(event.keyCode == 13) {scatterStart(); }&quot; /&gt;
-&lt;/div&gt;
-&lt;div class=&quot;control-container&quot;&gt;
-&lt;b title=&quot;The radius of influence of each point. The greater the lambda, the smaller the radius&quot;&gt;Lambda&lt;/b&gt;&lt;br /&gt;
-&lt;input id=&quot;lambda&quot; type=&quot;text&quot; name=&quot;lambda&quot; value=&quot;10&quot; maxlength=&quot;4&quot; onkeypress=&quot;if (event.keyCode == 13) {scatterStart(); }&quot; /&gt;
-&lt;/div&gt;
-&lt;div class=&quot;control-container&quot;&gt;
-&lt;b title=&quot;Max number of iterations until stop.&quot;&gt;Max Iter&lt;/b&gt;&lt;br /&gt;
-&lt;input id=&quot;maxIter&quot; type=&quot;text&quot; name=&quot;maxIter&quot; value=&quot;20&quot; onkeypress=&quot;if
-(event.keyCode == 13) {scatterStart(); }&quot; /&gt;
-&lt;/div&gt;
-&lt;div class=&quot;control-container&quot;&gt;
-&lt;b title=&quot;Stop the algorithm when the dots move less than a delta (plateau).&quot;&gt;Delta Stop&lt;/b&gt;&lt;br /&gt;
-&lt;input id=&quot;delta&quot; type=&quot;text&quot; name=&quot;delta&quot; value=&quot;0.001&quot; onkeypress=&quot;if
-(event.keyCode == 13) {scatterStart(); }&quot; /&gt;
-&lt;/div&gt;
-&lt;div class=&quot;control-container&quot;&gt;
-&lt;input type=&quot;button&quot; onclick=&quot;scatterStart();&quot; value=&quot;play&quot; /&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;graph-container&quot;&gt;
-&lt;div id=&quot;baseline&quot; class=&quot;three-column&quot; style=&quot;margin-left:10%; border-right: 1px
-solid lightgray;&quot;&gt;&lt;b style=&quot;color: steelblue;&quot;&gt;Baseline&lt;/b&gt;&lt;/div&gt;
-&lt;div id=&quot;orthoreg&quot; class=&quot;three-column&quot; style=&quot;margin-right:10%;&quot;&gt;&lt;b style=&quot;color: red;&quot;&gt;Ours&lt;/b&gt;&lt;/div&gt;
-&lt;div id=&quot;angle&quot; class=&quot;one-column&quot; style=&quot;text-align:left;&quot;&gt; 
-&lt;b&gt;Average nearest neighbor distance&lt;/b&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://prlz77.github.io/assets/js/iclr2017/d3-plots-min.js&quot;&gt;&lt;/script&gt;
-
-&lt;script&gt; document.onload = scatterStart(); &lt;/script&gt;
-
-&lt;p&gt;I encourage the reader to continue reading for better understanding of this
-example.
-&lt;!----&gt;
-&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
-    MathJax.Hub.Config({
-    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-    });
-&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
-&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Deep learning models are becoming increasingly bigger and deeper, beating the
-state of the art in numerous tasks. But how is it possible to grow these neural
-net architectures while preventing them from completely memorizing the training
-data and showing good performances on unseen examples (overfitting)? The answer to
-this question includes multiple factors such as having bigger datasets, clever
-architectures, and good regularization methods. Our work is centered on the
-latter. Concretely, we focus on those regularization methods that prevent the
-co-adaptation of feature detectors, thus reducing the redundancy in the models
-and increasing their generalization power.&lt;/p&gt;
-
-&lt;p&gt;Probably, the most popular way to prevent feature co-adaptation is
-&lt;a href=&quot;https://github.com/szagoruyko/wide-residual-networks&quot;&gt;Dropout&lt;/a&gt;. However,
-dropping techniques such as Dropout or
-&lt;a href=&quot;http://cs.nyu.edu/~wanli/dropc/&quot;&gt;DropConnect&lt;/a&gt; reduce the capacity of the
-models, which need to be bigger to compensate for this fact.
-A least common method for preventing co-adaptation is to
-add a regularization term to the loss function of the model so as to penalize
-the correlation between neurons. This idea has been explored several times for
-supervised learning on neural networks,
-first with the name of &lt;a href=&quot;http://ieeexplore.ieee.org/document/6639015/&quot;&gt;incoherent
-training&lt;/a&gt;, and later as &lt;a href=&quot;https://arxiv.org/abs/1511.06068&quot;&gt;DeCov&lt;/a&gt;
-(Cogswell et al. at ICLR2016).&lt;/p&gt;
-
-&lt;p&gt;Although the presented decorrelation methods proved to perform well, they are
-still far from being commonly used in state of the art models. In part, this is
-because they were applied to rather shallow models, and it is not
-clear that the computational overhead introduced by these regularizers in state
-of the art models will compensate the reduction in overfitting. Our work aims to
-dissipate these inconveniences by:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;reducing the computational cost by regularizing the network weights,&lt;/li&gt;
-  &lt;li&gt;increasing the performance margins by imposing locality constraints,&lt;/li&gt;
-  &lt;li&gt;successfully regularizing all the layers of a state of the art residual network.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Why imposing locality when decorrelating feature detectors? Since a toy is more
-amusing than one thousand words, please &lt;a href=&quot;#baseline&quot;&gt;play&lt;/a&gt; with the example I provide at the
-beginning of the post (if you have not already tried it ;) ). Note that although
-it is a toy example with 2D nice-to-plot features, similar behavior was found in
-actual CNN features, especially in bottleneck layers, when the number of filters
-matches their dimensionality. 
-The intuition is
-that regularizing negatively decorrelated feature detectors is
-counter-productive. Namely, in the &lt;a href=&quot;#baseline&quot;&gt;left plot&lt;/a&gt;, each dot
-(feature detector) “tries to be different” from all the other dots, even those which are in the
-opposite quadrant. We propose to make dots only sensitive to their nearest
-neighbors, thus increasing the average minimum angle (linear correlation) between all the feature
-detectors.  We achieve this locality by means of a squashing function:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;C(\theta) = \sum_{i=1}^{n}\sum_{j=1,j\ne i}^{n} \log(1 + e^{\lambda
-    (cos(\theta_i,\theta_j)-1)}) = \log(1 + e^{\lambda  (\langle
-    \theta_i,\theta_j\rangle -1)}), \ ||\theta_i||=||\theta_j||=1,&lt;/script&gt;
-
-&lt;p&gt;where $\lambda$ is a coefficient that controls the minimum
-angle-of-influence of the regularizer, i.e. the minimum angle between two
-feature weights so that there exists a gradient pushing them apart. Again, a toy
-is worth a thousand words:&lt;/p&gt;
-
-&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;
-
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css&quot; /&gt;
-
-&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
-
-&lt;div class=&quot;graph-container&quot;&gt;
-&lt;div id=&quot;squashing&quot; style=&quot;float:left; width:55%;
-margin-left:23%;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;position:absolute; left:75%; margin-top:25%;&quot;&gt;&lt;span style=&quot;color:steelblue&quot;&gt;$cos^2(x)$&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;color:red;&quot;&gt;$\log(1 +
-e^{\lambda  (x-1)})$&lt;/span&gt;&lt;/div&gt;
-&lt;div style=&quot;width:40%; margin:15px; margin-left:23%; float:left;&quot; id=&quot;slider&quot;&gt;&lt;/div&gt;&lt;div style=&quot;float:left; margin:15px;&quot; type=&quot;text&quot;&gt;$\lambda=$&lt;span id=&quot;slider-value&quot;&gt;10&lt;/span&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;script&gt;
-var squashingGraph = new SquashingGraph();
-$( function() {
-    $( &quot;#slider&quot; ).slider({
-        min: 2,
-        max: 20,
-        step: 1,
-        value: 10,
-        animate: &quot;fast&quot;,
-        slide: function (event, ui) { squashingGraph.updateGraph(ui.value);
-        $(&quot;#slider-value&quot;).text(ui.value); }
-    });
-} );
-&lt;/script&gt;
-
-&lt;p&gt;As it can be seen, when $\lambda \in [7,10]$, the squashing function gradient
-approximates zero for those features further than $\pi / 2$ (90º). In other
-words, the regularizer will enforce feature weights to be orthogonal. As a
-result, the linear correlation between feature detectors will decrease,
-resulting in better generalization as it can be seen in the following figure:&lt;/p&gt;
-
-&lt;div class=&quot;graph-container&quot;&gt;&lt;div style=&quot;width:50%; float:left;&quot;&gt;
-&lt;img src=&quot;https://prlz77.github.io/assets/images/iclr2017/Cifar10.svg&quot; /&gt;
-&lt;/div&gt;
-&lt;div style=&quot;width:50%; float:left;&quot;&gt;
-&lt;img src=&quot;https://prlz77.github.io/assets/images/iclr2017/Cifar100.svg&quot; /&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Note that OrthoReg is able to reduce the overfitting in the presence of Dropout
-and &lt;a href=&quot;https://arxiv.org/abs/1502.03167&quot;&gt;BatchNorm&lt;/a&gt; at the same time. A possible
-hypothesis for this fact is that different regularizers act on different
-aspects of the network, exposing how much is still to be explored if we want to
-comprehend how to reach Deep Learning’s full potential.&lt;/p&gt;
-
-&lt;p&gt;I am delighted that you, the reader, have arrived at this line, for it means that I
-have been able to capture your attention and you have decided to
-spend some moments of your precious time to give a meaning to this work by
-reading it (and I hope you played a little bit too).&lt;/p&gt;
-
-&lt;h2 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h2&gt;
-&lt;p&gt;Thanks to &lt;a href=&quot;https://twitter.com/&quot;&gt;@pepgonfaus&lt;/a&gt;, &lt;a href=&quot;https://github.com/gcucurull&quot;&gt;@gcucurull&lt;/a&gt;,
-and Jordi Gonzàlez for their comments and suggestions.&lt;/p&gt;
-</description>
+        <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; We propose to locally decorrelate the feature weights of CNNs. When the proposed method, which we call &lt;a href=&quot;https://openreview.net/pdf?id=ByOvsIqeg&quot;&gt;OrthoReg&lt;/a&gt;, is used to regularize the 40 layers of Wide Residual Networks, we obtain state of the art results on CIFAR, and SVHN. Here is an example of the effects of...</description>
         <pubDate>Sun, 12 Mar 2017 22:00:00 +0100</pubDate>
         <link>https://prlz77.github.io/iclr2017-paper/</link>
         <guid isPermaLink="true">https://prlz77.github.io/iclr2017-paper/</guid>
@@ -200,81 +23,7 @@ and Jordi Gonzàlez for their comments and suggestions.&lt;/p&gt;
     
       <item>
         <title>An early overview of ICLR2017</title>
-        <description>&lt;p&gt;Machine learning is accelerating, we have an idea and it is on arxiv the next
-day, NIPS2016 was bigger than ever and it is difficult to keep track of all the
-new interesting work.&lt;/p&gt;
-
-&lt;p&gt;Given that this is the first time I submit to ICLR, and taking advantage from
-all the data available of OpenReview, I have decided to make some data
-visualizations. I hope these visualizations help to build a mental idea of which
-papers are the best rated, the ones with better reviews, who is submitting them,
-which is the score distribution, etc.&lt;/p&gt;
-
-&lt;p&gt;So, let’s first see what is people saying in their abstracts in order to warm up.
-The next plot is a t-sne visualization of the GloVe embedding of the words found
-in the paper abstracts:&lt;/p&gt;
-
-&lt;script src=&quot;../assets/js/iclr2017/embedding.js&quot; id=&quot;65bdc0d4-c66f-4830-86dc-6378b51b38d3&quot; data-bokeh-model-id=&quot;f8a1bb7b-fba9-4757-af01-9db55cd3a69d&quot; data-bokeh-doc-id=&quot;019b9e74-298b-4809-99b0-1a83e1545402&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;As expected, &lt;em&gt;network, architecture, data, learning, …&lt;/em&gt; are in the most frequent
-words. On the other hand, &lt;em&gt;reward, attention&lt;/em&gt; and &lt;em&gt;adversarial&lt;/em&gt; do also appear as important, following the current trends of deep reinforcement learning, models with memory/attention and GANS. 
-Note that although I performed a rough pre-processing, removing words
-like &lt;em&gt;it&lt;/em&gt;, &lt;em&gt;and&lt;/em&gt;, &lt;em&gt;but&lt;/em&gt;, etc. there are still some common words that should be
-prunned.&lt;/p&gt;
-
-&lt;p&gt;What about which are the most prolific organizations? In order to make a
-histogram of the submissions per organization, we can use the &lt;em&gt;affiliations&lt;/em&gt;
-field in each submission:&lt;/p&gt;
-
-&lt;script src=&quot;../assets/js/iclr2017/affiliations.js&quot; id=&quot;236fe6b3-c772-4c81-9f82-62d2cbd009dc&quot; data-bokeh-model-id=&quot;d8317ed2-2510-47f3-a2ec-59c0b2b101b1&quot; data-bokeh-doc-id=&quot;581c954c-3d2b-4163-95a8-a782fd19b0d3&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;As it can be seen, &lt;em&gt;google&lt;/em&gt; leads the top-50 most prolific organizations,
-followed by the university of &lt;em&gt;Montreal&lt;/em&gt;, &lt;em&gt;Berkeley&lt;/em&gt;, and &lt;em&gt;Microsoft&lt;/em&gt;.
-I merged some domains like &lt;em&gt;fb.com&lt;/em&gt; and &lt;em&gt;facebook.com&lt;/em&gt; but there might still be some
-duplicities. Interestingly, the top is populated by a lot of companies, and in
-especial, new ones like openai surpass other well established organizations.&lt;/p&gt;
-
-&lt;p&gt;Quantity does not always mean quality, so for all the organizations we plot
-their paper count (bubble size) by mean review score.&lt;/p&gt;
-
-&lt;script src=&quot;../assets/js/iclr2017/scatter-rating-hist.js&quot; id=&quot;f4014770-7b3e-4303-aaef-e40d5638f53d&quot; data-bokeh-model-id=&quot;77c52dff-3ae7-4e04-85c6-f1c3d4f2e239&quot; data-bokeh-doc-id=&quot;20b0c916-98a2-40c7-9b7c-ecfbef2c0bb5&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;As it can be seen &lt;em&gt;google&lt;/em&gt; has 9 submissions with an average score of 7.5, and the biggest cluster is of 13 submissions with an average score of 6. Note that the &lt;em&gt;google&lt;/em&gt; domain may contain &lt;em&gt;deep mind, google brain&lt;/em&gt; and &lt;em&gt;google research&lt;/em&gt; submissions. In case of doubt, I would like to clarify that I am not vinculated to &lt;em&gt;google&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Given the acceptance rate of ICLR2016, which was close to 30%, we can make a histogram for each score value to visualize the acceptance threshold:&lt;/p&gt;
-
-&lt;script src=&quot;../assets/js/iclr2017/rating-hist.js&quot; id=&quot;791fc159-7984-4dff-bd6f-f48a3f265eb0&quot; data-bokeh-model-id=&quot;80105587-b683-4b25-b26f-4cc97cc5c7f7&quot; data-bokeh-doc-id=&quot;86772088-fd32-4c06-afb5-e7f8567095b0&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;Finally, let’s see what interesting papers are there. For that, we can use a scatter plot where the y axis represents the number of replies the paper has (simply as a measure of “interestingness”), the average reviewer confidence in the x axis, and the average score of the paper reflected in the size and the color of the bubbles:&lt;/p&gt;
-
-&lt;script src=&quot;../assets/js/iclr2017/confidence-replies-score.js&quot; id=&quot;d9699ef8-6b47-4ac7-93c3-ce9bd80b7219&quot; data-bokeh-model-id=&quot;f6c5aebc-3500-4fea-a1dd-32d0aff6e480&quot; data-bokeh-doc-id=&quot;ffc21d66-f46d-42a3-a097-582e9b1e631e&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;Given the former three parameters, we can find some interesting papers such as &lt;a href=&quot;https://arxiv.org/abs/1611.01603&quot;&gt;Bidirectional Attention Flow for Machine Comprehension&lt;/a&gt;, &lt;a href=&quot;https://arxiv.org/abs/1611.01578&quot;&gt;Neural Architecture Search with Reinforcement Learning&lt;/a&gt;, and &lt;a href=&quot;https://arxiv.org/abs/1609.02200&quot;&gt;Discrete Variational Autoencoders&lt;/a&gt;. Bubbles are &lt;strong&gt;clickable&lt;/strong&gt;, linked to the respective openreview pages, and I added some jitter so that they are separated when zooming in. I encourage the reader to browse through the data to find the gems hidden in there.&lt;/p&gt;
-
-&lt;p&gt;For a more explicit visualization I also include a top-10 papers sorted first by average score and then by confidence (score is the raw average, not ponderated).&lt;/p&gt;
-
-&lt;script src=&quot;../assets/js/iclr2017/top-scores.js&quot; id=&quot;0427eed2-4cc6-4574-9cb3-1fac80485c1c&quot; data-bokeh-model-id=&quot;004698f7-b618-40b4-8fc8-334264fac16d&quot; data-bokeh-doc-id=&quot;85d28036-94e3-4e0e-8341-bfe12c3526f5&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;This unveils the top rated paper, which is &lt;a href=&quot;https://openreview.net/pdf?id=Sy8gdB9xx&quot;&gt;Understanding deep learning requires rethinking generalization&lt;/a&gt;!&lt;/p&gt;
-
-&lt;p&gt;Data was extracted on &lt;em&gt;21st December&lt;/em&gt;, so there might be some variations in the numbers. I will update it, as well as adding more plots, as soon as possible.&lt;/p&gt;
-
-&lt;h2 id=&quot;about-the-data&quot;&gt;About the data&lt;/h2&gt;
-&lt;p&gt;Openreview loads the data asynchronously using javascript, thus python and 
-&lt;a href=&quot;https://docs.python.org/3/library/urllib.html&quot;&gt;urllib&lt;/a&gt; are not an option. In
-these cases it is necessary to use
-&lt;a href=&quot;http://selenium-python.readthedocs.io/&quot;&gt;selenium&lt;/a&gt;, which allows us to use the
-chromium engine (or any other one) to execute the scripts and to get the data.
-Nevertheless, I will pack the data into json format and upload it here so that
-anyone interested in it can skip all the previous steps (and to avoid
-overloading OpenReview).&lt;/p&gt;
-
-&lt;h2 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h2&gt;
-&lt;p&gt;I would like to thank &lt;a href=&quot;https://twitter.com/pepgonfaus&quot;&gt;@pepgonfaus&lt;/a&gt; for helping to obtain the data and sharing new ideas.&lt;/p&gt;
-
-&lt;p&gt;I would also like to thank the Reddit ML community for helping me to improve this page.&lt;/p&gt;
-
-</description>
+        <description>&lt;p&gt;Machine learning is accelerating, we have an idea and it is on arxiv the next day, NIPS2016 was bigger than ever and it is difficult to keep track of all the new interesting work.&lt;/p&gt; &lt;p&gt;Given that this is the first time I submit to ICLR, and taking advantage from all...</description>
         <pubDate>Tue, 20 Dec 2016 01:41:00 +0100</pubDate>
         <link>https://prlz77.github.io/iclr2017-stats/</link>
         <guid isPermaLink="true">https://prlz77.github.io/iclr2017-stats/</guid>
@@ -286,14 +35,7 @@ overloading OpenReview).&lt;/p&gt;
     
       <item>
         <title>How to kill bash script children when crtl+c</title>
-        <description>&lt;p&gt;Using a script to run multiple tasks in background can be very handy but it can also be anoying when we press crtl+c to interrupt and the background processes keep working. There are many approaches to solve this but I have found the cleanest one is to simply trap the signal:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;trap&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'kill `jobs -p`; exit'&lt;/span&gt; INT
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This will first kill all the background processes and then exit the main script (quitting loops as well).&lt;/p&gt;
-</description>
+        <description>&lt;p&gt;Using a script to run multiple tasks in background can be very handy but it can also be anoying when we press crtl+c to interrupt and the background processes keep working. There are many approaches to solve this but I have found the cleanest one is to simply trap the...</description>
         <pubDate>Tue, 27 Sep 2016 18:20:00 +0200</pubDate>
         <link>https://prlz77.github.io/killing-process-children</link>
         <guid isPermaLink="true">https://prlz77.github.io/killing-process-children</guid>
@@ -305,19 +47,7 @@ overloading OpenReview).&lt;/p&gt;
     
       <item>
         <title>Can not set ViewportOut in nvidia-settings</title>
-        <description>&lt;p&gt;After plugging the second monitor, I could not find the correct resolution
-in nvidia-settings and it was impossible to do it manually. After having
-to solve this problem for the second time, I post it here so to remember.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Look at nvidia-settings for the name of the monitors (In my case DFP-0 and DFP-7).&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;nvidia-settings -a CurrentMetaMode=&quot;DFP-0: 1920x1080+0+0, DFP-7: 1280x1024+1920+0 { ViewPortIn=1280x1024, ViewPortOut=1280x1024 }&quot;&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Where DFP-7 is the problematic monitor and &lt;em&gt;1280x1024&lt;/em&gt; is the correct resolution.&lt;/p&gt;
-
-&lt;p&gt;I hope this is helpful for someone else.&lt;/p&gt;
-</description>
+        <description>&lt;p&gt;After plugging the second monitor, I could not find the correct resolution in nvidia-settings and it was impossible to do it manually. After having to solve this problem for the second time, I post it here so to remember.&lt;/p&gt; &lt;ol&gt; &lt;li&gt;Look at nvidia-settings for the name of the monitors (In...</description>
         <pubDate>Sun, 19 Jun 2016 18:18:00 +0200</pubDate>
         <link>https://prlz77.github.io/fix-viewport-out</link>
         <guid isPermaLink="true">https://prlz77.github.io/fix-viewport-out</guid>
@@ -329,44 +59,7 @@ to solve this problem for the second time, I post it here so to remember.&lt;/p&
     
       <item>
         <title>torch.async-hdf5-reader</title>
-        <description>&lt;p&gt;I decided to share this script I was using in order to accelerate the training of neural nets making them to gather data in parallel. So I wrote some tests to check it performs well its basic functions and commented the code a little bit.&lt;/p&gt;
-
-&lt;h2 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h2&gt;
-
-&lt;p&gt;It depends on the following libraries (they can be installed with luarocks):&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;threads&lt;/li&gt;
-  &lt;li&gt;hdf5&lt;/li&gt;
-  &lt;li&gt;cutorch (will be optional in the future)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;p&gt;Given an hdf5 file with a dataset of 4D (e.g. num_examples, channels, height, width) data with 2D label data (e.g. num_examples, labels), it provides a class for asynchronously getting miniBatches:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-lua&quot; data-lang=&quot;lua&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'hdf5reader'&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;-- params is a dictionary with the parameters:&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;--  params.nthread = number of threads (default = 1).&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;--  params.njob = max number of jobs (default = 1)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;--  params.cuda (default = false)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;--  params.batchSize = batchSize (default = 1)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;--  params.postprocess = postprocessing function (default f(x) = x)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;--  params.hdf5_path = path of .h5 file&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;--  params.data_field = database name for data. (default = 'data')&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;--  params.labels_field = database name for labels. (default = 'labels')&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;--  params.num_dim = index of the dimension containing all the images (default = 1)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;--  params.h_dim = height of the image (default = 2)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;--  params.w_dim = width of the image (default = 3)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;--  params.cha_dim = index of the dimension containing rgb (default = 4)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;--  params.shuffle = wether to shuffle data !!Overhead do not use with already shuffled data¡¡  (default = false)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;asyncReader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AsyncReader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This will initialize the class and copy the necessary information to the thread pool. Then one can call &lt;code class=&quot;highlighter-rouge&quot;&gt;asyncReader:fetchData()&lt;/code&gt; in order to make a thread to retrieve a batch from the database. This is an asynchronous call so other code can be executed while the batch is being prefetched.&lt;/p&gt;
-
-&lt;p&gt;At the point where we need the data, the blocking call &lt;code class=&quot;highlighter-rouge&quot;&gt;asyncReader:getNextBatch()&lt;/code&gt; can be used in order to get the data and labels tensors. Memory is allocated once at the class initialization and thus the returned tensors always reuse the same memory. In fact, tensors are duplicated so that one can read and write the retreived ones while a thread is filling the other ones.&lt;/p&gt;
-
-&lt;p&gt;If any error, doubt, etc. please tell me.&lt;/p&gt;
-</description>
+        <description>&lt;p&gt;I decided to share this script I was using in order to accelerate the training of neural nets making them to gather data in parallel. So I wrote some tests to check it performs well its basic functions and commented the code a little bit.&lt;/p&gt; &lt;h2 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h2&gt; &lt;p&gt;It depends on...</description>
         <pubDate>Wed, 20 Apr 2016 13:09:00 +0200</pubDate>
         <link>https://prlz77.github.io/torchasync</link>
         <guid isPermaLink="true">https://prlz77.github.io/torchasync</guid>
@@ -393,18 +86,7 @@ to solve this problem for the second time, I post it here so to remember.&lt;/p&
     
       <item>
         <title>matconv2caffe v0.1 released</title>
-        <description>&lt;h2 id=&quot;convert-matconvnet-models-to-caffe-with-matconv2caffe&quot;&gt;Convert Matconvnet models to Caffe with matconv2caffe.&lt;/h2&gt;
-
-&lt;p&gt;There is already a script to import caffe models to matconvnet thanks to &lt;a href=&quot;https://github.com/vlfeat/matconvnet/blob/master/utils/import-caffe.py&quot;&gt;@vedaldi&lt;/a&gt;. However, we needed the oposite so I made a script that converts the .caffemodel and extracts a deplotment .prototxt model definition and the average image. Currently it only works for standard CNNs and Dropout has not been tested to work.&lt;/p&gt;
-
-&lt;p&gt;It successfuly works for the caffenet .mat model (correctly predicts the ‘cat.jpg’ image).&lt;/p&gt;
-
-&lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=prlz77&amp;amp;repo=matconv2caffe&amp;amp;type=star&amp;amp;count=true&amp;amp;size=large&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;160px&quot; height=&quot;30px&quot;&gt;&lt;/iframe&gt;
-
-&lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=prlz77&amp;amp;repo=matconv2caffe&amp;amp;type=fork&amp;amp;count=true&amp;amp;size=large&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;160px&quot; height=&quot;30px&quot;&gt;&lt;/iframe&gt;
-
-&lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=prlz77&amp;amp;repo=matconv2caffe&amp;amp;type=follow&amp;amp;count=true&amp;amp;size=large&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;160px&quot; height=&quot;30px&quot;&gt;&lt;/iframe&gt;
-</description>
+        <description>&lt;h2 id=&quot;convert-matconvnet-models-to-caffe-with-matconv2caffe&quot;&gt;Convert Matconvnet models to Caffe with matconv2caffe.&lt;/h2&gt; &lt;p&gt;There is already a script to import caffe models to matconvnet thanks to &lt;a href=&quot;https://github.com/vlfeat/matconvnet/blob/master/utils/import-caffe.py&quot;&gt;@vedaldi&lt;/a&gt;. However, we needed the oposite so I made a script that converts the .caffemodel and extracts a deplotment .prototxt model definition and the average image. Currently it...</description>
         <pubDate>Wed, 05 Aug 2015 19:29:00 +0200</pubDate>
         <link>https://prlz77.github.io/matconv2caffe0.1/</link>
         <guid isPermaLink="true">https://prlz77.github.io/matconv2caffe0.1/</guid>
@@ -416,90 +98,7 @@ to solve this problem for the second time, I post it here so to remember.&lt;/p&
     
       <item>
         <title>How I installed Caffe in OS X Yosemite</title>
-        <description>&lt;h2 id=&quot;update&quot;&gt;Update&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Last time I had to compile it was much easier by using Cmake. It was as easy as creating a build folder and executing (after installing the dependencies):&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;cmake -D CMAKE_BUILD_TYPE=RELEASE -D WITH_CUDA=OFF -D CMAKE_INSTALL_PREFIX=$PWD ..&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Then compiling with:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;make -j&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Of course keep track of their webpage to get updated installation instructions.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;em&gt;Original post (2014):&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;I’ve had to install &lt;a href=&quot;http://caffe.berkeleyvision.org&quot;&gt;Caffe&lt;/a&gt; on my mac book with OS X Yosemite. However the installing instructions are for Mac OS 10.9 and I’ve discovered it’s much more difficult if you do it in Mac OS 10.10.&lt;/p&gt;
-
-&lt;h2 id=&quot;general-dependencies&quot;&gt;General dependencies&lt;/h2&gt;
-
-&lt;p&gt;I installed the CPU version, so I can’t give any feedback about using CUDA (also because my laptop doesn’t have an NVIDIA) appart from the fact that I had to install CUDA6 library so that Caffe compiles correctly. For this I went to NVIDIA webpage and used their installer.&lt;/p&gt;
-
-&lt;p&gt;The next thing to do is edit some brew formulas because:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;In OS X 10.9, clang++ is the default C++ compiler and uses libc++ as the standard library. However, NVIDIA CUDA (even version 6.0) currently links only with libstdc++. This makes it necessary to change the compilation settings for each of the dependencies.&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;http://caffe.berkeleyvision.org&quot;&gt;BVLC&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;So follow the instructions in &lt;a href=&quot;http://caffe.berkeleyvision.org/installation.html&quot;&gt;caffe installation&lt;/a&gt; BUT change whe word protobuf by protobuf241 everywhere you see it. This has to be done because Caffe won’t find some functions in the latest version which is installed by brew.&lt;/p&gt;
-
-&lt;p&gt;I used OpenBlas which is easily installed using brew.&lt;/p&gt;
-
-&lt;h3 id=&quot;python-wrappers&quot;&gt;Python Wrappers&lt;/h3&gt;
-
-&lt;p&gt;To use the python wrappers it is &lt;strong&gt;highly recommended&lt;/strong&gt; to install anaconda python. Otherwise I haven’t been able to install it correctly.&lt;/p&gt;
-
-&lt;p&gt;To install the required python packages you can use the command:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;conda install package &lt;span class=&quot;c&quot;&gt;# opencv for example&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;compiling&quot;&gt;Compiling&lt;/h2&gt;
-
-&lt;p&gt;First, the &lt;strong&gt;Makefile.config&lt;/strong&gt; has to be edited.&lt;/p&gt;
-
-&lt;p&gt;To use openBLAS change this lines:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;BLAS_INCLUDE := /usr/local/opt/openblas/include&lt;br /&gt;
-BLAS_LIB := /usr/local/opt/openblas/lib&lt;br /&gt;
-BLAS := open&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Also include the correct protobuf:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/local/opt/protobuf241/include &lt;br /&gt;
-LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/local/opt/protobuf241/lib&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Read the file to change the other needed options such as if to use anaconda or to use GPU/CPU.&lt;/p&gt;
-
-&lt;p&gt;I also had to change a line in the makefile where it said 10.9 instead of 10.10.&lt;/p&gt;
-
-&lt;h2 id=&quot;executing&quot;&gt;Executing&lt;/h2&gt;
-&lt;p&gt;Even though it compiles correctly, there might be some linking errors such as python fails to find protobuf when we import caffe. To solve this I edited the .bashrc to look like this:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;export PYTHONPATH=~/code/caffe-folder/python:/usr/local/lib/python2.7/site-packages/ &lt;br /&gt;
-export PATH=$PATH:/usr/local/opt/protobuf241/bin/ &lt;br /&gt;
-export DYLD_FALLBACK_LIBRARY_PATH=~/anaconda/lib:/usr/local/Cellar/protobuf241/2.4.1/lib/&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;That’s how I managed it to work after struggling for a lot of time. I hope this helps some people to lose less time than I did.&lt;/p&gt;
-
-</description>
+        <description>&lt;h2 id=&quot;update&quot;&gt;Update&lt;/h2&gt; &lt;hr /&gt; &lt;p&gt;Last time I had to compile it was much easier by using Cmake. It was as easy as creating a build folder and executing (after installing the dependencies):&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;cmake -D CMAKE_BUILD_TYPE=RELEASE -D WITH_CUDA=OFF -D CMAKE_INSTALL_PREFIX=$PWD ..&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;Then compiling with:&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;make -j&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;Of...</description>
         <pubDate>Mon, 03 Aug 2015 01:00:00 +0200</pubDate>
         <link>https://prlz77.github.io/install-caffe</link>
         <guid isPermaLink="true">https://prlz77.github.io/install-caffe</guid>

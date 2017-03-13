@@ -5,8 +5,8 @@
     <description>An information compressor in a pale blue dot.</description>
     <link>https://prlz77.github.io/</link>
     <atom:link href="https://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 13 Mar 2017 11:47:56 +0100</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 11:47:56 +0100</lastBuildDate>
+    <pubDate>Mon, 13 Mar 2017 11:59:32 +0100</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2017 11:59:32 +0100</lastBuildDate>
     <generator>Jekyll v3.4.1</generator>
     
       <item>
@@ -184,8 +184,12 @@ comprehend how to reach Deep Learning’s full potential.&lt;/p&gt;
 have been able to capture your attention and you have decided to
 spend some moments of your precious time to give a meaning to this work by
 reading it (and I hope you played a little bit too).&lt;/p&gt;
+
+&lt;h2 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h2&gt;
+&lt;p&gt;Thanks to &lt;a href=&quot;https://twitter.com/&quot;&gt;@pepgonfaus&lt;/a&gt;, &lt;a href=&quot;https://github.com/gcucurull&quot;&gt;@gcucurull&lt;/a&gt;,
+and Jordi Gonzàlez for their comments and suggestions.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 09 Mar 2017 16:20:00 +0100</pubDate>
+        <pubDate>Sun, 12 Mar 2017 22:00:00 +0100</pubDate>
         <link>https://prlz77.github.io/iclr2017-paper/</link>
         <guid isPermaLink="true">https://prlz77.github.io/iclr2017-paper/</guid>
         

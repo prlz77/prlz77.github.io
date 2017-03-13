@@ -75,12 +75,13 @@ example.
 Deep learning models are becoming increasingly bigger and deeper, beating the
 state of the art in numerous tasks. But how is it possible to grow these neural
 net architectures while preventing them from completely memorizing the training
-data and showing good performances on unseen examples (overfitting)? The answer to
-this question includes multiple factors such as having bigger datasets, clever
-architectures, and good regularization methods. Our work is centered on the
-latter. Concretely, we focus on those regularization methods that prevent the
-co-adaptation of feature detectors, thus reducing the redundancy in the models
-and increasing their generalization power.
+data and showing good performances on unseen examples (overfitting)? Although we 
+need to [rethink generalization](https://arxiv.org/pdf/1611.03530.pdf), the current answer to this question includes 
+multiple factors such as having bigger datasets, clever architectures, and good 
+regularization methods. Our work is centered on the latter. Concretely, we focus 
+on those regularization methods that prevent the co-adaptation of feature 
+detectors, thus reducing the redundancy in the models and increasing their 
+generalization power.
 
 Probably, the most popular way to prevent feature co-adaptation is
 [Dropout](https://github.com/szagoruyko/wide-residual-networks). However,
@@ -186,6 +187,8 @@ I am delighted that you, the reader, have arrived at this line, for it means tha
 have been able to capture your attention and you have decided to
 spend some moments of your precious time to give a meaning to this work by
 reading it (and I hope you played a little bit too). 
+
+We provide the code at [github](https://github.com/prlz77).
 
 ## Acknowledgements
 Thanks to [@pepgonfaus](https://twitter.com/), [@gcucurull](https://github.com/gcucurull),

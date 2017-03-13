@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Regularizing CNNs with Locally Constrained Decorrelations 
-date: 2017-03-09 16:20
+date: 2017-03-12 22:00
 description: Regularizing CNNs with Locally Constrained Decorrelations
 comments: true
 categories:
@@ -186,3 +186,7 @@ I am delighted that you, the reader, have arrived at this line, for it means tha
 have been able to capture your attention and you have decided to
 spend some moments of your precious time to give a meaning to this work by
 reading it (and I hope you played a little bit too). 
+
+## Acknowledgements
+Thanks to [@pepgonfaus](https://twitter.com/), [@gcucurull](https://github.com/gcucurull),
+and Jordi Gonzàlez for their comments and suggestions. 

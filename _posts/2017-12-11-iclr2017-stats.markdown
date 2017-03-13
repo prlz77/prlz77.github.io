@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Regularizing CNNs with Locally Constrained Decorrelations 
+title: Regularizing CNNs with Locally Constrained Decorrelations (ICLR2017)
 date: 2017-03-12 22:00
 description: Regularizing CNNs with Locally Constrained Decorrelations
 comments: true

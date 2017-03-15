@@ -188,7 +188,7 @@ have been able to capture your attention and you have decided to
 spend some moments of your precious time to give a meaning to this work by
 reading it (and I hope you played a little bit too). 
 
-We provide the code at [github](https://github.com/prlz77).
+We provide the code at [github](https://github.com/prlz77/orthoreg).
 
 ## Acknowledgements
 Thanks to [@pepgonfaus](https://twitter.com/), [@gcucurull](https://github.com/gcucurull),

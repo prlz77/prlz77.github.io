@@ -79,7 +79,7 @@ b {
       </tr>
     {% endfor %}
   </table>
-  <h3><i class="fa fa-comment"></i> Imparted Seminars</h3>
+  <h3><i class="fa fa-comment"></i> Teaching and Seminars </h3>
   <hr style="margin-top:0px;">
   <table>
     {% for seminar in site.data.resume.seminars %}
@@ -102,6 +102,19 @@ b {
         </td>
       </tr>
     {% endfor %}
+  </table>
+  <h3><i class="fa fa-check-square"></i> Reviewing</h3>
+  <hr style="margin-top:0px;">
+  {% assign reviewing = site.data.resume.reviewing | first %}
+  <table>
+      <tr>
+        <td class="first-col" style="width: 15%;"><b>Journals<b></td>
+        <td class="second-col">{{ reviewing.journals }}</td>
+      </tr>
+      <tr>
+          <td class="first-col" style="width: 15%;"><b>Conferences</b></td>
+        <td class="second-col">{{ reviewing.conferences }}</td>
+     </tr>
   </table>
   <h3><i class="fa fa-book"></i> Publications</h3>
   <hr style="margin-top:0px;">

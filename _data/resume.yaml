@@ -40,15 +40,21 @@ projects:
     where: STADIUS, KU Leuven
     director: Prof. Bart de Moor
     supervisor: Peter Roelants
-    description: Creation of a framework for assessing and dealing with the redundancy present in the neural network weights.
+    description: Successfuly reduced the redundancy of CNNs by prunning redundant filters.
     when: Jun. 2015
   - name: "DEGREE THESIS - A Big Data approximation with deep neural networks"
     where: Computer Science department, Universitat Autònoma de Barcelona
     director: Jordi Gonzàlez Sabaté
     supervisor: Pep Gonfaus
     when: Jun. 2014
-    description: Application of deep learning for big data applications, including the participation in a Kaggle Competition.
+    description: Designed and deployed a deep learning system for big data applications.
 seminars:
+  - name: "Machine Learning seminars (Computer Engineering)"
+    where: "Engineering school, UAB"
+    when: 2016-2017
+  - name: "Programming methodology labs (Computer Engineering)"
+    where: "Engineering school, UAB"
+    when: 2015-2016
   - name: "Deep learning 101"
     where: "Vall d'Hebron Research Institute (VHIR), Barcelona"
     when: Oct. 14th 2015
@@ -81,3 +87,6 @@ courses:
     where: "Coursera - Standford, Andrew NG."
     description: "Machine Learning course on coursera. Max. score."
     when: "2014"
+reviewing:
+  - conferences: NIPS2016 
+    journals: PR(SI-AMDO)2017

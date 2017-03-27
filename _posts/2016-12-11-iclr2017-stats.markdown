@@ -101,7 +101,7 @@ overloading OpenReview).
 ## Acknowledgements
 I would like to thank [@pepgonfaus](https://twitter.com/pepgonfaus) for helping to obtain the data and sharing new ideas.
 
-I would also like to thank the Reddit ML community for helping me to improve this page.
+Thanks the Reddit ML community for helping me to improve this page.
 
 ## Related posts
 [Carlos E. Perez](https://twitter.com/IntuitMachine) has written a couple of

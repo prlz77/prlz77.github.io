@@ -68,7 +68,24 @@ For a more explicit visualization I also include a top-10 papers sorted first by
 This unveils the top rated paper, which is [Understanding deep learning requires rethinking generalization](https://openreview.net/pdf?id=Sy8gdB9xx)!
 
 
-Data was extracted on *21st December*, so there might be some variations in the numbers. I will update it, as well as adding more plots, as soon as possible.
+Data was extracted on *21st December*, so there might be some variations in the numbers. 
+
+## What happened after reviews?
+The final acceptance distribution has turned out to be similar to the rating
+histogram plotted above in this post as it can be seen in the "ICLR
+2017 Conference Statistics" twitted  by
+[@OriolVinyalsML](https://twitter.com/OriolVinyalsML):
+
+![ICLR 2017 Conference Statistics](../assets/images/iclr2017/final_reviews.png)
+
+In fact, the final results show that the hard 6.5 threshold I plotted is spread between 6.5 and 6. 
+Congratulations to those papers accepted with a 5 and a 5.5 :). It is also interesting to see that papers in the 7-10 range have achieved to be
+oral.
+
+[@karpathy](https://twitter.com/karpathy) has posted the detailed list of the oral,
+poster, and workshop papers on
+[Medium](https://medium.com/@karpathy/iclr-2017-vs-arxiv-sanity-d1488ac5c131#.kui9yfr9v),
+as well as a nice comparative with arxiv-sanity.
 
 ## About the data
 Openreview loads the data asynchronously using javascript, thus python and 
@@ -86,4 +103,11 @@ I would like to thank [@pepgonfaus](https://twitter.com/pepgonfaus) for helping 
 
 I would also like to thank the Reddit ML community for helping me to improve this page.
 
-
+## Related posts
+[Carlos E. Perez](https://twitter.com/IntuitMachine) has written a couple of
+interesting articles: [Deep Learning: The Unreasonable Effectiveness of
+Randomness](https://medium.com/intuitionmachine/deep-learning-the-unreasonable-effectiveness-of-randomness-14d5aef13f87#.2xgeyunud),
+where he predicted some of the best rated papers discovered in this blog post,
+and [Ten Deserving Deep Learning Papers that were Rejected at ICLR
+2017](https://medium.com/intuitionmachine/eight-deserving-deep-learning-papers-that-were-rejected-at-iclr-2017-119e19a4c30b#.y3prxu3wc),
+where he comments on those interesting articles that were rejected.

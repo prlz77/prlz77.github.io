@@ -59,6 +59,10 @@ seminars:
     where: "Vall d'Hebron Research Institute (VHIR), Barcelona"
     when: Oct. 14th 2015
 awards:
+  - name: "Google Summer of Code"
+    who: "tiny-dnn - OpenCV"
+    description: "Include recurrent neural networks in the tiny-dnn framework."
+    when: 2017
   - name: "FI Doctoral scholarship"
     who: "Government of Catalonia"
     description: "Government fundings for the PhD studies."

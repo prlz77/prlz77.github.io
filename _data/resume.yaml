@@ -89,4 +89,4 @@ courses:
     when: "2014"
 reviewing:
   - conferences: NIPS2016 
-    journals: PR(SI-AMDO)2017
+    journals: TPAMI2017, PR(SI-AMDO)2017

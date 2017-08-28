@@ -18,7 +18,7 @@ and even [Lip reading](https://arxiv.org/abs/1611.01599).
 During this Google Summer of Code, I have extended the
 [tiny-dnn](https://github.com/tiny-dnn/tiny-dnn) framework with an RNN API, thus
 making it able to train on sequential data, where data points depend on each
-other in the time domain. Performing these extensions in tiny-dnn is specially
+other in the time domain. Performing these extensions in tiny-dnn is especially
 challenging (and fun) because:
 - The library is growing fast, thus making the pull requests obsolete really fast.
 - The library was initially thought for simple feedforward convolutional neural
@@ -42,11 +42,11 @@ challenging (and fun) because:
  multiple timesteps. 
 - Gradient checks were initially thought to work on the whole network, comparing
   with the loss function, and using a single weight matrix. I had to create a
-  new [blackbox gradient check](https://github.com/tiny-dnn/tiny-dnn/pull/846),
+  new [black box gradient check](https://github.com/tiny-dnn/tiny-dnn/pull/846),
   and [modify the initial one](https://github.com/tiny-dnn/tiny-dnn/pull/818) to handle multiple weight matrices.
 
 The milestones of this project have been:
-1. Creating a functionall rnn cell.
+1. Creating a functional rnn cell.
 2. Creating a wrapper for batching sequential data.
 3. Extending it to LSTMs and GRU
 4. Providing working examples and documentation.

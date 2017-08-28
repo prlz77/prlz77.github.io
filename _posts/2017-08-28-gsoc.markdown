@@ -162,3 +162,15 @@ it is the tests and it is to see a lot of tests to make a pr integrated in the
 code for extensor integration
 ```
 
+Acknowledgements
+---
+
+This work has been done under the supervision of @edgarriba, @nyanp, and @bhack.
+
+Final thoughts
+---
+
+Apart from giving me the opportunity to contribute to an exciting open-source
+project like **tiny-dnn**, this Google Summer of Code has allowed me to deepen
+my knowledge and understanding on the topics of my Ph.D. If you are eligible, I
+totally recommend you to apply.

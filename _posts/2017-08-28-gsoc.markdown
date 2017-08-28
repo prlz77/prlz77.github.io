@@ -1,0 +1,164 @@
+---
+layout: post
+title: "GSOC2017: RNNs on tiny-dnn"
+date: 2017-08-27 18:00:00
+description: My experience of building a RNN API for tiny-dnn for the Google Summer of Code 2017.
+comments: true
+categories:
+- blog
+permalink: gsoc2017/
+---
+<img style="width:300px; margin:auto; padding:auto;" src="{{ site.url }}/assets/images/tiny-dnn-gsoc.png"/>
+Recurrent Neural Networks (RNNs) are now central to many applications, from speech recognition to 
+Computer Vision. Some examples are Image captioning, [Visual Question
+Answering](https://github.com/JamesChuanggg/awesome-vqa) (VQA), [autonomous
+driving](http://selfdrivingcars.mit.edu/resources/), 
+and even [Lip reading](https://arxiv.org/abs/1611.01599). 
+
+During this Google Summer of Code, I have extended the
+[tiny-dnn](https://github.com/tiny-dnn/tiny-dnn) framework with an RNN API, thus
+making it able to train on sequential data, where data points depend on each
+other in the time domain. Performing these extensions in tiny-dnn is specially
+challenging (and fun) because:
+- The library is growing fast, thus making the pull requests obsolete really fast.
+- The library was initially thought for simple feedforward convolutional neural
+ networks, thus only caring about input, output, weights, and biases. 
+
+   However, RNNs do have also **hidden states** which must not be fed to the next layers
+ but to the next timesteps. Thankfully, tiny-dnn contemplates a third type:
+ *aux* vectors, which perfectly fit for hidden states. 
+
+   Another related smaller issue 
+ has been the fact that, RNNs usually use **multiple weight matrices**. The only
+ implication of this has been the modification of the `fan_in` and `fan_out`
+ functions in [layer](https://github.com/tiny-dnn/tiny-dnn/pull/768/files#diff-a1617ac70e8f704e6996e605b9f4b889R303) to accept indices for each weight matrix
+ (important for initialization).
+- Handling sequential data inputs.
+- Decoupling the state handling from the cell type. Namely, being able to change
+ the recurrent cell
+ ([RNN](://github.com/tiny-dnn/tiny-dnn/pull/806/files#diff-e5eec78cc6798eed6e1240a94a45b602),
+ [LSTM](https://github.com/tiny-dnn/tiny-dnn/pull/806/files#diff-f06a1ddf77504dc55259e064cae1fe07),
+ [GRU](https://github.com/tiny-dnn/tiny-dnn/pull/806/files#diff-0ec17f98a652d0f516860eda2d1acc8a)), and reusing the code to forward the
+ multiple timesteps. 
+- Gradient checks were initially thought to work on the whole network, comparing
+  with the loss function, and using a single weight matrix. I had to create a
+  new [blackbox gradient check](https://github.com/tiny-dnn/tiny-dnn/pull/846),
+  and [modify the initial one](https://github.com/tiny-dnn/tiny-dnn/pull/818) to handle multiple weight matrices.
+
+The milestones of this project have been:
+1. Creating a functionall rnn cell.
+2. Creating a wrapper for batching sequential data.
+3. Extending it to LSTMs and GRU
+4. Providing working examples and documentation.
+
+Which are summarized in the following main PRs:
+* [#768](https://github.com/tiny-dnn/tiny-dnn/pull/768): Single step recurrent
+ cell.
+* [#806](https://github.com/tiny-dnn/tiny-dnn/pull/806): Full RNN API with
+ **state transitions**, **LSTM**, **GRU**, examples, and docs.
+
+And the following minor PRs:
+* [#818](https://github.com/tiny-dnn/tiny-dnn/pull/818): Blackbox gradient check.
+* [#848](https://github.com/tiny-dnn/tiny-dnn/pull/846): Gradient check with
+ multiple weight matrices.
+* [#856](https://github.com/tiny-dnn/tiny-dnn/pull/818): Guess batch\_size from
+ gradient vectors (because non-recurrent layers have batch\_size = sequence
+ length * batch\_size.
+* [#776](https://github.com/tiny-dnn/tiny-dnn/pull/776): Transition to
+ `size_t`.
+
+Results
+----
+
+A new simple RNN API for tiny-dnn. Creating a recurrent neural network is as
+ easy as:
+ 
+~~~ c++
+network<sequential> nn;
+nn << recurrent_layer(gru(input_size, hidden_size), seq_len);
+~~~
+
+Where `recurrent_layer` acts as a wrapper for the recurrent cells, i.e. `gru`,
+`rnn`, or `lstm`, defined in `cells.h`. This wrapper receives data with
+dimensionality `(seq_len * batch_size, data_dim1, data_dim2, etc.)`, being the
+sequential dimension the leftmost in row-major order, and feeds each timestep,
+carrying states `seq_len` times. These are the most important methods:
+- `seq_len(int)`: sets the sequence length.
+- `bptt_max(int)`: sets the max number of steps to remember with Truncated
+  Back-Propagation Trough Time (more info
+  [here](https://r2rt.com/styles-of-truncated-backpropagation.html)).
+- `clear_state()`: clears current state vectors.
+
+In test time we do not need to save all the state transitions, thus, we can set
+the sequence length to one and the `bptt_max` to the desired number of steps to
+remember.
+
+Examples
+----
+
+Two examples have been provided: 
+1. [Two-number addition](
+https://github.com/prlz77/tiny-dnn/tree/rnn/examples/recurrent_addition):
+A model that learns to add two given numbers.
+```
+Input  numbers between -1 and 1.
+Input number 1: 0.1
+Input number 2: 0.4
+Sum: 0.514308
+Input number 1: 0.6
+Input number 2: -0.9
+Sum: -0.299533
+Input number 1: 1.0
+Input number 2: 1.0
+Sum: 1.91505 # performance is worse at the extremes
+Input number 1: 0
+Input number 2: 0
+Sum: 0.00183523
+```
+2. [Char-rnn gitter
+bot](https://github.com/prlz77/tiny-dnn/tree/rnn/examples/char_rnn). Trains a
+recurrent model on a gitter room history. This example is based on [Karpathy's
+char-rnn example](https://github.com/karpathy/char-rnn), i.e. training the model
+to predict the next character from the previous ones. It includes:
+- &nbsp;&nbsp;Training Code.
+- &nbsp;&nbsp;Testing Code.
+- &nbsp;&nbsp;Python wrapper.
+- &nbsp;&nbsp;Gitter API helper functions with PyCurl.
+- &nbsp;&nbsp;Three-layer GRU with 256 hidden units trained on
+  [tiny-dnn/developers](https://gitter.im/tiny-dnn/developers) with Adam:
+
+![]({{ site.url }}/assets/images/tiny-gitter-bot.gif)
+
+It also autocompletes usernames and references other users:
+
+```
+> @tiny_char_rnn karandesai-9
+tiny_char_rnn: 6 @bhack @beru @bhack @/all how about the network definitely in
+decided on data
+```
+
+We can use temperature to make predictions more certain. These are some
+outputs of the rnn at different temperatures (without any user input):
+```
+> t=1.0
+<<-<--z><->
+decai-9 change bhack @karandesai-96 @beru @beru @bhack @/acb96 @beru @beru @beru
+@beru @beru @b
+han @edgarriba @bhack @beru @beru @beru @beru @beru @beru @beru @beru
+> t=0.75
+a code after a fector back end a becement a class back in finc eed flack code
+and a back clang a cal base different caffe check flacting a change class 
+all hape a change different caffe check file file find a change is face a because a call get
+> t=0.5
+a did ead a decided in a ging a fector class but i am decided in a ging clang
+and backend on can be and factivation for each in the code and a commend
+of of the layer for element in see a factivation for decide.
+> t=0.1
+checked the new can be contribute it is the tests and it is the and backend that
+in the order from teached the tensorflow the pr the tests and it is the and
+pretty i can to try to make a lot of tests are the first tensor that we can
+travis to complete check this one the tests and it is the and fine of the code
+it is the tests and it is to see a lot of tests to make a pr integrated in the
+code for extensor integration
+```
+

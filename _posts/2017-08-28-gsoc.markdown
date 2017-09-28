@@ -15,6 +15,10 @@ Answering](https://github.com/JamesChuanggg/awesome-vqa) (VQA), [autonomous
 driving](http://selfdrivingcars.mit.edu/resources/), 
 and even [Lip reading](https://arxiv.org/abs/1611.01599). 
 
+<div style="text-align:center;">
+<iframe align="center" width="560" height="315" src="https://www.youtube.com/embed/b6nJbE1KK7Y" frameborder="0" allowfullscreen></iframe>
+</div>
+
 During this Google Summer of Code, I have extended the
 [tiny-dnn](https://github.com/tiny-dnn/tiny-dnn) framework with an RNN API, thus
 making it able to train on sequential data, where data points depend on each

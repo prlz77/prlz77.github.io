@@ -5,9 +5,21 @@
     <description>An information compressor in a pale blue dot.</description>
     <link>https://prlz77.github.io/</link>
     <atom:link href="https://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 21 Mar 2017 11:37:03 +0100</pubDate>
-    <lastBuildDate>Tue, 21 Mar 2017 11:37:03 +0100</lastBuildDate>
+    <pubDate>Thu, 28 Sep 2017 11:20:58 +0200</pubDate>
+    <lastBuildDate>Thu, 28 Sep 2017 11:20:58 +0200</lastBuildDate>
     <generator>Jekyll v3.4.1</generator>
+    
+      <item>
+        <title>GSOC2017: RNNs on tiny-dnn</title>
+        <description>&lt;p&gt;&lt;img style=&quot;width:300px; margin:auto; padding:auto;&quot; src=&quot;https://prlz77.github.io/assets/images/tiny-dnn-gsoc.png&quot; /&gt; Recurrent Neural Networks (RNNs) are now central to many applications, from speech recognition to Computer Vision. Some examples are Image captioning, &lt;a href=&quot;https://github.com/JamesChuanggg/awesome-vqa&quot;&gt;Visual Question Answering&lt;/a&gt; (VQA), &lt;a href=&quot;http://selfdrivingcars.mit.edu/resources/&quot;&gt;autonomous driving&lt;/a&gt;, and even &lt;a href=&quot;https://arxiv.org/abs/1611.01599&quot;&gt;Lip reading&lt;/a&gt;.&lt;/p&gt; &lt;div style=&quot;text-align:center;&quot;&gt; &lt;iframe align=&quot;center&quot; width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/b6nJbE1KK7Y&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt; &lt;/div&gt;...</description>
+        <pubDate>Sun, 27 Aug 2017 20:00:00 +0200</pubDate>
+        <link>https://prlz77.github.io/gsoc2017/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/gsoc2017/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>Regularizing CNNs with Locally Constrained Decorrelations (ICLR2017)</title>

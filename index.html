@@ -65,6 +65,30 @@
         
             <div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
                 <h3 class="post-title">
+                    <a href="https://prlz77.github.io/gsoc2017/">
+                      GSOC2017: RNNs on tiny-dnn
+                    </a>
+                </h3>
+
+                <span class="post-date">27 Aug 2017</span>                
+                
+                    <p>
+                    
+                    
+                        <p><img style="width:300px; margin:auto; padding:auto;" src="https://prlz77.github.io/assets/images/tiny-dnn-gsoc.png" /> Recurrent Neural Networks (RNNs) are now central to many applications, from speech recognition to Computer Vision. Some examples are Image captioning, <a href="https://github.com/JamesChuanggg/awesome-vqa">Visual Question Answering</a> (VQA), <a href="http://selfdrivingcars.mit.edu/resources/">autonomous driving</a>, and even <a href="https://arxiv.org/abs/1611.01599">Lip reading</a>.</p> <div style="text-align:center;"> <iframe align="center" width="560" height="315" src="https://www.youtube.com/embed/b6nJbE1KK7Y" frameborder="0" allowfullscreen=""></iframe> </div> <p>During this Google Summer of Code, I have extended the <a href="https://github.com/tiny-dnn/tiny-dnn">tiny-dnn</a> framework with an RNN API, thus making it able to train on sequential...
+                    
+                    </p>
+                    <p>
+                        <a href="https://prlz77.github.io/gsoc2017/" title="GSOC2017: RNNs on tiny-dnn">
+                            Read More
+                        </a>
+                    </p>
+                
+            </div>
+            <br>
+         
+            <div class="post" style="  border-style: dashed; border-width: 2px; padding: 10px; border-bottom-color:black;">
+                <h3 class="post-title">
                     <a href="https://prlz77.github.io/iclr2017-paper/">
                       Regularizing CNNs with Locally Constrained Decorrelations (ICLR2017)
                     </a>
@@ -73,64 +97,7 @@
                 <span class="post-date">12 Mar 2017</span>                
                 
                     <p>
-                    
-                    
-                        <p><strong>TL;DR</strong> We propose to locally decorrelate the feature weights of CNNs. When
-the proposed method, which we call
-<a href="https://openreview.net/pdf?id=ByOvsIqeg">OrthoReg</a>, is used to regularize the 40
-layers of Wide Residual Networks, we obtain state of the art results on CIFAR,
-and SVHN. Here is an example of the effects of our local regularizer:</p>
-
-<script type="text/javascript" src="https://prlz77.github.io/assets/js/d3.v4.min.js"></script>
-
-<script type="text/javascript" src="https://prlz77.github.io/assets/js/numeric-1.2.6.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="https://prlz77.github.io/assets/css/iclr2017/main.css" />
-
-<div class="controls">
-<div class="control-container">
-<b title="Number of data points.">Dataset Size</b><br />
-<input id="N" type="text" name="size" value="10" maxlength="4" onkeypress="if
-(event.keyCode == 13) {scatterStart(); }" />
-</div>
-<div class="control-container">
-<b title="Size of the steps that the dots make to separate. A large number might cause divergence, and a small number will make the algorithm too slow.">Step Size</b><br />
-<input id="alpha" type="text" name="alpha" value="0.1" onkeypress="if
-(event.keyCode == 13) {scatterStart(); }" />
-</div>
-<div class="control-container">
-<b title="The radius of influence of each point. The greater the lambda, the smaller the radius">Lambda</b><br />
-<input id="lambda" type="text" name="lambda" value="10" maxlength="4" onkeypress="if (event.keyCode == 13) {scatterStart(); }" />
-</div>
-<div class="control-container">
-<b title="Max number of iterations until stop.">Max Iter</b><br />
-<input id="maxIter" type="text" name="maxIter" value="20" onkeypress="if
-(event.keyCode == 13) {scatterStart(); }" />
-</div>
-<div class="control-container">
-<b title="Stop the algorithm when the dots move less than a delta (plateau).">Delta Stop</b><br />
-<input id="delta" type="text" name="delta" value="0.001" onkeypress="if
-(event.keyCode == 13) {scatterStart(); }" />
-</div>
-<div class="control-container">
-<input type="button" onclick="scatterStart();" value="play" />
-</div>
-</div>
-<div class="graph-container">
-<div id="baseline" class="three-column" style="margin-left:10%; border-right: 1px
-solid lightgray;"><b style="color: steelblue;">Baseline</b></div>
-<div id="orthoreg" class="three-column" style="margin-right:10%;"><b style="color: red;">Ours</b></div>
-<div id="angle" class="one-column" style="text-align:left;"> 
-<b>Average nearest neighbor distance</b></div>
-</div>
-<script type="text/javascript" src="https://prlz77.github.io/assets/js/iclr2017/d3-plots-min.js"></script>
-
-<script> document.onload = scatterStart(); </script>
-
-<p>I encourage the reader to continue reading for better understanding of this
-example.
-
-                    
+                          <p><strong>TL;DR</strong> We propose to locally decorrelate the feature weights of CNNs. When the proposed method, which we call <a href="https://openreview.net/pdf?id=ByOvsIqeg">OrthoReg</a>, is used to regularize the 40 layers of Wide Residual Networks, we obtain state of the art results on CIFAR, and SVHN. Here is an example of the effects of...    
                     </p>
                     <p>
                         <a href="https://prlz77.github.io/iclr2017-paper/" title="Regularizing CNNs with Locally Constrained Decorrelations (ICLR2017)">

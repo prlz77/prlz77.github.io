@@ -124,7 +124,24 @@ their paper count (bubble size) by mean review score.</p>
 
 <p>This unveils the top rated paper, which is <a href="https://openreview.net/pdf?id=Sy8gdB9xx">Understanding deep learning requires rethinking generalization</a>!</p>
 
-<p>Data was extracted on <em>21st December</em>, so there might be some variations in the numbers. I will update it, as well as adding more plots, as soon as possible.</p>
+<p>Data was extracted on <em>21st December</em>, so there might be some variations in the numbers.</p>
+
+<h2 id="what-happened-after-reviews">What happened after reviews?</h2>
+<p>The final acceptance distribution has turned out to be similar to the rating
+histogram plotted above in this post as it can be seen in the “ICLR
+2017 Conference Statistics” twitted  by
+<a href="https://twitter.com/OriolVinyalsML">@OriolVinyalsML</a>:</p>
+
+<p><img src="../assets/images/iclr2017/final_reviews.png" alt="ICLR 2017 Conference Statistics" /></p>
+
+<p>In fact, the final results show that the hard 6.5 threshold I plotted is spread between 6.5 and 6. 
+Congratulations to those papers accepted with a 5 and a 5.5 :). It is also interesting to see that papers in the 7-10 range have achieved to be
+oral.</p>
+
+<p><a href="https://twitter.com/karpathy">@karpathy</a> has posted the detailed list of the oral,
+poster, and workshop papers on
+<a href="https://medium.com/@karpathy/iclr-2017-vs-arxiv-sanity-d1488ac5c131#.kui9yfr9v">Medium</a>,
+as well as a nice comparative with arxiv-sanity.</p>
 
 <h2 id="about-the-data">About the data</h2>
 <p>Openreview loads the data asynchronously using javascript, thus python and 
@@ -139,8 +156,16 @@ overloading OpenReview).</p>
 <h2 id="acknowledgements">Acknowledgements</h2>
 <p>I would like to thank <a href="https://twitter.com/pepgonfaus">@pepgonfaus</a> for helping to obtain the data and sharing new ideas.</p>
 
-<p>I would also like to thank the Reddit ML community for helping me to improve this page.</p>
+<p>Thanks the Reddit ML community for helping me to improve this page.</p>
 
+<h2 id="related-posts">Related posts</h2>
+<p><a href="https://twitter.com/IntuitMachine">Carlos E. Perez</a> has written a couple of
+interesting articles: <a href="https://medium.com/intuitionmachine/deep-learning-the-unreasonable-effectiveness-of-randomness-14d5aef13f87#.2xgeyunud">Deep Learning: The Unreasonable Effectiveness of
+Randomness</a>,
+where he predicted some of the best rated papers discovered in this blog post,
+and <a href="https://medium.com/intuitionmachine/eight-deserving-deep-learning-papers-that-were-rejected-at-iclr-2017-119e19a4c30b#.y3prxu3wc">Ten Deserving Deep Learning Papers that were Rejected at ICLR
+2017</a>,
+where he comments on those interesting articles that were rejected.</p>
 
 			
 			<div id="disqus_thread"></div>
@@ -151,8 +176,8 @@ overloading OpenReview).</p>
      */
     
     var disqus_config = function () {
-        this.page.url = "https://prlz77.github.io";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "prlz77githubio"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "https://prlz77.github.io/iclr2017-stats/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "/iclr2017-stats"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     
     (function() {  // DON'T EDIT BELOW THIS LINE
@@ -177,6 +202,11 @@ overloading OpenReview).</p>
 		<ul class="posts">
 		    
 		    <li>
+			  <span>27 Aug 2017 &raquo;</span>
+			  <a href="https://prlz77.github.io/gsoc2017/">GSOC2017: RNNs on tiny-dnn</a>
+		    </li>
+		    
+		    <li>
 			  <span>12 Mar 2017 &raquo;</span>
 			  <a href="https://prlz77.github.io/iclr2017-paper/">Regularizing CNNs with Locally Constrained Decorrelations (ICLR2017)</a>
 		    </li>
@@ -184,11 +214,6 @@ overloading OpenReview).</p>
 		    <li>
 			  <span>27 Sep 2016 &raquo;</span>
 			  <a href="https://prlz77.github.io/killing-process-children">How to kill bash script children when crtl+c</a>
-		    </li>
-		    
-		    <li>
-			  <span>19 Jun 2016 &raquo;</span>
-			  <a href="https://prlz77.github.io/fix-viewport-out">Can not set ViewportOut in nvidia-settings</a>
 		    </li>
 		    
 		</ul>

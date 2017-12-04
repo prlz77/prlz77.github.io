@@ -1,0 +1,86 @@
+---
+layout: post
+title: An early overview of ICLR2018
+date: 2017-12-04 00:00:00
+description: An early overview of ICLR2018 (OpenReview)
+comments: true
+categories:
+- blog
+permalink: iclr2018-stats/
+---
+
+Most reviews for [ICLR2018](https://openreview.net/group?id=ICLR.cc/2018/Conference) are out and given the success of the [past edition](https://prlz77.github.io/iclr2017-stats) it is time for the next one :)
+<img src='{{ "/assets/images/iclr2018/wordcloud.svg" | absolute_url }}' style='margin: auto;' />
+
+<!---->
+
+The sixth edition of ICLR will be held in Vancouver the 30th of April and it comes with some important changes: 
+* This time submissions are double-blind.
+* There is only one review round.
+* Revisions are not allowed during the review period (last year some authors submitted "a draft" before the deadline and then continued working until the review).
+
+Another difference with the last edition, is that review scores have dropped **from a median of 6 to a median of 5** (5.69 avg -> 5.23 avg):
+
+<figure>
+    <embed type="image/svg+xml" src='{{ "/assets/images/iclr2018/score_histogram.svg" | absolute_url }}' />
+</figure>
+
+Could be this a consequence of the single review round, which helped the authors to empathize with their reviewers? Are low-hanging fruits running out? Is it the double-blind?
+
+What about the cutt-off score to be accepted? If we take into account the 40% best of the 979 mean scores, it is **5.54**.
+
+I computed the paper score by averaging its review ratings weighted by the reviewer confidence: 
+
+```
+papers = [{r=9,c=3}, {r=4,c=1}]
+avg_score = 9 * (3 / (3 + 1)) + 4 * (1 / (3 + 1)) = 7.75
+
+```
+
+Anyway, let's go straight to the point and see which are the top 10 rated papers.
+
+## Top 10 rated papers
+
+{% include iclr2018/top10.md %}
+
+I recommend the reader to go through all of them, they all are inspiring and interesting. It can also be seen that reviewers are unanimous for most of them. This brings about another question,
+which are the submissions that create the most discord?
+
+{% include iclr2018/top5controversy.md %}
+
+The most extrema case is **Progressive Growing of GANs for Improved Quality, Stability, and Variation**, which is rated as **trivial or wrong** by a reviewer while another one **rates it with an 8 (top 50%)**.
+
+A great feature of OpenReview is that it allows for public comments. This can help us to discover other interesting papers, such as the most popular ones. However, comments do not always come from experts and thus it is
+difficult to tell whether they are relevant to assess the importance of a paper.  In order to shed some light on the importance of comments vs reviews, I have related a simple [sentiment analysis score](https://textblob.readthedocs.io/en/dev/) on the comments with the score emitted by the reviewers:
+
+
+<figure>
+    <embed type="image/svg+xml" src='{{ "/assets/images/iclr2018/sentimentvscore.svg" | absolute_url }}' />
+</figure>
+
+As it can be seen, there is not much correlation between the sentiment of user comments and the rating of the reviewers (the size of the blue dots is the number of comments). Another factor is that the tool used for sentiment analysis might be too simple, although it succeeds for some of them:
+
+(+) **Deep Learning is Robust to Massive Label Noise**: Good results, better than in literature.
+
+(-) **Hybed: Hyperbolic Neural Graph Embedding**: These embeddings are not in the hyperbolic space as claimed...
+
+Also, we don't know how expert are the users who comment. However, does confidence change the way how reviewers rate?
+
+## Do confident reviewers rate differently?
+
+The answer is **yes** as it can be seen in the following plot:
+
+<figure>
+    <embed type="image/svg+xml" src='{{ "/assets/images/iclr2018/confscore.svg" | absolute_url }}' />
+</figure>
+
+Confident reviewers use to emit more extreme votes (0-3, 9-10, 7-8), while those which are less confident tend to vote in the middle (4-6). 
+
+# About the data
+This time I have used the OpenReview API instead of a crawler. I will update it regularly until all the reviews are published. 
+
+# Related Posts
+* [http://search.iclr2018.smerity.com/](http://search.iclr2018.smerity.com/)
+* [Yanguang](https://liyaguang.github.io/iclr2018-stats) has published a similar review.
+* [Past edition](https://prlz77.github.io/iclr2017-stats/)
+

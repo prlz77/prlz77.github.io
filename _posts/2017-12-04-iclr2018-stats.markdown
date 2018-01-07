@@ -14,6 +14,8 @@ Most reviews for [ICLR2018](https://openreview.net/group?id=ICLR.cc/2018/Confere
 
 <!---->
 
+**Update:** I have published an overview of the decision process in [part 2](https://prlz77.github.io/iclr2018-stats-2).
+
 The sixth edition of ICLR will be held in Vancouver the 30th of April and it comes with some important changes: 
 * This time submissions are double-blind.
 * There is only one review round.
@@ -84,3 +86,4 @@ This time I have used the OpenReview API instead of a crawler. I will update it 
 * [Yanguang](https://liyaguang.github.io/iclr2018-stats) has published a similar review.
 * [Past edition](https://prlz77.github.io/iclr2017-stats/)
 
+[Go to part 2](https://prlz77.github.io/iclr2018-stats-2)

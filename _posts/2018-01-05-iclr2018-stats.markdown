@@ -1,0 +1,93 @@
+---
+layout: post
+title: An early overview of ICLR2018 (part 2)
+date: 2017-12-05 00:00:00
+description: An early overview of ICLR2018 (OpenReview). Part 2.
+comments: true
+categories:
+- blog
+permalink: iclr2018-stats-2/
+---
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<script
+src="https://code.jquery.com/jquery-3.2.1.min.js"
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $.getJSON('{{ "/assets/js/iclr2018/iclr2018.json" | absolute_url }}', function (table_data) {
+            $('#iclr2018').DataTable({
+                data: table_data,
+                columns: [
+                    {title: "Title", className: "dt-body-nowrap"},
+                    {title: "Min score", className: "dt-center"},
+                    {title: "Max Score", className: "dt-center"},
+                    {title: "Mean Score", className: "dt-center"},
+                    {title: "#MSGs", className: "dt-center"},
+                    {title: "Last update", className: "dt-center"},
+                    {title: "Decision", className: "dt-center"},
+                ],
+                "order": [[5, "desc"]]
+            });
+        });
+    });
+</script>
+
+The rebuttal period has ended and final decisions will be notified by January
+29th. In this post, differently from [part one](https://prlz77.github.io/iclr2018-stats),
+I will provide updated information about the decision process. For those who
+just want the data right now, here is **the browsable table** with all the 
+submissions under review:
+
+<table id="iclr2018" class="compact stripe order-column hover responsive" width="100%" cellspacing="0"></table>
+<br>
+I left it ordered by date, and I will update the data on a daily basis so that 
+you can check the latest updates. The final decisions will also
+be provided. For those who want to play with the data on their own, 
+[here it is]({{ "/assets/js/iclr2018/iclr2018.json" }}) ;). 
+Please note that paper titles are already placed as stripped
+links to prevent your device from doing too much work with javascript (it might
+be already busy mining cryptocurrencies..).
+
+First, let's take a quick look back to the reviews:
+
+<figure>
+    <embed type="image/svg+xml" src='{{ "/assets/images/iclr2018/review_dates.svg" | absolute_url }}' />
+</figure>
+<br>
+The red line shows the daily number of reviewed submissions, and the blue line shows the
+accumulated amount. Please note that the deadline was the 27th of November, with
+~70% of the papers reviewed. As it can be seen, the 100% is never reached. I found
+the cause is [Causal Generative Neural Networks](https://openreview.net/forum?id=ry5wc1bCW),
+which was dismissed due to the Dual Submission Policy.
+
+The rebuttal period finished the 5th of January. Here is the data:
+
+<figure>
+    <embed type="image/svg+xml" src='{{ "/assets/images/iclr2018/rebuttal_dates.svg" | absolute_url }}' />
+</figure>
+<br>
+In this case, a 86% of the reviews are answered by the time of the deadline,  see that nice peak :)
+
+The number of withdrawals has also increased during January, see the following figure:
+
+<figure>
+    <embed type="image/svg+xml" src='{{ "/assets/images/iclr2018/withdraw_dates.svg" | absolute_url }}' />
+</figure>
+<br>
+The median score of the withdrawn papers is **4**. Browsing in OpenReview, there
+can be seen some *clear rejections* due to fatal flaws discovered by the reviewers
+and admitted by the authors. This highlights the importance of reviewing for
+good research.
+
+I hope you enjoyed the ICLR overview posts, and good luck with the final decisions!!
+
+# Acknowledgements
+Thanks to [@pepgonfaus](https://twitter.com/pepgonfaus) for reviewing and encouraging 
+me to write this series of posts.
+
+[Go to part 1](https://prlz77.github.io/iclr2018-stats/)
+
+

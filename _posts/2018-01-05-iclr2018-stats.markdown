@@ -51,6 +51,7 @@ Please note that paper titles are already placed as stripped
 links to prevent your device from doing too much work with javascript (it might
 be already busy mining cryptocurrencies..).
 
+I would also like to show you some statistics about the review-rebuttal process.
 First, let's take a quick look back to the reviews:
 
 <figure>

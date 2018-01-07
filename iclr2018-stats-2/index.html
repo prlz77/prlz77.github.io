@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>How I installed Caffe in OS X Yosemite</title>
+        <title>An early overview of ICLR2018 (part 2)</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">        
         <meta name="description" content="Solutions I found, projects i found interesting, etc.">
         <link rel="canonical" 
-        href="https://prlz77.github.io/install-caffe">
+        href="https://prlz77.github.io/iclr2018-stats-2/">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         
         <!-- Harmony styles -->
@@ -64,91 +64,89 @@
 <div class="page-content wc-container">
 	
 	<div class="post">
-		<h1>How I installed Caffe in OS X Yosemite</h1>
-		<span class="post-date">03 Aug 2015</span>
+		<h1>An early overview of ICLR2018 (part 2)</h1>
+		<span class="post-date">05 Dec 2017</span>
 		<div class="post">
-			<h2 id="update">Update</h2>
+			<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
 
-<hr />
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-<p>Last time I had to compile it was much easier by using Cmake. It was as easy as creating a build folder and executing (after installing the dependencies):</p>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
-<blockquote>
-  <p>cmake -D CMAKE_BUILD_TYPE=RELEASE -D WITH_CUDA=OFF -D CMAKE_INSTALL_PREFIX=$PWD ..</p>
-</blockquote>
+<script>
+    $(document).ready(function() {
+        $.getJSON('https://prlz77.github.io/assets/js/iclr2018/iclr2018.json', function (table_data) {
+            $('#iclr2018').DataTable({
+                data: table_data,
+                columns: [
+                    {title: "Title", className: "dt-body-nowrap"},
+                    {title: "Min score", className: "dt-center"},
+                    {title: "Max Score", className: "dt-center"},
+                    {title: "Mean Score", className: "dt-center"},
+                    {title: "#MSGs", className: "dt-center"},
+                    {title: "Last update", className: "dt-center"},
+                    {title: "Decision", className: "dt-center"},
+                ],
+                "order": [[5, "desc"]]
+            });
+        });
+    });
+</script>
 
-<p>Then compiling with:</p>
+<p>The rebuttal period has ended and final decisions will be notified by January
+29th. In this post, differently from <a href="https://prlz77.github.io/iclr2018-stats">part one</a>,
+I will provide updated information about the decision process. For those who
+just want the data right now, here is <strong>the browsable table</strong> with all the 
+submissions under review:</p>
 
-<blockquote>
-  <p>make -j</p>
-</blockquote>
+<table id="iclr2018" class="compact stripe order-column hover responsive" width="100%" cellspacing="0"></table>
+<p><br />
+I left it ordered by date, and I will update the data on a daily basis so that 
+you can check the latest updates. The final decisions will also
+be provided. For those who want to play with the data on their own, 
+<a href="/assets/js/iclr2018/iclr2018.json">here it is</a> ;). 
+Please note that paper titles are already placed as stripped
+links to prevent your device from doing too much work with javascript (it might
+be already busy mining cryptocurrencies..).</p>
 
-<p>Of course keep track of their webpage to get updated installation instructions.</p>
+<p>First, let’s take a quick look back to the reviews:</p>
 
-<hr />
+<figure>
+    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2018/review_dates.svg" />
+</figure>
+<p><br />
+The red line shows the daily number of reviewed submissions, and the blue line shows the
+accumulated amount. Please note that the deadline was the 27th of November, with
+~70% of the papers reviewed. As it can be seen, the 100% is never reached. I found
+the cause is <a href="https://openreview.net/forum?id=ry5wc1bCW">Causal Generative Neural Networks</a>,
+which was dismissed due to the Dual Submission Policy.</p>
 
-<p><em>Original post (2014):</em></p>
+<p>The rebuttal period finished the 5th of January. Here is the data:</p>
 
-<p>I’ve had to install <a href="http://caffe.berkeleyvision.org">Caffe</a> on my mac book with OS X Yosemite. However the installing instructions are for Mac OS 10.9 and I’ve discovered it’s much more difficult if you do it in Mac OS 10.10.</p>
+<figure>
+    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2018/rebuttal_dates.svg" />
+</figure>
+<p><br />
+In this case, a 86% of the reviews are answered by the time of the deadline,  see that nice peak :)</p>
 
-<h2 id="general-dependencies">General dependencies</h2>
+<p>The number of withdrawals has also increased during January, see the following figure:</p>
 
-<p>I installed the CPU version, so I can’t give any feedback about using CUDA (also because my laptop doesn’t have an NVIDIA) appart from the fact that I had to install CUDA6 library so that Caffe compiles correctly. For this I went to NVIDIA webpage and used their installer.</p>
+<figure>
+    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2018/withdraw_dates.svg" />
+</figure>
+<p><br />
+The median score of the withdrawn papers is <strong>4</strong>. Browsing in OpenReview, there
+can be seen some <em>clear rejections</em> due to fatal flaws discovered by the reviewers
+and admitted by the authors. This highlights the importance of reviewing for
+good research.</p>
 
-<p>The next thing to do is edit some brew formulas because:</p>
+<p>I hope you enjoyed the ICLR overview posts, and good luck with the final decisions!!</p>
 
-<blockquote>
-  <p>In OS X 10.9, clang++ is the default C++ compiler and uses libc++ as the standard library. However, NVIDIA CUDA (even version 6.0) currently links only with libstdc++. This makes it necessary to change the compilation settings for each of the dependencies.</p>
-  <ul>
-    <li><a href="http://caffe.berkeleyvision.org">BVLC</a></li>
-  </ul>
-</blockquote>
+<h1 id="acknowledgements">Acknowledgements</h1>
+<p>Thanks to <a href="https://twitter.com/pepgonfaus">@pepgonfaus</a> for reviewing and encouraging 
+me to write this series of posts.</p>
 
-<p>So follow the instructions in <a href="http://caffe.berkeleyvision.org/installation.html">caffe installation</a> BUT change whe word protobuf by protobuf241 everywhere you see it. This has to be done because Caffe won’t find some functions in the latest version which is installed by brew.</p>
-
-<p>I used OpenBlas which is easily installed using brew.</p>
-
-<h3 id="python-wrappers">Python Wrappers</h3>
-
-<p>To use the python wrappers it is <strong>highly recommended</strong> to install anaconda python. Otherwise I haven’t been able to install it correctly.</p>
-
-<p>To install the required python packages you can use the command:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">conda install package <span class="c"># opencv for example</span></code></pre></figure>
-
-<h2 id="compiling">Compiling</h2>
-
-<p>First, the <strong>Makefile.config</strong> has to be edited.</p>
-
-<p>To use openBLAS change this lines:</p>
-
-<blockquote>
-  <p>BLAS_INCLUDE := /usr/local/opt/openblas/include<br />
-BLAS_LIB := /usr/local/opt/openblas/lib<br />
-BLAS := open</p>
-</blockquote>
-
-<p>Also include the correct protobuf:</p>
-
-<blockquote>
-  <p>INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/local/opt/protobuf241/include <br />
-LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/local/opt/protobuf241/lib</p>
-</blockquote>
-
-<p>Read the file to change the other needed options such as if to use anaconda or to use GPU/CPU.</p>
-
-<p>I also had to change a line in the makefile where it said 10.9 instead of 10.10.</p>
-
-<h2 id="executing">Executing</h2>
-<p>Even though it compiles correctly, there might be some linking errors such as python fails to find protobuf when we import caffe. To solve this I edited the .bashrc to look like this:</p>
-
-<blockquote>
-  <p>export PYTHONPATH=~/code/caffe-folder/python:/usr/local/lib/python2.7/site-packages/ <br />
-export PATH=$PATH:/usr/local/opt/protobuf241/bin/ <br />
-export DYLD_FALLBACK_LIBRARY_PATH=~/anaconda/lib:/usr/local/Cellar/protobuf241/2.4.1/lib/</p>
-</blockquote>
-
-<p>That’s how I managed it to work after struggling for a lot of time. I hope this helps some people to lose less time than I did.</p>
+<p><a href="https://prlz77.github.io/iclr2018-stats/">Go to part 1</a></p>
 
 
 			
@@ -160,8 +158,8 @@ export DYLD_FALLBACK_LIBRARY_PATH=~/anaconda/lib:/usr/local/Cellar/protobuf241/2
      */
     
     var disqus_config = function () {
-        this.page.url = "https://prlz77.github.io/install-caffe";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "/install-caffe"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "https://prlz77.github.io/iclr2018-stats-2/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "/iclr2018-stats"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     
     (function() {  // DON'T EDIT BELOW THIS LINE
@@ -186,11 +184,6 @@ export DYLD_FALLBACK_LIBRARY_PATH=~/anaconda/lib:/usr/local/Cellar/protobuf241/2
 		<ul class="posts">
 		    
 		    <li>
-			  <span>05 Dec 2017 &raquo;</span>
-			  <a href="https://prlz77.github.io/iclr2018-stats-2/">An early overview of ICLR2018 (part 2)</a>
-		    </li>
-		    
-		    <li>
 			  <span>04 Dec 2017 &raquo;</span>
 			  <a href="https://prlz77.github.io/iclr2018-stats/">An early overview of ICLR2018</a>
 		    </li>
@@ -200,6 +193,11 @@ export DYLD_FALLBACK_LIBRARY_PATH=~/anaconda/lib:/usr/local/Cellar/protobuf241/2
 			  <a href="https://prlz77.github.io/gsoc2017/">GSOC2017: RNNs on tiny-dnn</a>
 		    </li>
 		    
+		    <li>
+			  <span>12 Mar 2017 &raquo;</span>
+			  <a href="https://prlz77.github.io/iclr2017-paper/">Regularizing CNNs with Locally Constrained Decorrelations (ICLR2017)</a>
+		    </li>
+		    
 		</ul>
 	</div>
 	
@@ -207,13 +205,13 @@ export DYLD_FALLBACK_LIBRARY_PATH=~/anaconda/lib:/usr/local/Cellar/protobuf241/2
 	<div class="post-footer">
 		<div class="column-1">
 			
-				<span><< Older</span>
+				<a href="https://prlz77.github.io/iclr2018-stats/"><< Older</a>
 			
 		</div>
 		<div class="column-2"><a href="https://prlz77.github.io/ ">Home</a></div>
 		<div class="column-3">
 			
-				<a href="https://prlz77.github.io/matconv2caffe0.1/">Newer >></a>
+				<span>Newer >></span>
 			
 		</div>
 	</div>

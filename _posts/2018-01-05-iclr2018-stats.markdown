@@ -62,7 +62,23 @@ The red line shows the daily number of reviewed submissions, and the blue line s
 accumulated amount. Please note that the deadline was the 27th of November, with
 ~70% of the papers reviewed. As it can be seen, the 100% is never reached. I found
 the cause is [Causal Generative Neural Networks](https://openreview.net/forum?id=ry5wc1bCW),
-which was dismissed due to the Dual Submission Policy.
+which was dismissed due to the Dual Submission Policy. 
+
+The results presented in the review dates figure are somehow expected, namely a
+peak of reviews on the deadline. How about the behavior of the reviewers during
+the review period?
+
+<figure>
+    <embed type="image/svg+xml" src='{{ "/assets/images/iclr2018/review_dates_scores.svg" | absolute_url }}' />
+</figure>
+<br>
+As it can be seen, the plot shows the score histograms during the review period. 
+Each column represents a day, and scores are divided in three groups (colors):
+red (scores 0-3), blue (scores 4-6), and green (scores 7-10). It is interesting
+to see how extreme scores are more frequent during the first days (especially for
+the red group), decreasing until disappearing. It might mean that reviewers are
+fast to spot clear accept/reject papers, while they take more time to decide on
+borderline papers.
 
 The rebuttal period finished the 5th of January. Here is the data:
 

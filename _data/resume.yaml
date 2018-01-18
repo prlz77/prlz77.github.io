@@ -21,7 +21,7 @@ work:
   - name: Research Internship
     where: Element AI, Montreal.
     when: "Feb 2018 - May 2018"
-    description: On bayesian deep learning.
+    description: Unsupervised Deep Learning and Uncertainty.
   - name: Research Assistant
     where: Visual Tagging Services, Computer Vision Center, Universitat Autònoma
         de Barcelona.

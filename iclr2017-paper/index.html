@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Regularizing CNNs with Locally Constrained Decorrelations (ICLR2017)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <meta name="description" content="Solutions I found, projects i found interesting, etc.">
+        <link rel="canonical" 
+        href="https://prlz77.github.io/iclr2017-paper/">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        
+        <!-- Harmony styles -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+        <!-- Modernizr js -->
+        <script async src="/assets/js/modernizr.js"></script>    
+
+        <!-- IE Fixes -->
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->        
+    </head>
+    <body class="theme-base-01">
+        <header class="main-header">
+            <div class="wc-container">
+                <h1><a href="/">prlz77</a></h1>
+                <h2>An information compressor in a pale blue dot.</h2>
+                <ul>
+	<li>
+		<a href="https://prlz77.github.io">Home</a>
+	</li>
+	<li>
+		<a href="https://prlz77.github.io/blog">Blog</a><span>/</span>
+	</li>
+	<li>
+		<a href="https://prlz77.github.io/about">About</a><span>/</span>
+	</li>
+	<li>
+		<a href="https://prlz77.github.io/resume">Résumé</a><span>/</span>
+	</li>
+	<li>
+        <a href="https://prlz77.github.io/index.xml"><i style="margin-left:0.5em" class="fa fa-rss" aria-hidden="true"></i></a><span>/</span>
+	</li>
+	<!--
+	<li>
+		<a title="prlz77 on Github"
+			href="https://github.com/gayanvirajith/harmony" target="_blank">
+			Download
+		</a><span>/</span>
+	</li>
+	
+	<li>
+		<span>/</span>
+	</li>-->
+</ul>
+                
+            </div>
+        </header>
+        <link rel="stylesheet" href="/octicons/octicons.css">
+<div class="page-content wc-container">
+	
+	<div class="post">
+		<h1>Regularizing CNNs with Locally Constrained Decorrelations (ICLR2017)</h1>
+		<span class="post-date">12 Mar 2017</span>
+		<div class="post">
+			<p><strong>TL;DR</strong> We propose to locally decorrelate the feature weights of CNNs. When
+the proposed method, which we call
+<a href="https://openreview.net/pdf?id=ByOvsIqeg">OrthoReg</a>, is used to regularize the 40
+layers of Wide Residual Networks, we obtain state of the art results on CIFAR,
+and SVHN. Here is an example of the effects of our local regularizer:</p>
+
+<script type="text/javascript" src="https://prlz77.github.io/assets/js/d3.v4.min.js"></script>
+
+<script type="text/javascript" src="https://prlz77.github.io/assets/js/numeric-1.2.6.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://prlz77.github.io/assets/css/iclr2017/main.css" />
+
+<div class="controls">
+<div class="control-container">
+<b title="Number of data points.">Dataset Size</b><br />
+<input id="N" type="text" name="size" value="10" maxlength="4" onkeypress="if
+(event.keyCode == 13) {scatterStart(); }" />
+</div>
+<div class="control-container">
+<b title="Size of the steps that the dots make to separate. A large number might cause divergence, and a small number will make the algorithm too slow.">Step Size</b><br />
+<input id="alpha" type="text" name="alpha" value="0.1" onkeypress="if
+(event.keyCode == 13) {scatterStart(); }" />
+</div>
+<div class="control-container">
+<b title="The radius of influence of each point. The greater the lambda, the smaller the radius">Lambda</b><br />
+<input id="lambda" type="text" name="lambda" value="10" maxlength="4" onkeypress="if (event.keyCode == 13) {scatterStart(); }" />
+</div>
+<div class="control-container">
+<b title="Max number of iterations until stop.">Max Iter</b><br />
+<input id="maxIter" type="text" name="maxIter" value="20" onkeypress="if
+(event.keyCode == 13) {scatterStart(); }" />
+</div>
+<div class="control-container">
+<b title="Stop the algorithm when the dots move less than a delta (plateau).">Delta Stop</b><br />
+<input id="delta" type="text" name="delta" value="0.001" onkeypress="if
+(event.keyCode == 13) {scatterStart(); }" />
+</div>
+<div class="control-container">
+<input type="button" onclick="scatterStart();" value="play" />
+</div>
+</div>
+<div class="graph-container">
+<div id="baseline" class="three-column" style="margin-left:10%; border-right: 1px
+solid lightgray;"><b style="color: steelblue;">Baseline</b></div>
+<div id="orthoreg" class="three-column" style="margin-right:10%;"><b style="color: red;">Ours</b></div>
+<div id="angle" class="one-column" style="text-align:left;"> 
+<b>Average nearest neighbor distance</b></div>
+</div>
+<script type="text/javascript" src="https://prlz77.github.io/assets/js/iclr2017/d3-plots-min.js"></script>
+
+<script> document.onload = scatterStart(); </script>
+
+<p>I encourage the reader to continue reading for better understanding of this
+example.
+<!---->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+</script>
+<script type="text/javascript" async="" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script></p>
+
+<p>Deep learning models are becoming increasingly bigger and deeper, beating the
+state of the art in numerous tasks. But how is it possible to grow these neural
+net architectures while preventing them from completely memorizing the training
+data and showing good performances on unseen examples (overfitting)? Although we 
+need to <a href="https://arxiv.org/pdf/1611.03530.pdf">rethink generalization</a>, the current answer to this question includes 
+multiple factors such as having bigger datasets, clever architectures, and good 
+regularization methods. Our work is centered on the latter. Concretely, we focus 
+on those regularization methods that prevent the co-adaptation of feature 
+detectors, thus reducing the redundancy in the models and increasing their 
+generalization power.</p>
+
+<p>Probably, the most popular way to prevent feature co-adaptation is
+<a href="https://github.com/szagoruyko/wide-residual-networks">Dropout</a>. However,
+dropping techniques such as Dropout or
+<a href="http://cs.nyu.edu/~wanli/dropc/">DropConnect</a> reduce the capacity of the
+models, which need to be bigger to compensate for this fact.
+A least common method for preventing co-adaptation is to
+add a regularization term to the loss function of the model so as to penalize
+the correlation between neurons. This idea has been explored several times for
+supervised learning on neural networks,
+first with the name of <a href="http://ieeexplore.ieee.org/document/6639015/">incoherent
+training</a>, and later as <a href="https://arxiv.org/abs/1511.06068">DeCov</a>
+(Cogswell et al. at ICLR2016).</p>
+
+<p>Although the presented decorrelation methods proved to perform well, they are
+still far from being commonly used in state of the art models. In part, this is
+because they were applied to rather shallow models, and it is not
+clear that the computational overhead introduced by these regularizers in state
+of the art models will compensate the reduction in overfitting. Our work aims to
+dissipate these inconveniences by:</p>
+
+<ul>
+  <li>reducing the computational cost by regularizing the network weights,</li>
+  <li>increasing the performance margins by imposing locality constraints,</li>
+  <li>successfully regularizing all the layers of a state of the art residual network.</li>
+</ul>
+
+<p>Why imposing locality when decorrelating feature detectors? Since a toy is more
+amusing than one thousand words, please <a href="#baseline">play</a> with the example I provide at the
+beginning of the post (if you have not already tried it ;) ). Note that although
+it is a toy example with 2D nice-to-plot features, similar behavior was found in
+actual CNN features, especially in bottleneck layers, when the number of filters
+matches their dimensionality. 
+The intuition is
+that regularizing negatively decorrelated feature detectors is
+counter-productive. Namely, in the <a href="#baseline">left plot</a>, each dot
+(feature detector) “tries to be different” from all the other dots, even those which are in the
+opposite quadrant. We propose to make dots only sensitive to their nearest
+neighbors, thus increasing the average minimum angle (linear correlation) between all the feature
+detectors.  We achieve this locality by means of a squashing function:</p>
+
+<script type="math/tex; mode=display">C(\theta) = \sum_{i=1}^{n}\sum_{j=1,j\ne i}^{n} \log(1 + e^{\lambda
+    (cos(\theta_i,\theta_j)-1)}) = \log(1 + e^{\lambda  (\langle
+    \theta_i,\theta_j\rangle -1)}), \ ||\theta_i||=||\theta_j||=1,</script>
+
+<p>where $\lambda$ is a coefficient that controls the minimum
+angle-of-influence of the regularizer, i.e. the minimum angle between two
+feature weights so that there exists a gradient pushing them apart. Again, a toy
+is worth a thousand words:</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<div class="graph-container">
+<div id="squashing" style="float:left; width:55%;
+margin-left:23%;"></div><div style="position:absolute; left:75%; margin-top:25%;"><span style="color:steelblue">$cos^2(x)$</span><br /><span style="color:red;">$\log(1 +
+e^{\lambda  (x-1)})$</span></div>
+<div style="width:40%; margin:15px; margin-left:23%; float:left;" id="slider"></div><div style="float:left; margin:15px;" type="text">$\lambda=$<span id="slider-value">10</span></div>
+</div>
+<script>
+var squashingGraph = new SquashingGraph();
+$( function() {
+    $( "#slider" ).slider({
+        min: 2,
+        max: 20,
+        step: 1,
+        value: 10,
+        animate: "fast",
+        slide: function (event, ui) { squashingGraph.updateGraph(ui.value);
+        $("#slider-value").text(ui.value); }
+    });
+} );
+</script>
+
+<p>As it can be seen, when $\lambda \in [7,10]$, the squashing function gradient
+approximates zero for those features further than $\pi / 2$ (90º). In other
+words, the regularizer will enforce feature weights to be orthogonal. As a
+result, the linear correlation between feature detectors will decrease,
+resulting in better generalization as it can be seen in the following figure:</p>
+
+<div class="graph-container"><div style="width:50%; float:left;">
+<img src="https://prlz77.github.io/assets/images/iclr2017/Cifar10.svg" />
+</div>
+<div style="width:50%; float:left;">
+<img src="https://prlz77.github.io/assets/images/iclr2017/Cifar100.svg" />
+</div>
+</div>
+
+<p>Note that OrthoReg is able to reduce the overfitting in the presence of Dropout
+and <a href="https://arxiv.org/abs/1502.03167">BatchNorm</a> at the same time. A possible
+hypothesis for this fact is that different regularizers act on different
+aspects of the network, exposing how much is still to be explored if we want to
+comprehend how to reach Deep Learning’s full potential.</p>
+
+<p>I am delighted that you, the reader, have arrived at this line, for it means that I
+have been able to capture your attention and you have decided to
+spend some moments of your precious time to give a meaning to this work by
+reading it (and I hope you played a little bit too).</p>
+
+<p>We provide the code at <a href="https://github.com/prlz77/orthoreg">github</a>.</p>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>Thanks to <a href="https://twitter.com/">@pepgonfaus</a>, <a href="https://github.com/gcucurull">@gcucurull</a>,
+and Jordi Gonzàlez for their comments and suggestions.</p>
+
+			
+			<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    
+    var disqus_config = function () {
+        this.page.url = "https://prlz77.github.io/iclr2017-paper/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "/iclr2017-stats"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = 'https://prlz77githubio.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+			
+		</div>
+	</div>
+
+
+	
+	<div class="related">
+		<h4>Related Posts</h2>
+		<ul class="posts">
+		    
+		    <li>
+			  <span>05 Dec 2017 &raquo;</span>
+			  <a href="https://prlz77.github.io/iclr2018-stats-2/">An early overview of ICLR2018 (part 2)</a>
+		    </li>
+		    
+		    <li>
+			  <span>04 Dec 2017 &raquo;</span>
+			  <a href="https://prlz77.github.io/iclr2018-stats/">An early overview of ICLR2018</a>
+		    </li>
+		    
+		    <li>
+			  <span>27 Aug 2017 &raquo;</span>
+			  <a href="https://prlz77.github.io/gsoc2017/">GSOC2017: RNNs on tiny-dnn</a>
+		    </li>
+		    
+		</ul>
+	</div>
+	
+
+	<div class="post-footer">
+		<div class="column-1">
+			
+				<a href="https://prlz77.github.io/iclr2017-stats/"><< Older</a>
+			
+		</div>
+		<div class="column-2"><a href="https://prlz77.github.io/ ">Home</a></div>
+		<div class="column-3">
+			
+				<a href="https://prlz77.github.io/gsoc2017/">Newer >></a>
+			
+		</div>
+	</div>
+</div>
+ 
+
+        <footer class="main-footer">
+            <div class="wc-container">
+                <div class="column one">
+                    <h6>Few more links</h6>
+<ul class="menu">
+    <li><a href="https://prlz77.github.io/about">About</a></li>
+    <li><a href="https://prlz77.github.io/blog">Blog</a></li>
+    <li><a href="https://prlz77.github.io/faq">Help / FAQ</a></li>    
+</ul>		                    
+                </div>
+                <div class="column two">
+                    <h6>Follow me</h6>
+
+<ul class="social-media">
+
+
+    
+    <li>
+        <a title="prlz77 on Twitter" 
+            href="https://twitter.com/prlz77" 
+            class="twitter wc-img-replace" target="_blank">Twitter</a>
+    </li>   
+    
+
+    
+    <li>
+        <a title="prlz77 on Github" 
+            href="https://github.com/prlz77" 
+            class="github wc-img-replace" target="_blank">Github</a>
+    </li>
+     
+
+    
+
+    
+    <li>
+        <a title="113126019576725081194 on Google Plus" 
+            href="https://plus.google.com/113126019576725081194" 
+            class="google wc-img-replace" target="_blank">Google</a>
+    </li>
+    
+
+    
+
+    
+
+</ul>
+                </div>
+            </div>
+            <p class="wc-container disclaimer">
+                
+	Everything you find here under Creative Commons CC0.         
+
+Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>
+            </p>
+        </footer>
+        <script type="text/javascript">
+          /* To avoid render blocking css */
+          var cb = function() {
+            var l = document.createElement('link'); l.rel = 'stylesheet';
+            l.href = '//fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin';
+            var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+          };
+          var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+              webkitRequestAnimationFrame || msRequestAnimationFrame;
+          if (raf) raf(cb);
+          else window.addEventListener('load', cb);
+        </script>
+        <!-- jQuery 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!-- When no internet load JQuery from local -->
+        <script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>
+        <!-- Site js -->
+        <script src="/assets/js/all.js"></script>
+        <!-- Google analytics  -->
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-65884397-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    </body>        
+</html>

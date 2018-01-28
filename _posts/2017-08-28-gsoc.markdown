@@ -129,7 +129,7 @@ to predict the next character from the previous ones. It includes:
 - &nbsp;&nbsp;Three-layer GRU with 256 hidden units trained on
   [tiny-dnn/developers](https://gitter.im/tiny-dnn/developers) with Adam:
 
-![]({{ site.url }}/assets/images/tiny-gitter-bot.gif)
+![]({{ site.url }}/assets/images/tiny-gitter-bot.gif)
 
 It also autocompletes usernames and references other users:
 

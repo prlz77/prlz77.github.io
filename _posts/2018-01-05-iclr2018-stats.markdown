@@ -29,7 +29,7 @@ crossorigin="anonymous"></script>
                     {title: "Last update", className: "dt-center"},
                     {title: "Decision", className: "dt-center"},
                 ],
-                "order": [[5, "desc"]]
+                "order": [[6, "asc"], [3, "desc"]]
             });
         });
     });

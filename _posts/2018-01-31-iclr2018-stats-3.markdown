@@ -311,7 +311,7 @@ function packageImports(nodes) {
 
   return imports;
 }
-var window_w = $(window.width());
+var window_w = $("#interactions").parent().width();
 var new_w = window_w / (800);
 $("#interactions").css("zoom", new_w).css("width", window_w);
 

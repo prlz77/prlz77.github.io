@@ -14,7 +14,7 @@ those who got their papers accepted, and I hope reviews serve as a source of
 inspiration for those who got their papers rejected. 
 
 Now that we have the acceptance decisions and author names have been disclosed, 
-let's play with data to find interesting papers, who are the influential researchers, 
+let's play with data to find interesting papers, who are influential researchers, 
 and which are the most significant organizations for the 2018 edition of this 
 great conference :)
 
@@ -249,23 +249,23 @@ function mouseovered(d) {
 
   link
       .classed("link--target", function(l) { if (l.target === d) return l.source.source = true; })
-      //.classed("link--source", function(l) { if (l.source === d) return l.target.target = true; })
+      .classed("link--source", function(l) { if (l.source === d) return l.target.target = true; })
     .filter(function(l) { return l.target === d || l.source === d; })
       .raise();
 
   node
       .classed("node--target", function(n) { return n.target; })
-      //.classed("node--source", function(n) { return n.source; });
+      .classed("node--source", function(n) { return n.source; });
 }
 
 function mouseouted(d) {
   link
       .classed("link--target", false)
-     // .classed("link--source", false);
+      .classed("link--source", false);
 
   node
       .classed("node--target", false)
-     // .classed("node--source", false);
+      .classed("node--source", false);
 }
 
 // Lazily construct the package hierarchy from class names.
@@ -311,8 +311,9 @@ function packageImports(nodes) {
 
   return imports;
 }
-var new_w = $(window).width() / (800);
-$("#interactions").css("zoom", new_w).css("width", $(window).width())
+var window_w = $(window.width());
+var new_w = window_w / (800);
+$("#interactions").css("zoom", new_w).css("width", window_w);
 
 </script>
 

@@ -14,7 +14,7 @@ those who got their papers accepted, and I hope reviews serve as a source of
 inspiration for those who got their papers rejected. 
 
 Now that we have the acceptance decisions and author names have been disclosed, 
-let's play with data to find interesting papers, who are influential researchers, 
+let's play with data to find interesting papers, who are the influential researchers, 
 and which are the most significant organizations for the 2018 edition of this 
 great conference :)
 

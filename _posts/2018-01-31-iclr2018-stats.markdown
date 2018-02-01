@@ -9,6 +9,14 @@ categories:
 permalink: iclr2018-stats-3/
 ---
 
+Finally, decisions for the ICLR2018 conference are out! Congratulations to 
+those who got their papers accepted, and I hope reviews serve as a source of
+inspiration for those who got their papers rejected. 
+
+Affiliations and author names have also been disclosed, so we can play now with
+this new information to find the 
+
+
 
 <!---->
 <div id="interactions" style="text-align:center;">

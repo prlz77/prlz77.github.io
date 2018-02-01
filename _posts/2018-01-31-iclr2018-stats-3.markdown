@@ -55,12 +55,9 @@ with a mean ~8 and an Oral submission with a mean score of ~6. To find these exa
 the following table with all the submissions can be used:
 
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-<script
-src="https://code.jquery.com/jquery-3.2.1.min.js"
-integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
 <script>
     $(document).ready(function() {
         $.getJSON('{{ "/assets/js/iclr2018/iclr2018.json" | absolute_url }}', function (table_data) {
@@ -81,7 +78,7 @@ crossorigin="anonymous"></script>
     });
 </script>
 
-<table id="iclr2018" class="compact stripe order-column hover responsive" width="100%" cellspacing="0"></table>
+<table id="iclr2018" class="compact stripe order-column hover responsive" width="90%" cellspacing="0" style="font-size:0.875rem;"></table>
 <br>
 
 Browsing, I found that [Progressive Growing of GANs for Improved Quality, Stability, and Variation](https://openreview.net/forum?id=Hk99zCeAb) was accepted as Oral with a mean score of 5,67. 
@@ -198,7 +195,7 @@ found any imprecision, do not hesitate to notify me.
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
-var diameter = 800,
+var diameter = $(window).width(),
     radius = diameter / 2,
     innerRadius = radius - 120;
 

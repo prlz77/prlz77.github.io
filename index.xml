@@ -5,13 +5,25 @@
     <description>An information compressor in a pale blue dot.</description>
     <link>https://prlz77.github.io/</link>
     <atom:link href="https://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 31 Jan 2018 10:12:11 +0100</pubDate>
-    <lastBuildDate>Wed, 31 Jan 2018 10:12:11 +0100</lastBuildDate>
+    <pubDate>Thu, 01 Feb 2018 12:18:02 +0100</pubDate>
+    <lastBuildDate>Thu, 01 Feb 2018 12:18:02 +0100</lastBuildDate>
     <generator>Jekyll v3.4.1</generator>
     
       <item>
+        <title>An early overview of ICLR2018 (part 3)</title>
+        <description>&lt;p&gt;Finally, decisions for the ICLR2018 conference are out! Congratulations to those who got their papers accepted, and I hope reviews serve as a source of inspiration for those who got their papers rejected.&lt;/p&gt; &lt;p&gt;Now that we have the acceptance decisions and author names have been disclosed, let’s play with data...</description>
+        <pubDate>Wed, 31 Jan 2018 01:00:00 +0100</pubDate>
+        <link>https://prlz77.github.io/iclr2018-stats-3/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/iclr2018-stats-3/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
         <title>An early overview of ICLR2018 (part 2)</title>
-        <description>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css&quot; /&gt; &lt;script src=&quot;https://code.jquery.com/jquery-3.2.1.min.js&quot; integrity=&quot;sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt; &lt;script src=&quot;https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js&quot;&gt;&lt;/script&gt; &lt;script&gt; $(document).ready(function() { $.getJSON('https://prlz77.github.io/assets/js/iclr2018/iclr2018.json', function (table_data) { $('#iclr2018').DataTable({ data: table_data, columns: [ {title: &quot;Title&quot;, className: &quot;dt-body-nowrap&quot;}, {title: &quot;Min score&quot;, className: &quot;dt-center&quot;}, {title: &quot;Max Score&quot;, className: &quot;dt-center&quot;}, {title: &quot;Mean Score&quot;, className: &quot;dt-center&quot;}, {title: &quot;#MSGs&quot;, className: &quot;dt-center&quot;}, {title: &quot;Last update&quot;, className:...</description>
+        <description>&lt;p&gt;The rebuttal period has ended and final decisions will be notified by January 29th. In this post, differently from &lt;a href=&quot;https://prlz77.github.io/iclr2018-stats&quot;&gt;part one&lt;/a&gt;, I will provide updated information about the decision process. For those who just want the data right now, here is &lt;strong&gt;the browsable table&lt;/strong&gt; with all the submissions under...</description>
         <pubDate>Tue, 05 Dec 2017 01:00:00 +0100</pubDate>
         <link>https://prlz77.github.io/iclr2018-stats-2/</link>
         <guid isPermaLink="true">https://prlz77.github.io/iclr2018-stats-2/</guid>
@@ -23,7 +35,7 @@
     
       <item>
         <title>An early overview of ICLR2018</title>
-        <description>&lt;p&gt;Most reviews for &lt;a href=&quot;https://openreview.net/group?id=ICLR.cc/2018/Conference&quot;&gt;ICLR2018&lt;/a&gt; are out and given the success of the &lt;a href=&quot;https://prlz77.github.io/iclr2017-stats&quot;&gt;past edition&lt;/a&gt; it is time for the next one :) &lt;img src=&quot;https://prlz77.github.io/assets/images/iclr2018/wordcloud.svg&quot; style=&quot;margin: auto;&quot; /&gt;&lt;/p&gt; &lt;!----&gt; &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; I have published an overview of the decision process in &lt;a href=&quot;https://prlz77.github.io/iclr2018-stats-2&quot;&gt;part 2&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;The sixth edition of ICLR will...</description>
+        <description>&lt;p&gt;Most reviews for &lt;a href=&quot;https://openreview.net/group?id=ICLR.cc/2018/Conference&quot;&gt;ICLR2018&lt;/a&gt; are out and given the success of the &lt;a href=&quot;https://prlz77.github.io/iclr2017-stats&quot;&gt;past edition&lt;/a&gt; it is time for the next one :) &lt;img src=&quot;https://prlz77.github.io/assets/images/iclr2018/wordcloud.svg&quot; style=&quot;margin: auto;&quot; /&gt;&lt;/p&gt; &lt;!----&gt; &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; I have published an overview of the decision process in &lt;a href=&quot;https://prlz77.github.io/iclr2018-stats-2&quot;&gt;part 2&lt;/a&gt;, and final decisions in &lt;a href=&quot;https://prlz77.github.io/iclr2018-stats-3/&quot;&gt;part...</description>
         <pubDate>Mon, 04 Dec 2017 01:00:00 +0100</pubDate>
         <link>https://prlz77.github.io/iclr2018-stats/</link>
         <guid isPermaLink="true">https://prlz77.github.io/iclr2018-stats/</guid>
@@ -114,18 +126,6 @@
         <pubDate>Fri, 15 Apr 2016 20:06:00 +0200</pubDate>
         <link>https://prlz77.github.io/macsleeps</link>
         <guid isPermaLink="true">https://prlz77.github.io/macsleeps</guid>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>matconv2caffe v0.1 released</title>
-        <description>&lt;h2 id=&quot;convert-matconvnet-models-to-caffe-with-matconv2caffe&quot;&gt;Convert Matconvnet models to Caffe with matconv2caffe.&lt;/h2&gt; &lt;p&gt;There is already a script to import caffe models to matconvnet thanks to &lt;a href=&quot;https://github.com/vlfeat/matconvnet/blob/master/utils/import-caffe.py&quot;&gt;@vedaldi&lt;/a&gt;. However, we needed the oposite so I made a script that converts the .caffemodel and extracts a deplotment .prototxt model definition and the average image. Currently it...</description>
-        <pubDate>Wed, 05 Aug 2015 19:29:00 +0200</pubDate>
-        <link>https://prlz77.github.io/matconv2caffe0.1/</link>
-        <guid isPermaLink="true">https://prlz77.github.io/matconv2caffe0.1/</guid>
         
         
         <category>blog</category>

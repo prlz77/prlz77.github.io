@@ -251,7 +251,7 @@ found any imprecision, do not hesitate to notify me.</p>
 
 <script>
 
-var diameter = $(window).width(),
+var diameter = 800,
     radius = diameter / 2,
     innerRadius = radius - 120;
 
@@ -367,6 +367,8 @@ function packageImports(nodes) {
 
   return imports;
 }
+var new_w = $(window).width() / (800);
+$("#interactions").css("zoom", new_w).css("width", $(window).width())
 
 </script>
 

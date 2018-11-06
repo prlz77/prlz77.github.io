@@ -1,23 +1,32 @@
 ---
 layout: post
 title: An early overview of ICLR2019
-date: 2018-10-06 00:00:00
+date: 2018-10-07 00:00:00
 description: An early overview of ICLR2019 (OpenReview).
 comments: true
 categories:
 - blog
 permalink: iclr2019-stats/
 ---
+<img src='{{ "/assets/images/iclr2019/wordcloud.jpg" | absolute_url }}' style='width: 90%; margin:auto;' />
 
-Let's take a look to ICLR2019 reviews!
+This year's venue will be held on May 6-9 in New Orleans. No big changes with
+respect to the last edition, except for the Workshop track, which will be held
+in small concurrent events, with a separately chaired process.
+
+Anyway, let's take a look to ICLR2019 reviews! For those who like to browse data 
+themselves, here is the table with all the submissions and scores weighted
+by reviewers' confidence ;) <br>
+
+<!---->
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.css"/>
- 
+
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
 <script>
     $(document).ready(function() {
         $.getJSON('{{ "/assets/js/iclr2019/iclr2019.json" | absolute_url }}', function (table_data) {
-            $('#iclr2018').DataTable({
+            $('#iclr2019').DataTable({
                 data: table_data,
                 columns: [
                     {title: "Title", className: "dt-body-nowrap"},
@@ -38,3 +47,82 @@ Let's take a look to ICLR2019 reviews!
 <br>
 
 
+## Top-10 rated papers
+So the top 10 best scored reviews are:
+
+| **#** | **Title** | **Authors** | **Rating** | **Std** |
+| 1 | [Benchmarking Neural Network Robustness to Common Corruptions and Perturbations](https://openreview.net/forum?id=HJz6tiCqYm) | Anon | 9.0 | 0.0 |
+| 2 | [KnockoffGAN: Generating Knockoffs for Feature Selection using Generative Adversarial Networks](https://openreview.net/forum?id=ByeZ5jC5YQ) | Anon | 8.5 | 1.5 |
+| 3 | [Large Scale GAN Training for High Fidelity Natural Image Synthesis](https://openreview.net/forum?id=B1xsqj09Fm) | Anon | 8.5 | 1.2 |
+| 4 | [Ordered Neurons: Integrating Tree Structures into Recurrent Neural Networks](https://openreview.net/forum?id=B1l6qiR5F7) | Anon | 8.1 | 0.8 |
+| 5 | [Slimmable Neural Networks](https://openreview.net/forum?id=H1gMCsAqY7) | Anon | 8.1 | 0.8 |
+| 6 | [Enabling Factorized Piano Music Modeling and Generation with the MAESTRO Dataset](https://openreview.net/forum?id=r1lYRjC9F7) | Anon | 8.0 | 0.0 |
+| 7 | [No Training Required: Exploring Random Encoders for Sentence Classification](https://openreview.net/forum?id=BkgPajAcY7) | Anon | 8.0 | 0.0 |
+| 8 | [ProMP: Proximal Meta-Policy Search](https://openreview.net/forum?id=SkxXCi0qFX) | Anon | 8.0 | 1.0 |
+| 9 | [Differentiable Learning-to-Normalize via Switchable Normalization](https://openreview.net/forum?id=ryggIs0cYQ) | Anon | 8.0 | 0.0 |
+| 10 | [GENERATING HIGH FIDELITY IMAGES WITH SUBSCALE PIXEL NETWORKS AND MULTIDIMENSIONAL UPSCALING](https://openreview.net/forum?id=HylzTiC5Km) | Anon | 7.9 | 0.9 |
+
+The first impression is that scores are lower this year, let's check the 
+score histogram:
+
+<figure>
+    <embed type="image/svg+xml" src='{{ "/assets/images/iclr2019/score_histogram.svg" | absolute_url }}' />
+</figure>
+
+Indeed, scores are lower and the average score has lowered **from 5.4 to 5.1 this year** 
+(5.7 in 2017). Given that [last year's](https://prlz77.github.io/iclr2018-stats-3/) 36% acceptance rate, this year's **cut score** should be **around 5.1**.
+
+What about the most controversial papers?
+
+## Top-5 controversial papers
+These are the submissions with higher discrepancy between the reviewers. A clear
+example is [Large-Scale Visual Speech Recognition](https://openreview.net/forum?id=HJxpDiC5tX),
+where the authors construct a large scale dataset for lip reading, and propose
+a pipeline that outperforms previous approaches, as well as human lipreaders.
+In a review titled "**Engineering Marvel**" with a score of 3/10 and confidence 
+of 5, Reviewer1 claims there is **no novelty**, and provides a list of issues.<br>
+Differently, Reviewer3, rates the submission with a 9/10 and confidence of 4, 
+arguing that the submission is **useful for the research community**, since it 
+provides a large dataset and a strong baseline.
+
+
+| **#** | **Title** | **Authors** | **Std** | **Min** | **Max** |
+| 1 | [ Large-Scale Visual Speech Recognition](https://openreview.net/forum?id=HJxpDiC5tX) | Anon | 3.0 | 3 | 9 |
+| 2 | [Invariant and Equivariant Graph Networks](https://openreview.net/forum?id=Syx72jC9tm) | Anon | 2.5 | 4 | 9 |
+| 3 | [An adaptive homeostatic algorithm for the unsupervised learning of visual features](https://openreview.net/forum?id=SyMras0cFQ) | Anon | 2.5 | 4 | 9 |
+| 4 | [Per-Tensor Fixed-Point Quantization of the Back-Propagation Algorithm](https://openreview.net/forum?id=rkxaNjA9Ym) | Anon | 2.5 | 3 | 8 |
+| 5 | [Unsupervised Neural Multi-Document Abstractive Summarization](https://openreview.net/forum?id=rylhToC5YQ) | Anon | 2.5 | 3 | 9 |
+
+
+In most of the discrepancies most reviewers show a confidence of 4 and 5. How
+is this year's confidence related to the scores?
+
+## Reviewer's confidence
+
+<figure>
+    <embed type="image/svg+xml" src='{{ "/assets/images/iclr2019/confscore.svg" | absolute_url }}' />
+</figure>
+
+Similarly to [last year](https://prlz77.github.io/iclr2018-stats), confident reviewers
+tend to produce more extreme scores. In fact, not only confidences affect extreme
+ratings, but also the review deadline:
+
+<figure>
+    <embed type="image/svg+xml" src='{{ "/assets/images/iclr2019/review_dates_scores.svg" | absolute_url }}' />
+</figure>
+
+Surprisingly, this year most of the rejects concentrate on the last days. This
+is different from [ICLR2018](https://prlz77.github.io/iclr2018-stats-2), when most of them where concentrated at the beginning.
+
+However, no surprise on the fact that most reviews where submitted on the last days:
+
+<figure>
+    <embed type="image/svg+xml" src='{{ "/assets/images/iclr2019/review_dates.svg" | absolute_url }}' />
+</figure>
+
+That's all for now. Once the decisions are out, I will update the post with the
+new information.
+
+## About the data
+The data was obtained from [openreview](https://openreview.net/), using their
+[library](https://github.com/iesl/openreview-py).

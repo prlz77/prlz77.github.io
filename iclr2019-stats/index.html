@@ -65,9 +65,19 @@
 	
 	<div class="post">
 		<h1>An early overview of ICLR2019</h1>
-		<span class="post-date">06 Oct 2018</span>
+		<span class="post-date">07 Oct 2018</span>
 		<div class="post">
-			<p>Let’s take a look to ICLR2019 reviews!</p>
+			<p><img src="https://prlz77.github.io/assets/images/iclr2019/wordcloud.jpg" style="width: 90%; margin:auto;" /></p>
+
+<p>This year’s venue will be held on May 6-9 in New Orleans. No big changes with
+respect to the last edition, except for the Workshop track, which will be held
+in small concurrent events, with a separately chaired process.</p>
+
+<p>Anyway, let’s take a look to ICLR2019 reviews! For those who like to browse data 
+themselves, here is the table with all the submissions and scores weighted
+by reviewers’ confidence ;) <br /></p>
+
+<!---->
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.css" />
 
@@ -76,7 +86,7 @@
 <script>
     $(document).ready(function() {
         $.getJSON('https://prlz77.github.io/assets/js/iclr2019/iclr2019.json', function (table_data) {
-            $('#iclr2018').DataTable({
+            $('#iclr2019').DataTable({
                 data: table_data,
                 columns: [
                     {title: "Title", className: "dt-body-nowrap"},
@@ -96,6 +106,199 @@
 <table id="iclr2019" class="compact stripe order-column hover responsive" width="90%" cellspacing="0" style="font-size:0.875rem;"></table>
 <p><br /></p>
 
+<h2 id="top-10-rated-papers">Top-10 rated papers</h2>
+<p>So the top 10 best scored reviews are:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>#</strong></td>
+      <td><strong>Title</strong></td>
+      <td><strong>Authors</strong></td>
+      <td><strong>Rating</strong></td>
+      <td><strong>Std</strong></td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><a href="https://openreview.net/forum?id=HJz6tiCqYm">Benchmarking Neural Network Robustness to Common Corruptions and Perturbations</a></td>
+      <td>Anon</td>
+      <td>9.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><a href="https://openreview.net/forum?id=ByeZ5jC5YQ">KnockoffGAN: Generating Knockoffs for Feature Selection using Generative Adversarial Networks</a></td>
+      <td>Anon</td>
+      <td>8.5</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><a href="https://openreview.net/forum?id=B1xsqj09Fm">Large Scale GAN Training for High Fidelity Natural Image Synthesis</a></td>
+      <td>Anon</td>
+      <td>8.5</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><a href="https://openreview.net/forum?id=B1l6qiR5F7">Ordered Neurons: Integrating Tree Structures into Recurrent Neural Networks</a></td>
+      <td>Anon</td>
+      <td>8.1</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><a href="https://openreview.net/forum?id=H1gMCsAqY7">Slimmable Neural Networks</a></td>
+      <td>Anon</td>
+      <td>8.1</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><a href="https://openreview.net/forum?id=r1lYRjC9F7">Enabling Factorized Piano Music Modeling and Generation with the MAESTRO Dataset</a></td>
+      <td>Anon</td>
+      <td>8.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><a href="https://openreview.net/forum?id=BkgPajAcY7">No Training Required: Exploring Random Encoders for Sentence Classification</a></td>
+      <td>Anon</td>
+      <td>8.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><a href="https://openreview.net/forum?id=SkxXCi0qFX">ProMP: Proximal Meta-Policy Search</a></td>
+      <td>Anon</td>
+      <td>8.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><a href="https://openreview.net/forum?id=ryggIs0cYQ">Differentiable Learning-to-Normalize via Switchable Normalization</a></td>
+      <td>Anon</td>
+      <td>8.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><a href="https://openreview.net/forum?id=HylzTiC5Km">GENERATING HIGH FIDELITY IMAGES WITH SUBSCALE PIXEL NETWORKS AND MULTIDIMENSIONAL UPSCALING</a></td>
+      <td>Anon</td>
+      <td>7.9</td>
+      <td>0.9</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The first impression is that scores are lower this year, let’s check the 
+score histogram:</p>
+
+<figure>
+    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2019/score_histogram.svg" />
+</figure>
+
+<p>Indeed, scores are lower and the average score has lowered <strong>from 5.4 to 5.1 this year</strong> 
+(5.7 in 2017). Given that <a href="https://prlz77.github.io/iclr2018-stats-3/">last year’s</a> 36% acceptance rate, this year’s <strong>cut score</strong> should be <strong>around 5.1</strong>.</p>
+
+<p>What about the most controversial papers?</p>
+
+<h2 id="top-5-controversial-papers">Top-5 controversial papers</h2>
+<p>These are the submissions with higher discrepancy between the reviewers. A clear
+example is <a href="https://openreview.net/forum?id=HJxpDiC5tX">Large-Scale Visual Speech Recognition</a>,
+where the authors construct a large scale dataset for lip reading, and propose
+a pipeline that outperforms previous approaches, as well as human lipreaders.
+In a review titled “<strong>Engineering Marvel</strong>” with a score of 3/10 and confidence 
+of 5, Reviewer1 claims there is <strong>no novelty</strong>, and provides a list of issues.<br />
+Differently, Reviewer3, rates the submission with a 9/10 and confidence of 4, 
+arguing that the submission is <strong>useful for the research community</strong>, since it 
+provides a large dataset and a strong baseline.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>#</strong></td>
+      <td><strong>Title</strong></td>
+      <td><strong>Authors</strong></td>
+      <td><strong>Std</strong></td>
+      <td><strong>Min</strong></td>
+      <td><strong>Max</strong></td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><a href="https://openreview.net/forum?id=HJxpDiC5tX"> Large-Scale Visual Speech Recognition</a></td>
+      <td>Anon</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><a href="https://openreview.net/forum?id=Syx72jC9tm">Invariant and Equivariant Graph Networks</a></td>
+      <td>Anon</td>
+      <td>2.5</td>
+      <td>4</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><a href="https://openreview.net/forum?id=SyMras0cFQ">An adaptive homeostatic algorithm for the unsupervised learning of visual features</a></td>
+      <td>Anon</td>
+      <td>2.5</td>
+      <td>4</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><a href="https://openreview.net/forum?id=rkxaNjA9Ym">Per-Tensor Fixed-Point Quantization of the Back-Propagation Algorithm</a></td>
+      <td>Anon</td>
+      <td>2.5</td>
+      <td>3</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><a href="https://openreview.net/forum?id=rylhToC5YQ">Unsupervised Neural Multi-Document Abstractive Summarization</a></td>
+      <td>Anon</td>
+      <td>2.5</td>
+      <td>3</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In most of the discrepancies most reviewers show a confidence of 4 and 5. How
+is this year’s confidence related to the scores?</p>
+
+<h2 id="reviewers-confidence">Reviewer’s confidence</h2>
+
+<figure>
+    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2019/confscore.svg" />
+</figure>
+
+<p>Similarly to <a href="https://prlz77.github.io/iclr2018-stats">last year</a>, confident reviewers
+tend to produce more extreme scores. In fact, not only confidences affect extreme
+ratings, but also the review deadline:</p>
+
+<figure>
+    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2019/review_dates_scores.svg" />
+</figure>
+
+<p>Surprisingly, this year most of the rejects concentrate on the last days. This
+is different from <a href="https://prlz77.github.io/iclr2018-stats-2">ICLR2018</a>, when most of them where concentrated at the beginning.</p>
+
+<p>However, no surprise on the fact that most reviews where submitted on the last days:</p>
+
+<figure>
+    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2019/review_dates.svg" />
+</figure>
+
+<p>That’s all for now. Once the decisions are out, I will update the post with the
+new information.</p>
+
+<h2 id="about-the-data">About the data</h2>
+<p>The data was obtained from <a href="https://openreview.net/">openreview</a>, using their
+<a href="https://github.com/iesl/openreview-py">library</a>.</p>
 
 			
 			<div id="disqus_thread"></div>

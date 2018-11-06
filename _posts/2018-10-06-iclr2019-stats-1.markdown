@@ -72,6 +72,7 @@ score histogram:
 Indeed, scores are lower and the average score has lowered **from 5.4 to 5.1 this year** 
 (5.7 in 2017). Given that [last year's](https://prlz77.github.io/iclr2018-stats-3/) 36% acceptance rate, this year's **cut score** should be **around 5.1**.
 
+
 What about the most controversial papers?
 
 ## Top-5 controversial papers
@@ -94,8 +95,19 @@ provides a large dataset and a strong baseline.
 | 5 | [Unsupervised Neural Multi-Document Abstractive Summarization](https://openreview.net/forum?id=rylhToC5YQ) | Anon | 2.5 | 3 | 9 |
 
 
-In most of the discrepancies most reviewers show a confidence of 4 and 5. How
-is this year's confidence related to the scores?
+Now, we know the top rated and controversial submissions, as well as the possible cut score, but which is
+the cut topic? Are some topics better rated than others?
+
+## Keywords
+We can take a look at the keywords and how they are rated:
+
+<figure>
+    <embed type="image/svg+xml" src='{{ "/assets/images/iclr2019/keywords.svg" | absolute_url }}' />
+</figure>
+
+This is the rating histogram of the top-25 keywords. **Optimization** and 
+**variational inference** are the most valued keywords, while **machine learning**,
+and **interpretability** are the worst rated ones.
 
 ## Reviewer's confidence
 

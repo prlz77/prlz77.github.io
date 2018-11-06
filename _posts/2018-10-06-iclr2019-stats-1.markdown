@@ -76,12 +76,12 @@ Indeed, scores are lower and the average score has lowered **from 5.4 to 5.1 thi
 What about the most controversial papers?
 
 ## Top-5 controversial papers
-These are the submissions with higher discrepancy between the reviewers. A clear
+These are the submissions with the higher discrepancy between the reviewers. A clear
 example is [Large-Scale Visual Speech Recognition](https://openreview.net/forum?id=HJxpDiC5tX),
-where the authors construct a large scale dataset for lip reading, and propose
+where the authors construct a large scale dataset for lip reading and propose
 a pipeline that outperforms previous approaches, as well as human lipreaders.
 In a review titled "**Engineering Marvel**" with a score of 3/10 and confidence 
-of 5, Reviewer1 claims there is **no novelty**, and provides a list of issues.<br>
+of 5, Reviewer1 claims there is **no novelty** and provides a list of issues.<br>
 Differently, Reviewer3, rates the submission with a 9/10 and confidence of 4, 
 arguing that the submission is **useful for the research community**, since it 
 provides a large dataset and a strong baseline.

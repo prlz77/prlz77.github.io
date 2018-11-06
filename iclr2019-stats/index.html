@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>matconv2caffe v0.1 released</title>
+        <title>An early overview of ICLR2019</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">        
         <meta name="description" content="Solutions I found, projects i found interesting, etc.">
         <link rel="canonical" 
-        href="https://prlz77.github.io/matconv2caffe0.1/">
+        href="https://prlz77.github.io/iclr2019-stats/">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         
         <!-- Harmony styles -->
@@ -64,20 +64,38 @@
 <div class="page-content wc-container">
 	
 	<div class="post">
-		<h1>matconv2caffe v0.1 released</h1>
-		<span class="post-date">05 Aug 2015</span>
+		<h1>An early overview of ICLR2019</h1>
+		<span class="post-date">06 Oct 2018</span>
 		<div class="post">
-			<h2 id="convert-matconvnet-models-to-caffe-with-matconv2caffe">Convert Matconvnet models to Caffe with matconv2caffe.</h2>
+			<p>Let’s take a look to ICLR2019 reviews!</p>
 
-<p>There is already a script to import caffe models to matconvnet thanks to <a href="https://github.com/vlfeat/matconvnet/blob/master/utils/import-caffe.py">@vedaldi</a>. However, we needed the oposite so I made a script that converts the .caffemodel and extracts a deplotment .prototxt model definition and the average image. Currently it only works for standard CNNs and Dropout has not been tested to work.</p>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.css" />
 
-<p>It successfuly works for the caffenet .mat model (correctly predicts the ‘cat.jpg’ image).</p>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
 
-<iframe src="https://ghbtns.com/github-btn.html?user=prlz77&amp;repo=matconv2caffe&amp;type=star&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+<script>
+    $(document).ready(function() {
+        $.getJSON('https://prlz77.github.io/assets/js/iclr2019/iclr2019.json', function (table_data) {
+            $('#iclr2018').DataTable({
+                data: table_data,
+                columns: [
+                    {title: "Title", className: "dt-body-nowrap"},
+                    {title: "Min score", className: "dt-center"},
+                    {title: "Max Score", className: "dt-center"},
+                    {title: "Mean Score", className: "dt-center"},
+                    {title: "#MSGs", className: "dt-center"},
+                    {title: "Last update", className: "dt-center"},
+                    {title: "Decision", className: "dt-center"},
+                ],
+                "order": [[6, "asc"], [3, "desc"]]
+            });
+        });
+    });
+</script>
 
-<iframe src="https://ghbtns.com/github-btn.html?user=prlz77&amp;repo=matconv2caffe&amp;type=fork&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+<table id="iclr2019" class="compact stripe order-column hover responsive" width="90%" cellspacing="0" style="font-size:0.875rem;"></table>
+<p><br /></p>
 
-<iframe src="https://ghbtns.com/github-btn.html?user=prlz77&amp;repo=matconv2caffe&amp;type=follow&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
 
 			
 			<div id="disqus_thread"></div>
@@ -88,8 +106,8 @@
      */
     
     var disqus_config = function () {
-        this.page.url = "https://prlz77.github.io/matconv2caffe0.1/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "/matconv2caffe"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "https://prlz77.github.io/iclr2019-stats/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "/iclr2019-stats-1"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     
     (function() {  // DON'T EDIT BELOW THIS LINE
@@ -114,11 +132,6 @@
 		<ul class="posts">
 		    
 		    <li>
-			  <span>06 Oct 2018 &raquo;</span>
-			  <a href="https://prlz77.github.io/iclr2019-stats/">An early overview of ICLR2019</a>
-		    </li>
-		    
-		    <li>
 			  <span>31 Jan 2018 &raquo;</span>
 			  <a href="https://prlz77.github.io/iclr2018-stats-3/">An early overview of ICLR2018 (part 3)</a>
 		    </li>
@@ -128,6 +141,11 @@
 			  <a href="https://prlz77.github.io/iclr2018-stats-2/">An early overview of ICLR2018 (part 2)</a>
 		    </li>
 		    
+		    <li>
+			  <span>04 Dec 2017 &raquo;</span>
+			  <a href="https://prlz77.github.io/iclr2018-stats/">An early overview of ICLR2018</a>
+		    </li>
+		    
 		</ul>
 	</div>
 	
@@ -135,13 +153,13 @@
 	<div class="post-footer">
 		<div class="column-1">
 			
-				<a href="https://prlz77.github.io/install-caffe"><< Older</a>
+				<a href="https://prlz77.github.io/iclr2018-stats-3/"><< Older</a>
 			
 		</div>
 		<div class="column-2"><a href="https://prlz77.github.io/ ">Home</a></div>
 		<div class="column-3">
 			
-				<a href="https://prlz77.github.io/macsleeps">Newer >></a>
+				<span>Newer >></span>
 			
 		</div>
 	</div>

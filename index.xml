@@ -5,9 +5,21 @@
     <description>An information compressor in a pale blue dot.</description>
     <link>https://prlz77.github.io/</link>
     <atom:link href="https://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 01 Feb 2018 14:26:40 +0100</pubDate>
-    <lastBuildDate>Thu, 01 Feb 2018 14:26:40 +0100</lastBuildDate>
+    <pubDate>Tue, 06 Nov 2018 16:20:08 +0100</pubDate>
+    <lastBuildDate>Tue, 06 Nov 2018 16:20:08 +0100</lastBuildDate>
     <generator>Jekyll v3.4.1</generator>
+    
+      <item>
+        <title>An early overview of ICLR2019</title>
+        <description>&lt;p&gt;Let’s take a look to ICLR2019 reviews!&lt;/p&gt; &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.css&quot; /&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.js&quot;&gt;&lt;/script&gt; &lt;script&gt; $(document).ready(function() { $.getJSON('https://prlz77.github.io/assets/js/iclr2019/iclr2019.json', function (table_data) { $('#iclr2018').DataTable({ data: table_data, columns: [ {title: &quot;Title&quot;, className: &quot;dt-body-nowrap&quot;}, {title: &quot;Min score&quot;, className: &quot;dt-center&quot;}, {title: &quot;Max Score&quot;, className: &quot;dt-center&quot;}, {title: &quot;Mean Score&quot;, className: &quot;dt-center&quot;}, {title: &quot;#MSGs&quot;, className: &quot;dt-center&quot;},...</description>
+        <pubDate>Sat, 06 Oct 2018 02:00:00 +0200</pubDate>
+        <link>https://prlz77.github.io/iclr2019-stats/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/iclr2019-stats/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>An early overview of ICLR2018 (part 3)</title>
@@ -111,21 +123,6 @@
         <pubDate>Wed, 20 Apr 2016 13:09:00 +0200</pubDate>
         <link>https://prlz77.github.io/torchasync</link>
         <guid isPermaLink="true">https://prlz77.github.io/torchasync</guid>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>Mac Book Pro randomly goes to sleep fix</title>
-        <description>&lt;p&gt;Magnets can make your Mac to sleep. This was driving me mad since I always put it on a sleeve that closes with a magnet.&lt;/p&gt;
-
-&lt;p&gt;Here is the solution page: &lt;a href=&quot;https://support.apple.com/en-us/HT203315&quot;&gt;Apple support&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 15 Apr 2016 20:06:00 +0200</pubDate>
-        <link>https://prlz77.github.io/macsleeps</link>
-        <guid isPermaLink="true">https://prlz77.github.io/macsleeps</guid>
         
         
         <category>blog</category>

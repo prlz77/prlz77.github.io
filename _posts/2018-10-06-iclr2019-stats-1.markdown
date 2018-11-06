@@ -1,0 +1,40 @@
+---
+layout: post
+title: An early overview of ICLR2019
+date: 2018-10-06 00:00:00
+description: An early overview of ICLR2019 (OpenReview).
+comments: true
+categories:
+- blog
+permalink: iclr2019-stats/
+---
+
+Let's take a look to ICLR2019 reviews!
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $.getJSON('{{ "/assets/js/iclr2019/iclr2019.json" | absolute_url }}', function (table_data) {
+            $('#iclr2018').DataTable({
+                data: table_data,
+                columns: [
+                    {title: "Title", className: "dt-body-nowrap"},
+                    {title: "Min score", className: "dt-center"},
+                    {title: "Max Score", className: "dt-center"},
+                    {title: "Mean Score", className: "dt-center"},
+                    {title: "#MSGs", className: "dt-center"},
+                    {title: "Last update", className: "dt-center"},
+                    {title: "Decision", className: "dt-center"},
+                ],
+                "order": [[6, "asc"], [3, "desc"]]
+            });
+        });
+    });
+</script>
+
+<table id="iclr2019" class="compact stripe order-column hover responsive" width="90%" cellspacing="0" style="font-size:0.875rem;"></table>
+<br>
+
+

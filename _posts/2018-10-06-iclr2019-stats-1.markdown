@@ -52,15 +52,15 @@ So the top 10 best scored reviews are:
 
 | **#** | **Title** | **Authors** | **Rating** | **Std** |
 | 1 | [Benchmarking Neural Network Robustness to Common Corruptions and Perturbations](https://openreview.net/forum?id=HJz6tiCqYm) | Anon | 9.0 | 0.0 |
-| 2 | [KnockoffGAN: Generating Knockoffs for Feature Selection using Generative Adversarial Networks](https://openreview.net/forum?id=ByeZ5jC5YQ) | Anon | 8.5 | 1.5 |
-| 3 | [Large Scale GAN Training for High Fidelity Natural Image Synthesis](https://openreview.net/forum?id=B1xsqj09Fm) | Anon | 8.5 | 1.2 |
-| 4 | [Ordered Neurons: Integrating Tree Structures into Recurrent Neural Networks](https://openreview.net/forum?id=B1l6qiR5F7) | Anon | 8.1 | 0.8 |
-| 5 | [Slimmable Neural Networks](https://openreview.net/forum?id=H1gMCsAqY7) | Anon | 8.1 | 0.8 |
-| 6 | [Enabling Factorized Piano Music Modeling and Generation with the MAESTRO Dataset](https://openreview.net/forum?id=r1lYRjC9F7) | Anon | 8.0 | 0.0 |
-| 7 | [No Training Required: Exploring Random Encoders for Sentence Classification](https://openreview.net/forum?id=BkgPajAcY7) | Anon | 8.0 | 0.0 |
-| 8 | [ProMP: Proximal Meta-Policy Search](https://openreview.net/forum?id=SkxXCi0qFX) | Anon | 8.0 | 1.0 |
-| 9 | [Differentiable Learning-to-Normalize via Switchable Normalization](https://openreview.net/forum?id=ryggIs0cYQ) | Anon | 8.0 | 0.0 |
-| 10 | [GENERATING HIGH FIDELITY IMAGES WITH SUBSCALE PIXEL NETWORKS AND MULTIDIMENSIONAL UPSCALING](https://openreview.net/forum?id=HylzTiC5Km) | Anon | 7.9 | 0.9 |
+| 2 | [Sparse Dictionary Learning by Dynamical Neural Networks](https://openreview.net/forum?id=B1gstsCqt7) | Anon | 8.5 | 0.5 |
+| 3 | [KnockoffGAN: Generating Knockoffs for Feature Selection using Generative Adversarial Networks](https://openreview.net/forum?id=ByeZ5jC5YQ) | Anon | 8.5 | 1.5 |
+| 4 | [Large Scale GAN Training for High Fidelity Natural Image Synthesis](https://openreview.net/forum?id=B1xsqj09Fm) | Anon | 8.5 | 1.2 |
+| 5 | [GENERATING HIGH FIDELITY IMAGES WITH SUBSCALE PIXEL NETWORKS AND MULTIDIMENSIONAL UPSCALING](https://openreview.net/forum?id=HylzTiC5Km) | Anon | 8.4 | 1.4 |
+| 6 | [Variational Discriminator Bottleneck: Improving Imitation Learning, Inverse RL, and GANs by Constraining Information Flow](https://openreview.net/forum?id=HyxPx3R9tm) | Anon | 8.2 | 1.6 |
+| 7 | [ALISTA: Analytic Weights Are As Good As Learned Weights in LISTA](https://openreview.net/forum?id=B1lnzn0ctQ) | Anon | 8.2 | 1.6 |
+| 8 | [Ordered Neurons: Integrating Tree Structures into Recurrent Neural Networks](https://openreview.net/forum?id=B1l6qiR5F7) | Anon | 8.1 | 0.8 |
+| 9 | [Slimmable Neural Networks](https://openreview.net/forum?id=H1gMCsAqY7) | Anon | 8.1 | 0.8 |
+| 10 | [Posterior Attention Models for Sequence to Sequence Learning](https://openreview.net/forum?id=BkltNhC9FX) | Anon | 8.0 | 0.8 |
 
 The first impression is that scores are lower this year, let's check the 
 score histogram:

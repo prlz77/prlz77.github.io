@@ -20,7 +20,7 @@ studies:
 work:
   - name: Research Internship
     where: Element AI, Montreal.
-    when: "Feb 2018 - May 2018"
+    when: "Feb 2018 - Feb 2019"
     description: Unsupervised Deep Learning and Uncertainty.
   - name: Research Assistant
     where: Visual Tagging Services, Computer Vision Center, Universitat Autònoma
@@ -53,6 +53,18 @@ projects:
     when: Jun. 2014
     description: Designed and deployed a deep learning system for big data applications.
 seminars:
+  - name: "Computer Vision and AI seminar"
+    where: "Parc de Recerca, UAB"
+    when: 2018
+  - name: "AI4ALL Computer Vision and AI lab"
+    where: "Engineering school, UAB"
+    when: 2018
+  - name: "How do machines learn?"
+    where: "CosmoCaixa (Nit de la recerca), Barcelona"
+    when: Sept. 28th 2018
+  - name: "Machine Learning lab (Computer Engineering)"
+    where: "Engineering school, UAB"
+    when: 2018-2019
   - name: "Machine Learning seminars (Computer Engineering)"
     where: "Engineering school, UAB"
     when: 2016-2017

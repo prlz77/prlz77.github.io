@@ -70,7 +70,7 @@ score histogram:
 </figure>
 
 Indeed, scores are lower and the average score has lowered **from 5.4 to 5.1 this year** 
-(5.7 in 2017). Given that [last year's](https://prlz77.github.io/iclr2018-stats-3/) 36% acceptance rate, this year's **cut score** should be **around 5.1**.
+(5.7 in 2017). Given that [last year's](https://prlz77.github.io/iclr2018-stats-3/) 36% acceptance rate, this year's **cut score** should be **around 5.5**.
 
 
 What about the most controversial papers?

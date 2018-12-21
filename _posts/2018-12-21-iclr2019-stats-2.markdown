@@ -67,7 +67,8 @@ Let's now see which have been the most prolific institutions.
 The top institutions haven't changed much since the [last
 edition](https://prlz77.github.io/iclr2018-stats-3/), in fact, most of the top
 prolific institutions have grown even more in the number of submissions this
-year. In the following graph, I
+year. Most urls such as fb.com and facebook.com have been merged, but please do
+not hesitate to leave a message if you find an error. In the following graph, I
 have plotted the difference between 2019 and 2018.
 
 <figure style="height:400px; overflow:scroll;">
@@ -102,6 +103,8 @@ Here are the keywords most related to the different final decisions:
 <br>
 So let's work on **Theory** about **robust graph neural networks** for **domain
 adaptation**!!!!
+
+The next two sections are best seen on a computer.
 
 ## Collaboration between institutions
 

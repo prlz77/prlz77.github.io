@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>An early overview of ICLR2018 (part 2)</title>
+        <title>An early overview of ICLR2019 (part 2)</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">        
         <meta name="description" content="Solutions I found, projects i found interesting, etc.">
         <link rel="canonical" 
-        href="https://prlz77.github.io/iclr2018-stats-2/">
+        href="https://prlz77.github.io/iclr2019-stats-2/">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         
         <!-- Harmony styles -->
@@ -64,27 +64,36 @@
 <div class="page-content wc-container">
 	
 	<div class="post">
-		<h1>An early overview of ICLR2018 (part 2)</h1>
-		<span class="post-date">05 Dec 2017</span>
+		<h1>An early overview of ICLR2019 (part 2)</h1>
+		<span class="post-date">21 Dec 2018</span>
 		<div class="post">
-			<p>The rebuttal period has ended and final decisions will be notified by January
-29th. In this post, differently from <a href="https://prlz77.github.io/iclr2018-stats">part one</a>,
-I will provide updated information about the decision process. For those who
-just want the data right now, here is <strong>the browsable table</strong> with all the 
-submissions under review:</p>
+			<p>Decisions for ICLR2019 are out! So it is time to take a look at this year’s
+trends! Which researches have been most successful? Which institutions? Which
+papers?</p>
+
+<p><a href="https://github.com/prlz77/iclr2019-stats">(Link to part 1)</a></p>
 
 <!---->
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+<p>This year, 24 <strong>oral</strong> papers have been accepted, <strong>476</strong> posters, and 918
+<strong>rejects</strong>. This is, 500 of 1418 papers have been accepted, and thus reaching an
+acceptance rate of 35.26%.</p>
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<figure>
+    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2019/score_decision_histogram.svg" />
+</figure>
+<p><br /></p>
 
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<p>This is the updated table with all papers and decisions:</p>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.css" />
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
 
 <script>
     $(document).ready(function() {
-        $.getJSON('https://prlz77.github.io/assets/js/iclr2018/iclr2018.json', function (table_data) {
-            $('#iclr2018').DataTable({
+        $.getJSON('https://prlz77.github.io/assets/js/iclr2019/iclr2019.json', function (table_data) {
+            $('#iclr2019').DataTable({
                 data: table_data,
                 columns: [
                     {title: "Title", className: "dt-body-nowrap"},
@@ -101,72 +110,141 @@ submissions under review:</p>
     });
 </script>
 
-<table id="iclr2018" class="compact stripe order-column hover responsive" width="100%" cellspacing="0"></table>
-<p><br />
-I left it ordered by date, and I will update the data on a daily basis so that 
-you can check the latest updates. The final decisions will also
-be provided. For those who want to play with the data on their own, 
-<a href="/assets/js/iclr2018/iclr2018.json">here it is</a> ;). 
-Please note that paper titles are already placed as stripped
-links to prevent your device from doing too much work with javascript (it might
-be already busy mining cryptocurrencies..).</p>
+<table id="iclr2019" class="compact stripe order-column hover responsive" width="90%" cellspacing="0" style="font-size:0.875rem;"></table>
+<p><br /></p>
 
-<p>I would also like to show you some statistics about the review-rebuttal process.
-First, let’s take a quick look back to the reviews:</p>
+<p>Let’s now see which have been the most prolific institutions.</p>
 
-<figure>
-    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2018/review_dates.svg" />
+<h2 id="top-prolific-institutions">Top prolific institutions</h2>
+<figure style="height:400px; overflow:scroll;">
+    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2019/affiliations.svg" />
+</figure>
+
+<p>The top institutions haven’t changed much since the <a href="https://prlz77.github.io/iclr2018-stats-3/">last
+edition</a>, in fact, most of the top
+prolific institutions have grown even more in the number of submissions this
+year. In the following graph, I
+have plotted the difference between 2019 and 2018.</p>
+
+<figure style="height:400px; overflow:scroll;">
+    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2019/affiliations_delta.svg" />
 </figure>
 <p><br />
-The red line shows the daily number of reviewed submissions, and the blue line shows the
-accumulated amount. Please note that the deadline was the 27th of November, with
-~70% of the papers reviewed. As it can be seen, the 100% is never reached. I found
-the cause is <a href="https://openreview.net/forum?id=ry5wc1bCW">Causal Generative Neural Networks</a>,
-which was dismissed due to the Dual Submission Policy.</p>
+Notice that the number of rejections usually grows with the number of accepted
+works.</p>
 
-<p>The results presented in the review dates figure are somehow expected, namely a
-peak of reviews on the deadline. How about the behavior of the reviewers during
-the review period?</p>
+<h2 id="top-prolific-authors">Top prolific authors</h2>
+<p>Here is the list of the top (co)authors.</p>
+<figure style="height:400px; overflow:scroll;">
+    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2019/authors.svg" />
+</figure>
 
-<figure>
-    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2018/review_dates_scores.svg" />
+<p><br />
+Differently from last year, Sergey Levine has surpassed Yoshua Bengio, although
+Yoshua appears in an oral paper. Anyway congratulations to all authors in the
+graph. I would also like to mention that many first-authors do not appear
+in this figure, since they spent most of their effort in a single submission.</p>
+
+<p>So, what is the secret sauce? What should I put into my paper to get accepted?
+Here are the keywords most related to the different final decisions:</p>
+
+<h2 id="keywords">Keywords</h2>
+<figure style="height:400px; overflow:scroll;">
+    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2019/keywords_decisions.svg" />
 </figure>
 <p><br />
-As it can be seen, the plot shows the score histograms during the review period. 
-Each column represents a day, and scores are divided in three groups (colors):
-red (scores 0-3), blue (scores 4-6), and green (scores 7-10). It is interesting
-to see how extreme scores are more frequent during the first days (especially for
-the red group), decreasing until disappearing. It might mean that reviewers are
-fast to spot clear accept/reject papers, while they take more time to decide on
-borderline papers.</p>
+So let’s work on <strong>Theory</strong> about <strong>robust graph neural networks</strong> for <strong>domain
+adaptation</strong>!!!!</p>
 
-<p>The rebuttal period finished the 5th of January. Here is the data:</p>
+<h2 id="collaboration-between-institutions">Collaboration between institutions</h2>
 
-<figure>
-    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2018/rebuttal_dates.svg" />
-</figure>
-<p><br />
-In this case, a 86% of the reviews are answered by the time of the deadline,  see that nice peak :)</p>
+<p>In the last edition, we noticed that the most prolific institutions where those
+with more collaborations. How about this year?</p>
 
-<p>The number of withdrawals has also increased during January, see the following figure:</p>
+<div id="interactions" style="text-align:center;">
+</div>
 
-<figure>
-    <embed type="image/svg+xml" src="https://prlz77.github.io/assets/images/iclr2018/withdraw_dates.svg" />
-</figure>
-<p><br />
-The median score of the withdrawn papers is <strong>4</strong>. Browsing in OpenReview, there
-can be seen some <em>clear rejections</em> due to fatal flaws discovered by the reviewers
-and admitted by the authors. This highlights the importance of reviewing for
-good research.</p>
+<p>So the trend continues, google, microsoft, mit, cmu, berkeley, are the ones that
+collaborate more with others.
+<br /></p>
 
-<p>I hope you enjoyed the ICLR overview posts, and good luck with the final decisions!!</p>
+<h2 id="collaboration-between-top-authors">Collaboration between top authors</h2>
+<p>Let’s see how authors collaborate. This time I will use a graph to see if people
+forms clusters.</p>
 
-<h1 id="acknowledgements">Acknowledgements</h1>
-<p>Thanks to <a href="https://twitter.com/pepgonfaus">@pepgonfaus</a> for reviewing and encouraging 
-me to write this series of posts.</p>
+<div id="mynetwork" style="width:100%; height:600px;"></div>
 
-<p>Go to part <a href="https://prlz77.github.io/iclr2018-stats/">1</a>, <a href="https://prlz77.github.io/iclr2018-stats-3/">3</a></p>
+<p>Effectively, some clusters can be seen. For instance, the MILA group is
+represented by the connections between Yoshua, Aaron, and Ioannis. There is also
+the Berkeley group with Chelsea Finn, Sergey Levine, Pieter Abeel, et al. Deepmind
+is represented by the region with Oriol Vinyals, Tim Lillicrap, Nando de
+Freitas… Interestingly, there is an isolated group formed by MSR researchers,
+with Tienyan Liu, Tao Qin, and Wei Chen.</p>
 
+<style>
+.node {
+  font: 300 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  fill: #bbb;
+}
+
+.node:hover {
+  fill: #000;
+}
+
+.link {
+  stroke: steelblue;
+  stroke-opacity: 0.1;
+  fill: none;
+  pointer-events: none;
+}
+
+.node:hover,
+.node--source,
+.node--target {
+  font-weight: 700;
+}
+
+.node--source {
+  fill: #2ca02c;
+}
+
+.node--target {
+  fill: #d62728;
+}
+
+.link--source,
+.link--target {
+  stroke-opacity: 1;
+  stroke-width: 2px;
+}
+
+.link--source {
+  stroke: #d62728;
+}
+
+.link--target {
+  stroke: #d62728;
+}
+
+</style>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script>
+var links_path = 'https://prlz77.github.io/assets/js/iclr2019/affiliation_links.json'
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+
+<script src="/assets/js/iclr2019/iclr2019.js"></script>
+
+<p>I hope you have found this blog interesting!</p>
+
+<h2 id="about-the-data">About the data</h2>
+<p>The data was obtained from <a href="https://openreview.net/">openreview</a>, using their
+<a href="https://github.com/iesl/openreview-py">library</a>.</p>
 
 			
 			<div id="disqus_thread"></div>
@@ -177,8 +255,8 @@ me to write this series of posts.</p>
      */
     
     var disqus_config = function () {
-        this.page.url = "https://prlz77.github.io/iclr2018-stats-2/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "/iclr2018-stats-2"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "https://prlz77.github.io/iclr2019-stats-2/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "/iclr2019-stats-2"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     
     (function() {  // DON'T EDIT BELOW THIS LINE
@@ -203,11 +281,6 @@ me to write this series of posts.</p>
 		<ul class="posts">
 		    
 		    <li>
-			  <span>21 Dec 2018 &raquo;</span>
-			  <a href="https://prlz77.github.io/iclr2019-stats-2/">An early overview of ICLR2019 (part 2)</a>
-		    </li>
-		    
-		    <li>
 			  <span>07 Oct 2018 &raquo;</span>
 			  <a href="https://prlz77.github.io/iclr2019-stats/">An early overview of ICLR2019</a>
 		    </li>
@@ -217,6 +290,11 @@ me to write this series of posts.</p>
 			  <a href="https://prlz77.github.io/iclr2018-stats-3/">An early overview of ICLR2018 (part 3)</a>
 		    </li>
 		    
+		    <li>
+			  <span>05 Dec 2017 &raquo;</span>
+			  <a href="https://prlz77.github.io/iclr2018-stats-2/">An early overview of ICLR2018 (part 2)</a>
+		    </li>
+		    
 		</ul>
 	</div>
 	
@@ -224,13 +302,13 @@ me to write this series of posts.</p>
 	<div class="post-footer">
 		<div class="column-1">
 			
-				<a href="https://prlz77.github.io/iclr2018-stats/"><< Older</a>
+				<a href="https://prlz77.github.io/iclr2019-stats/"><< Older</a>
 			
 		</div>
 		<div class="column-2"><a href="https://prlz77.github.io/ ">Home</a></div>
 		<div class="column-3">
 			
-				<a href="https://prlz77.github.io/iclr2018-stats-3/">Newer >></a>
+				<span>Newer >></span>
 			
 		</div>
 	</div>

@@ -5,9 +5,21 @@
     <description>An information compressor in a pale blue dot.</description>
     <link>https://prlz77.github.io/</link>
     <atom:link href="https://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 08 Nov 2018 09:24:04 +0100</pubDate>
-    <lastBuildDate>Thu, 08 Nov 2018 09:24:04 +0100</lastBuildDate>
+    <pubDate>Sat, 22 Dec 2018 00:24:02 +0100</pubDate>
+    <lastBuildDate>Sat, 22 Dec 2018 00:24:02 +0100</lastBuildDate>
     <generator>Jekyll v3.4.1</generator>
+    
+      <item>
+        <title>An early overview of ICLR2019 (part 2)</title>
+        <description>&lt;p&gt;Decisions for ICLR2019 are out! So it is time to take a look at this year’s trends! Which researches have been most successful? Which institutions? Which papers?&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://github.com/prlz77/iclr2019-stats&quot;&gt;(Link to part 1)&lt;/a&gt;&lt;/p&gt; &lt;!----&gt; &lt;p&gt;This year, 24 &lt;strong&gt;oral&lt;/strong&gt; papers have been accepted, &lt;strong&gt;476&lt;/strong&gt; posters, and 918 &lt;strong&gt;rejects&lt;/strong&gt;. This is, 500 of...</description>
+        <pubDate>Fri, 21 Dec 2018 01:00:00 +0100</pubDate>
+        <link>https://prlz77.github.io/iclr2019-stats-2/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/iclr2019-stats-2/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>An early overview of ICLR2019</title>
@@ -111,18 +123,6 @@
         <pubDate>Sun, 19 Jun 2016 18:18:00 +0200</pubDate>
         <link>https://prlz77.github.io/fix-viewport-out</link>
         <guid isPermaLink="true">https://prlz77.github.io/fix-viewport-out</guid>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>torch.async-hdf5-reader</title>
-        <description>&lt;p&gt;I decided to share this script I was using in order to accelerate the training of neural nets making them to gather data in parallel. So I wrote some tests to check it performs well its basic functions and commented the code a little bit.&lt;/p&gt; &lt;h2 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h2&gt; &lt;p&gt;It depends on...</description>
-        <pubDate>Wed, 20 Apr 2016 13:09:00 +0200</pubDate>
-        <link>https://prlz77.github.io/torchasync</link>
-        <guid isPermaLink="true">https://prlz77.github.io/torchasync</guid>
         
         
         <category>blog</category>

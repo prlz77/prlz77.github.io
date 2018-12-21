@@ -1,0 +1,190 @@
+---
+layout: post
+title: An early overview of ICLR2019 (part 2)
+date: 2018-12-21 00:00:00
+description: An early overview of ICLR2019 (OpenReview).
+comments: true
+categories:
+- blog
+permalink: iclr2019-stats-2/
+---
+
+Decisions for ICLR2019 are out! So it is time to take a look at this year's
+trends! Which researches have been most successful? Which institutions? Which
+papers?
+
+[(Link to part 1)](https://github.com/prlz77/iclr2019-stats)
+
+<!---->
+
+This year, 24 **oral** papers have been accepted, **476** posters, and 918
+**rejects**. This is, 500 of 1418 papers have been accepted, and thus reaching an
+acceptance rate of 35.26%.
+
+<figure>
+    <embed type="image/svg+xml" src='{{
+    "/assets/images/iclr2019/score_decision_histogram.svg" | absolute_url }}' />
+</figure>
+<br>
+
+This is the updated table with all papers and decisions:
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.css"/>
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $.getJSON('{{ "/assets/js/iclr2019/iclr2019.json" | absolute_url }}', function (table_data) {
+            $('#iclr2019').DataTable({
+                data: table_data,
+                columns: [
+                    {title: "Title", className: "dt-body-nowrap"},
+                    {title: "Min score", className: "dt-center"},
+                    {title: "Max Score", className: "dt-center"},
+                    {title: "Mean Score", className: "dt-center"},
+                    {title: "#MSGs", className: "dt-center"},
+                    {title: "Last update", className: "dt-center"},
+                    {title: "Decision", className: "dt-center"},
+                ],
+                "order": [[6, "asc"], [3, "desc"]]
+            });
+        });
+    });
+</script>
+
+<table id="iclr2019" class="compact stripe order-column hover responsive" width="90%" cellspacing="0" style="font-size:0.875rem;"></table>
+<br>
+
+Let's now see which have been the most prolific institutions.
+
+## Top prolific institutions
+<figure style="height:400px; overflow:scroll;">
+    <embed type="image/svg+xml" src='{{
+    "/assets/images/iclr2019/affiliations.svg" | absolute_url }}' />
+</figure>
+
+The top institutions haven't changed much since the [last
+edition](https://prlz77.github.io/iclr2018-stats-3/), in fact, most of the top
+prolific institutions have grown even more in the number of submissions this
+year. In the following graph, I
+have plotted the difference between 2019 and 2018.
+
+<figure style="height:400px; overflow:scroll;">
+    <embed type="image/svg+xml" src='{{
+    "/assets/images/iclr2019/affiliations_delta.svg" | absolute_url }}' />
+</figure>
+<br>
+Notice that the number of rejections usually grows with the number of accepted
+works.
+
+## Top prolific authors
+Here is the list of the top (co)authors.
+<figure style="height:400px; overflow:scroll;">
+    <embed type="image/svg+xml" src='{{
+    "/assets/images/iclr2019/authors.svg" | absolute_url }}' />
+</figure>
+
+<br>
+Differently from last year, Sergey Levine has surpassed Yoshua Bengio, although
+Yoshua appears in an oral paper. Anyway congratulations to all authors in the
+graph. I would also like to mention that many first-authors do not appear
+in this figure, since they spent most of their effort in a single submission.
+
+So, what is the secret sauce? What should I put into my paper to get accepted?
+Here are the keywords most related to the different final decisions:
+
+## Keywords
+<figure style="height:400px; overflow:scroll;">
+    <embed type="image/svg+xml" src='{{
+    "/assets/images/iclr2019/keywords_decisions.svg" | absolute_url }}' />
+</figure>
+<br>
+So let's work on **Theory** about **robust graph neural networks** for **domain
+adaptation**!!!!
+
+## Collaboration between institutions
+
+In the last edition, we noticed that the most prolific institutions where those
+with more collaborations. How about this year?
+
+<div id="interactions" style="text-align:center;">
+</div>
+
+So the trend continues, google, microsoft, mit, cmu, berkeley, are the ones that
+collaborate more with others.
+<br>
+
+## Collaboration between top authors
+Let's see how authors collaborate. This time I will use a graph to see if people
+forms clusters.
+
+<div id="mynetwork" style="width:100%; height:600px;" ></div>
+
+Effectively, some clusters can be seen. For instance, the MILA group is
+represented by the connections between Yoshua, Aaron, and Ioannis. There is also
+the Berkeley group with Chelsea Finn, Sergey Levine, Pieter Abeel, et al. Deepmind
+is represented by the region with Oriol Vinyals, Tim Lillicrap, Nando de
+Freitas... Interestingly, there is an isolated group formed by MSR researchers,
+with Tienyan Liu, Tao Qin, and Wei Chen.
+
+<style>
+.node {
+  font: 300 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  fill: #bbb;
+}
+
+.node:hover {
+  fill: #000;
+}
+
+.link {
+  stroke: steelblue;
+  stroke-opacity: 0.1;
+  fill: none;
+  pointer-events: none;
+}
+
+.node:hover,
+.node--source,
+.node--target {
+  font-weight: 700;
+}
+
+.node--source {
+  fill: #2ca02c;
+}
+
+.node--target {
+  fill: #d62728;
+}
+
+.link--source,
+.link--target {
+  stroke-opacity: 1;
+  stroke-width: 2px;
+}
+
+.link--source {
+  stroke: #d62728;
+}
+
+.link--target {
+  stroke: #d62728;
+}
+
+</style>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+var links_path = '{{ "/assets/js/iclr2019/affiliation_links.json" | absolute_url }}'
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+<script src="/assets/js/iclr2019/iclr2019.js"></script>
+
+I hope you have found this blog interesting!
+
+## About the data
+The data was obtained from [openreview](https://openreview.net/), using their
+[library](https://github.com/iesl/openreview-py).

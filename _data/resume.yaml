@@ -1,14 +1,15 @@
 # Copyright 2016 by Pau Rodríguez
 # This is personal data, all rights reserved.
 name: Pau Rodríguez López
-description: PhD researcher on AI and Computer Vision.
+description: PhD researcher on AI and Computer Vision. Research Scientist at
+Element AI Montreal.
 mail: pau.rodri1 at gmail.com
 github: prlz77
 studies:
   - name: PhD researcher
     where: Computer Vision Center, Universitat Autònoma de Barcelona
     description: On bio-inspired machine learning techniques applied to computer vision and social media.
-    when: 2015 - present
+    when: 2015 - 2019
   - name: Advanced master of Artificial Intelligence
     where: KU Leuven
     description: "Magna Cum Laude. Topics: Artificial Neural Networks, Machine learning, SVM, Data Mining, Cybernetics and more."
@@ -18,6 +19,10 @@ studies:
     description: "With honors. Topics: Artificial Intelligence, Networks, HPC and more."
     when: 2009 - 2014
 work:
+  - name: Research Scientist
+    where: Element AI, Montreal
+    when: "June 2019 - present"
+    description: Metalearning, Computer Vision
   - name: Research Internship
     where: Element AI, Montreal.
     when: "Feb 2018 - Feb 2019"
@@ -108,5 +113,5 @@ courses:
     description: "Machine Learning course on coursera. Max. score."
     when: "2014"
 reviewing:
-  - conferences: NIPS2016 
-    journals: TPAMI2017, PR(SI-AMDO)2017
+  - conferences: MAIS2019, NeurIPS2016 
+    journals: IEE TM2019, IMAVIS2019, TPAMI2017, PR(SI-AMDO)2017

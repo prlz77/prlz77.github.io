@@ -40,6 +40,9 @@
 		<a href="https://prlz77.github.io/about">About</a><span>/</span>
 	</li>
 	<li>
+		<a href="https://scholar.google.com/citations?user=IwBx73wAAAAJ">Scholar</a><span>/</span>
+	</li>
+	<li>
 		<a href="https://prlz77.github.io/resume">Résumé</a><span>/</span>
 	</li>
 	<li>
@@ -93,7 +96,7 @@ challenging (and fun) because:</p>
  <em>aux</em> vectors, which perfectly fit for hidden states.</li>
       <li> Another related smaller issue 
  has been the fact that RNNs usually use <strong>multiple weight matrices</strong>. The only
- implication of this has been the modification of the <code class="highlighter-rouge">fan_in</code> and <code class="highlighter-rouge">fan_out</code>
+ implication of this has been the modification of the <code class="language-plaintext highlighter-rouge">fan_in</code> and <code class="language-plaintext highlighter-rouge">fan_out</code>
  functions in <a href="https://github.com/tiny-dnn/tiny-dnn/pull/768/files#diff-a1617ac70e8f704e6996e605b9f4b889R303">layer</a> to accept indices for each weight matrix
  (important for initialization).</li>
     </ul>
@@ -136,7 +139,7 @@ and <a href="https://github.com/tiny-dnn/tiny-dnn/pull/818">modify the initial o
  gradient vectors (because non-recurrent layers have batch_size = sequence
  length * batch_size.</li>
   <li><a href="https://github.com/tiny-dnn/tiny-dnn/pull/776">#776</a>: Transition to
- <code class="highlighter-rouge">size_t</code>.</li>
+ <code class="language-plaintext highlighter-rouge">size_t</code>.</li>
 </ul>
 
 <h2 id="results">Results</h2>
@@ -144,26 +147,25 @@ and <a href="https://github.com/tiny-dnn/tiny-dnn/pull/818">modify the initial o
 <p>A new simple RNN API for tiny-dnn. Creating a recurrent neural network is as
  easy as:</p>
 
-<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">network</span><span class="o">&lt;</span><span class="n">sequential</span><span class="o">&gt;</span> <span class="n">nn</span><span class="p">;</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">network</span><span class="o">&lt;</span><span class="n">sequential</span><span class="o">&gt;</span> <span class="n">nn</span><span class="p">;</span>
 <span class="n">nn</span> <span class="o">&lt;&lt;</span> <span class="n">recurrent_layer</span><span class="p">(</span><span class="n">gru</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">),</span> <span class="n">seq_len</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>Where <code class="highlighter-rouge">recurrent_layer</code> acts as a wrapper for the recurrent cells, i.e. <code class="highlighter-rouge">gru</code>,
-<code class="highlighter-rouge">rnn</code>, or <code class="highlighter-rouge">lstm</code>, defined in <code class="highlighter-rouge">cells.h</code>. This wrapper receives data with
-dimensionality <code class="highlighter-rouge">(seq_len * batch_size, data_dim1, data_dim2, etc.)</code>, being the
+<p>Where <code class="language-plaintext highlighter-rouge">recurrent_layer</code> acts as a wrapper for the recurrent cells, i.e. <code class="language-plaintext highlighter-rouge">gru</code>,
+<code class="language-plaintext highlighter-rouge">rnn</code>, or <code class="language-plaintext highlighter-rouge">lstm</code>, defined in <code class="language-plaintext highlighter-rouge">cells.h</code>. This wrapper receives data with
+dimensionality <code class="language-plaintext highlighter-rouge">(seq_len * batch_size, data_dim1, data_dim2, etc.)</code>, being the
 sequential dimension the leftmost in row-major order, and iterates
-<code class="highlighter-rouge">seq_len</code> times. These are the most important methods:</p>
+<code class="language-plaintext highlighter-rouge">seq_len</code> times. These are the most important methods:</p>
 <ul>
-  <li><code class="highlighter-rouge">seq_len(int)</code>: sets the sequence length.</li>
-  <li><code class="highlighter-rouge">bptt_max(int)</code>: sets the max number of steps to remember with Truncated
+  <li><code class="language-plaintext highlighter-rouge">seq_len(int)</code>: sets the sequence length.</li>
+  <li><code class="language-plaintext highlighter-rouge">bptt_max(int)</code>: sets the max number of steps to remember with Truncated
 Back-Propagation Trough Time (more info
 <a href="https://r2rt.com/styles-of-truncated-backpropagation.html">here</a>).</li>
-  <li><code class="highlighter-rouge">clear_state()</code>: clears current state vectors.</li>
+  <li><code class="language-plaintext highlighter-rouge">clear_state()</code>: clears current state vectors.</li>
 </ul>
 
 <p>In test time we do not need to save all the state transitions, thus, we can set
-the sequence length to one and the <code class="highlighter-rouge">bptt_max</code> to the desired number of steps to
+the sequence length to one and the <code class="language-plaintext highlighter-rouge">bptt_max</code> to the desired number of steps to
 remember.</p>
 
 <h2 id="examples">Examples</h2>
@@ -172,7 +174,7 @@ remember.</p>
 <ol>
   <li><a href="https://github.com/prlz77/tiny-dnn/tree/rnn/examples/recurrent_addition">Two-number addition</a>:
 A model that learns to add two given numbers.
-    <div class="highlighter-rouge"><pre class="highlight"><code>Input  numbers between -1 and 1.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input  numbers between -1 and 1.
 Input number 1: 0.1
 Input number 2: 0.4
 Sum: 0.514308
@@ -185,8 +187,7 @@ Sum: 1.91505 # performance is worse at the extremes
 Input number 1: 0
 Input number 2: 0
 Sum: 0.00183523
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li><a href="https://github.com/prlz77/tiny-dnn/tree/rnn/examples/char_rnn">Char-rnn gitter
 bot</a>. Trains a
@@ -208,15 +209,14 @@ to predict the next character from the previous ones. It includes:
 
 <p>It also autocompletes usernames and references other users:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&gt; @tiny_char_rnn karandesai-9
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; @tiny_char_rnn karandesai-9
 tiny_char_rnn: 6 @bhack @beru @bhack @/all how about the network definitely in
 decided on data
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>We can use temperature to make predictions more certain. These are some
 outputs of the rnn at different temperatures (without any user input):</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>&gt; t=1.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t=1.0
 &lt;&lt;-&lt;--z&gt;&lt;-&gt;
 decai-9 change bhack @karandesai-96 @beru @beru @bhack @/acb96 @beru @beru @beru
 @beru @beru @b
@@ -236,8 +236,7 @@ pretty i can to try to make a lot of tests are the first tensor that we can
 travis to complete check this one the tests and it is the and fine of the code
 it is the tests and it is to see a lot of tests to make a pr integrated in the
 code for extensor integration
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="acknowledgements">Acknowledgements</h2>
 
@@ -326,8 +325,8 @@ totally recommend you to apply.</p>
 <ul class="menu">
     <li><a href="https://prlz77.github.io/about">About</a></li>
     <li><a href="https://prlz77.github.io/blog">Blog</a></li>
-    <li><a href="https://prlz77.github.io/faq">Help / FAQ</a></li>    
-</ul>		                    
+</ul>		
+                    
                 </div>
                 <div class="column two">
                     <h6>Follow me</h6>

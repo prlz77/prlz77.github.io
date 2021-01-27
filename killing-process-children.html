@@ -40,6 +40,9 @@
 		<a href="https://prlz77.github.io/about">About</a><span>/</span>
 	</li>
 	<li>
+		<a href="https://scholar.google.com/citations?user=IwBx73wAAAAJ">Scholar</a><span>/</span>
+	</li>
+	<li>
 		<a href="https://prlz77.github.io/resume">Résumé</a><span>/</span>
 	</li>
 	<li>
@@ -69,9 +72,8 @@
 		<div class="post">
 			<p>Using a script to run multiple tasks in background can be very handy but it can also be anoying when we press crtl+c to interrupt and the background processes keep working. There are many approaches to solve this but I have found the cleanest one is to simply trap the signal:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">trap</span> <span class="s1">'kill `jobs -p`; exit'</span> INT
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">trap</span> <span class="s1">'kill `jobs -p`; exit'</span> INT
+</code></pre></div></div>
 
 <p>This will first kill all the background processes and then exit the main script (quitting loops as well).</p>
 
@@ -151,8 +153,8 @@
 <ul class="menu">
     <li><a href="https://prlz77.github.io/about">About</a></li>
     <li><a href="https://prlz77.github.io/blog">Blog</a></li>
-    <li><a href="https://prlz77.github.io/faq">Help / FAQ</a></li>    
-</ul>		                    
+</ul>		
+                    
                 </div>
                 <div class="column two">
                     <h6>Follow me</h6>

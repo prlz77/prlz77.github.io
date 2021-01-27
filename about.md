@@ -7,7 +7,7 @@ permalink: /about/
 <img src="{{ site.url }}/assets/me.jpg" alt="Me" style="width:25%;">
 
 I am Pau Rodríguez, a Research Scientist at Element AI / ServiceNow. I am also an 
-adjunct professor at Universitat Autonoma de Barcelona, and an ELLIS member. 
+adjunct professor at Universitat Autonoma de Barcelona and an ELLIS member. 
 My research focuses on how to make artificial intelligence resemble more to natural intelligence.
 I am particularly interested in algorithms that learn from few samples or that require
 fewer annotations. Some of the topics I am interested in are representation learning, 

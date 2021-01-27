@@ -2,7 +2,8 @@
 # This is personal data, all rights reserved.
 name: Pau Rodríguez López
 description: "PhD researcher on AI and Computer Vision.<BR>
-Research Scientist at Element AI Montreal."
+Research Scientist at Element AI Montreal.<BR>
+<a href=\"https://ellis.eu/\">ELLIS</a> member."
 mail: pau.rodri1 at gmail.com
 github: prlz77
 studies:
@@ -80,6 +81,14 @@ seminars:
     where: "Vall d'Hebron Research Institute (VHIR), Barcelona"
     when: Oct. 14th 2015
 awards:
+  - name: "Best Reviewer Award"
+    who: "NeurIPS"
+    description: "Top 10% Best Reviewer Award"
+    when: "2020"
+  - name: "Best Reviewer Award"
+    who: "ICML"
+    description: "Top 33% Best Reviewer Award"
+    when: "2020"
   - name: "Google Summer of Code"
     who: "tiny-dnn - OpenCV"
     description: "Include recurrent neural networks in the tiny-dnn framework."
@@ -113,5 +122,5 @@ courses:
     description: "Machine Learning course on coursera. Max. score."
     when: "2014"
 reviewing:
-  - conferences: MAIS2019, NeurIPS2016 
-    journals: IEE TM2019, IMAVIS2019, TPAMI2017, PR(SI-AMDO)2017
+  - conferences: CVPR, ICCV, ICML, NeurIPS, WACV, ICLR
+    journals: IEE TM, IMAVIS, TPAMI, PR

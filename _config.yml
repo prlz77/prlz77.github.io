@@ -9,7 +9,7 @@ url: https://prlz77.github.io
 # Localhost
 #url: https://127.0.0.1:4000
 
-gems: ['jekyll/scholar']
+plugins: ['jekyll/scholar']
 
 # Harmony theme configuration. Please change accordingly.
 harmony:
@@ -86,8 +86,8 @@ scholar:
   style: apa
   locale: en
 
-  sort_by: none
-  order: ascending
+  sort_by: year
+  order: descending
 
   group_by: none
   group_order: ascending

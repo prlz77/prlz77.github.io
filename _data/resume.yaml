@@ -59,6 +59,12 @@ projects:
     when: Jun. 2014
     description: Designed and deployed a deep learning system for big data applications.
 seminars:
+  - name: "Deep Learning in the Physical Sciences and Engineering"
+    where: "McGill University, Department of Chemical Engineering, Montreal, Canada."
+    when: "Nov. 2020"
+  - name: "Towards robust models for fine-grained image recognition"
+    where: "ETS University, Montreal, Canada"
+    when: "Aug. 2020"
   - name: "Computer Vision and AI seminar"
     where: "Parc de Recerca, UAB"
     when: 2018

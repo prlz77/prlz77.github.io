@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description>An information compressor in a pale blue dot.</description>
+    <link>https://prlz77.github.io/</link>
+    <atom:link href="https://prlz77.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 23 Sep 2021 15:55:46 +0200</pubDate>
+    <lastBuildDate>Thu, 23 Sep 2021 15:55:46 +0200</lastBuildDate>
+    <generator>Jekyll v3.9.0</generator>
+    
+      <item>
+        <title>An early overview of ICLR2019 (part 2)</title>
+        <description>&lt;p&gt;Decisions for ICLR2019 are out! So it is time to take a look at this year’s trends! Which researches have been most successful? Which institutions? Which papers?&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://github.com/prlz77/iclr2019-stats&quot;&gt;(Link to part 1)&lt;/a&gt;&lt;/p&gt; &lt;!----&gt; &lt;p&gt;This year, 24 &lt;strong&gt;oral&lt;/strong&gt; papers have been accepted, &lt;strong&gt;476&lt;/strong&gt; posters, and 918 &lt;strong&gt;rejects&lt;/strong&gt;. This is, 500 of...</description>
+        <pubDate>Fri, 21 Dec 2018 01:00:00 +0100</pubDate>
+        <link>https://prlz77.github.io/iclr2019-stats-2/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/iclr2019-stats-2/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>An early overview of ICLR2019</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://prlz77.github.io/assets/images/iclr2019/wordcloud.jpg&quot; style=&quot;width: 90%; margin:auto;&quot; /&gt;&lt;/p&gt; &lt;p&gt;This year’s venue will be held on May 6-9 in New Orleans. No big changes with respect to the last edition, except for the Workshop track, which will be held in small concurrent events, with a separately chaired process.&lt;/p&gt; &lt;p&gt;Anyway, let’s take a look...</description>
+        <pubDate>Sun, 07 Oct 2018 02:00:00 +0200</pubDate>
+        <link>https://prlz77.github.io/iclr2019-stats/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/iclr2019-stats/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>An early overview of ICLR2018 (part 3)</title>
+        <description>&lt;p&gt;Finally, decisions for the ICLR2018 conference are out! Congratulations to those who got their papers accepted, and I hope reviews serve as a source of inspiration for those who got their papers rejected.&lt;/p&gt; &lt;p&gt;Now that we have the acceptance decisions and author names have been disclosed, let’s play with data...</description>
+        <pubDate>Wed, 31 Jan 2018 01:00:00 +0100</pubDate>
+        <link>https://prlz77.github.io/iclr2018-stats-3/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/iclr2018-stats-3/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>An early overview of ICLR2018 (part 2)</title>
+        <description>&lt;p&gt;The rebuttal period has ended and final decisions will be notified by January 29th. In this post, differently from &lt;a href=&quot;https://prlz77.github.io/iclr2018-stats&quot;&gt;part one&lt;/a&gt;, I will provide updated information about the decision process. For those who just want the data right now, here is &lt;strong&gt;the browsable table&lt;/strong&gt; with all the submissions under...</description>
+        <pubDate>Tue, 05 Dec 2017 01:00:00 +0100</pubDate>
+        <link>https://prlz77.github.io/iclr2018-stats-2/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/iclr2018-stats-2/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>An early overview of ICLR2018</title>
+        <description>&lt;p&gt;Most reviews for &lt;a href=&quot;https://openreview.net/group?id=ICLR.cc/2018/Conference&quot;&gt;ICLR2018&lt;/a&gt; are out and given the success of the &lt;a href=&quot;https://prlz77.github.io/iclr2017-stats&quot;&gt;past edition&lt;/a&gt; it is time for the next one :) &lt;img src=&quot;https://prlz77.github.io/assets/images/iclr2018/wordcloud.svg&quot; style=&quot;margin: auto;&quot; /&gt;&lt;/p&gt; &lt;!----&gt; &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; I have published an overview of the decision process in &lt;a href=&quot;https://prlz77.github.io/iclr2018-stats-2&quot;&gt;part 2&lt;/a&gt;, and final decisions in &lt;a href=&quot;https://prlz77.github.io/iclr2018-stats-3/&quot;&gt;part...</description>
+        <pubDate>Mon, 04 Dec 2017 01:00:00 +0100</pubDate>
+        <link>https://prlz77.github.io/iclr2018-stats/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/iclr2018-stats/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>GSOC2017: RNNs on tiny-dnn</title>
+        <description>&lt;p&gt;&lt;img style=&quot;width:300px; margin:auto; padding:auto;&quot; src=&quot;https://prlz77.github.io/assets/images/tiny-dnn-gsoc.png&quot; /&gt; Recurrent Neural Networks (RNNs) are now central to many applications, from speech recognition to Computer Vision. Some examples are Image captioning, &lt;a href=&quot;https://github.com/JamesChuanggg/awesome-vqa&quot;&gt;Visual Question Answering&lt;/a&gt; (VQA), &lt;a href=&quot;http://selfdrivingcars.mit.edu/resources/&quot;&gt;autonomous driving&lt;/a&gt;, and even &lt;a href=&quot;https://arxiv.org/abs/1611.01599&quot;&gt;Lip reading&lt;/a&gt;.&lt;/p&gt; &lt;div style=&quot;text-align:center;&quot;&gt; &lt;iframe align=&quot;center&quot; width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/b6nJbE1KK7Y&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt; &lt;/div&gt;...</description>
+        <pubDate>Sun, 27 Aug 2017 20:00:00 +0200</pubDate>
+        <link>https://prlz77.github.io/gsoc2017/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/gsoc2017/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Regularizing CNNs with Locally Constrained Decorrelations (ICLR2017)</title>
+        <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; We propose to locally decorrelate the feature weights of CNNs. When the proposed method, which we call &lt;a href=&quot;https://openreview.net/pdf?id=ByOvsIqeg&quot;&gt;OrthoReg&lt;/a&gt;, is used to regularize the 40 layers of Wide Residual Networks, we obtain state of the art results on CIFAR, and SVHN. Here is an example of the effects of...</description>
+        <pubDate>Sun, 12 Mar 2017 22:00:00 +0100</pubDate>
+        <link>https://prlz77.github.io/iclr2017-paper/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/iclr2017-paper/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>An early overview of ICLR2017</title>
+        <description>&lt;p&gt;Machine learning is accelerating, we have an idea and it is on arxiv the next day, NIPS2016 was bigger than ever and it is difficult to keep track of all the new interesting work.&lt;/p&gt; &lt;p&gt;Given that this is the first time I submit to ICLR, and taking advantage from all...</description>
+        <pubDate>Tue, 20 Dec 2016 01:41:00 +0100</pubDate>
+        <link>https://prlz77.github.io/iclr2017-stats/</link>
+        <guid isPermaLink="true">https://prlz77.github.io/iclr2017-stats/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>How to kill bash script children when crtl+c</title>
+        <description>&lt;p&gt;Using a script to run multiple tasks in background can be very handy but it can also be anoying when we press crtl+c to interrupt and the background processes keep working. There are many approaches to solve this but I have found the cleanest one is to simply trap the...</description>
+        <pubDate>Tue, 27 Sep 2016 18:20:00 +0200</pubDate>
+        <link>https://prlz77.github.io/killing-process-children</link>
+        <guid isPermaLink="true">https://prlz77.github.io/killing-process-children</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Can not set ViewportOut in nvidia-settings</title>
+        <description>&lt;p&gt;After plugging the second monitor, I could not find the correct resolution in nvidia-settings and it was impossible to do it manually. After having to solve this problem for the second time, I post it here so to remember.&lt;/p&gt; &lt;ol&gt; &lt;li&gt;Look at nvidia-settings for the name of the monitors (In...</description>
+        <pubDate>Sun, 19 Jun 2016 18:18:00 +0200</pubDate>
+        <link>https://prlz77.github.io/fix-viewport-out</link>
+        <guid isPermaLink="true">https://prlz77.github.io/fix-viewport-out</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+  </channel>
+</rss>

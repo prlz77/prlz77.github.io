@@ -1,8 +1,8 @@
 # Copyright 2016 by Pau Rodríguez
 # This is personal data, all rights reserved.
 name: Pau Rodríguez López
-description: "PhD researcher on AI and Computer Vision.<BR>
-Research Scientist at Element AI Montreal.<BR>
+description: "Research Scientist at Apple Machine Learning Research.<BR>
+Adjunct professor at Universitat Autònoma de Barcelona.<BR>
 <a href=\"https://ellis.eu/\">ELLIS</a> member."
 mail: pau.rodri1 at gmail.com
 github: prlz77
@@ -21,8 +21,16 @@ studies:
     when: 2009 - 2014
 work:
   - name: Research Scientist
+    where: Apple Machine Learning Research
+    when: "Nov 2022 - present"
+    description: Machine Learning Research
+  - name: Research Lead
+    where: ServiceNow Research, Montreal
+    when: "Jan 2021 - Nov 2022"
+    description: Metalearning, Computer Vision
+  - name: Research Scientist
     where: Element AI, Montreal
-    when: "June 2019 - present"
+    when: "June 2019 - Jan 2021"
     description: Metalearning, Computer Vision
   - name: Research Internship
     where: Element AI, Montreal.

@@ -1,3 +1,4 @@
+git checkout src
 bundle exec jekyll build
 mv _site ../
 git add .

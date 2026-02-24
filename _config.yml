@@ -9,9 +9,6 @@ url: https://prlz77.github.io
 # Localhost
 #url: https://127.0.0.1:4000
 
-plugins:
-  - jekyll-scholar
-
 # Harmony theme configuration. Please change accordingly.
 harmony:
   name: prlz77
@@ -66,30 +63,3 @@ sass:
 comments :
   provider : false
 
-# Jekyll-Scholar settings
-scholar:
-  style: apa
-  locale: en
-
-  sort_by: year
-  order: descending
-
-  group_by: none
-  group_order: ascending
-
-  source: _bibliography
-  bibliography: publications.bib
-  bibliography_template: "{{reference}}"
-
-  replace_strings: true
-  join_strings:    true
-
-  bibtex_filters:
-  - superscript
-  - latex
-
-  details_dir:    bibliography
-  details_layout: bibtex.html
-  details_link:   Details
-
-  query: "@*"

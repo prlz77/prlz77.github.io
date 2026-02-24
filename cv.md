@@ -1,6 +1,7 @@
 ---
-layout: resume
-title: Résumé
+layout: cv
+title: CV
+permalink: /cv/
 ---
 # Pau Rodríguez López
 

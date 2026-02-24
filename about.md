@@ -12,7 +12,30 @@ Research Scientist at Apple Machine Learning Research, adjunct professor at Univ
 
 ### Contact me
 
-Find me on [Github][github] or just say hi at pau.rodri1 at gmail.com.
+<div style="display: flex; align-items: center; gap: 15px;">
+  <a href="#" id="about-email" title="Email me" style="color: inherit; text-decoration: none;">
+    <i class="fa fa-envelope fa-lg"></i>
+  </a>
+  <a href="https://github.com/prlz77" target="_blank" title="GitHub" style="color: inherit; text-decoration: none;">
+    <i class="fa fa-github fa-lg"></i>
+  </a>
+</div>
+
+<script>
+  (function() {
+    var user = 'pau.rodri1';
+    var domain = 'gmail.com';
+    var emailLink = document.getElementById('about-email');
+    emailLink.addEventListener('click', function(e) {
+      if (this.getAttribute('href') === '#') {
+        e.preventDefault();
+        var email = user + '@' + domain;
+        window.location.href = 'mailto:' + email;
+        this.setAttribute('href', 'mailto:' + email);
+      }
+    });
+  })();
+</script>
 
 
 [github]: https://github.com/prlz77

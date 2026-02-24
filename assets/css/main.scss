@@ -1,20 +1,18 @@
 ---
 ---
-
-// Import reset
-@import "partials/reset";
+@use "partials/reset" as *;
 
 // Import colors, fonts etc...
-@import "partials/variables";
+@use "partials/variables" as *;
 
 // Import custom mixins
-@import "partials/mixins";
+@use "partials/mixins" as *;
 
 // Import layout mixin
-@import "partials/layout";
+@use "partials/layout" as *;
 
 // Import syntax
-@import "partials/syntax";
+@use "partials/syntax" as *;
 
 
 /* --------------------------------
@@ -28,7 +26,9 @@ html * {
   -moz-osx-font-smoothing: grayscale;
 }
 
-*, *:after, *:before {
+*,
+*:after,
+*:before {
   @include box-sizing(border-box);
 }
 
@@ -40,18 +40,20 @@ body {
 }
 
 .wc-container {
-    width: 90%;
-    max-width: $M; // see breakpoints in _sass/partials/_layout.scss
-    margin: 0 auto;
+  width: 90%;
+  max-width: $M; // see breakpoints in _sass/partials/_layout.scss
+  margin: 0 auto;
 
-    &::after { /* Clearfix */
-        content: '';
-        display: table;
-        clear: both;
-    }
+  &::after {
+    /* Clearfix */
+    content: '';
+    display: table;
+    clear: both;
+  }
 }
 
-.wc-img-replace { /* replace text with a background-image */
+.wc-img-replace {
+  /* replace text with a background-image */
   display: inline-block;
   overflow: hidden;
   text-indent: 100%;
@@ -66,13 +68,19 @@ body {
 
 --------------------------------- */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.6;
 }
 
 h1 {
   // mobile first
   @include font-size(20px);
+
   @include MQ(M) {
     @include font-size(36px);
   }
@@ -81,6 +89,7 @@ h1 {
 h2 {
   // mobile first
   @include font-size(18px);
+
   @include MQ(M) {
     @include font-size(31px);
   }
@@ -88,6 +97,7 @@ h2 {
 
 h3 {
   @include font-size(15px);
+
   @include MQ(M) {
     @include font-size(30px);
   }
@@ -95,6 +105,7 @@ h3 {
 
 h4 {
   @include font-size(16px);
+
   @include MQ(M) {
     @include font-size(24px);
   }
@@ -102,6 +113,7 @@ h4 {
 
 h5 {
   @include font-size(14px);
+
   @include MQ(M) {
     @include font-size(22px);
   }
@@ -109,6 +121,7 @@ h5 {
 
 h6 {
   @include font-size(14px);
+
   @include MQ(M) {
     @include font-size(19px);
   }
@@ -117,6 +130,7 @@ h6 {
 p {
   line-height: 1.6;
   @include font-size(14px);
+
   @include MQ(M) {
     @include font-size(18px);
   }
@@ -126,7 +140,9 @@ a {
   background: transparent;
 }
 
-a:active, a:hover, a:focus {
+a:active,
+a:hover,
+a:focus {
   outline: 0;
 }
 
@@ -147,10 +163,17 @@ hr {
 }
 
 /* bold text */
-strong, b { font-weight: 600; }
+strong,
+b {
+  font-weight: 600;
+}
 
 /* italic */
-em, i { font-style: italic; }
+em,
+i {
+  font-style: italic;
+}
+
 /* --------------------------------
 
  Theme base
@@ -164,7 +187,10 @@ a.default-anchor {
   text-decoration: none;
   border-bottom: 1px solid transparent;
   color: $base-08;
-  &:hover, &:active, &:focus {
+
+  &:hover,
+  &:active,
+  &:focus {
     @include transition(border-bottom-color .2s);
     border-bottom-color: $base-08;
   }
@@ -172,7 +198,15 @@ a.default-anchor {
 }
 
 div.default-page-content {
-  h1, h2, h3, h4, h5, h6 { color: $base-00; }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $base-00;
+  }
 }
 
 body {
@@ -183,9 +217,13 @@ a {
   @extend .default-anchor;
 }
 
-header.main-header, footer.main-footer {
-  p,address {
+header.main-header,
+footer.main-footer {
+
+  p,
+  address {
     @include font-size(12px);
+
     @include MQ(M) {
       @include font-size(14px);
     }
@@ -196,10 +234,18 @@ header.main-header {
   color: $base-00;
   border-top: 5px $base-00 solid;
 
-  h1, h2 { text-align: center; color: inherit;}
+  h1,
+  h2 {
+    text-align: center;
+    color: inherit;
+  }
+
   a {
     color: inherit;
-    &:hover, &:active, &:focus {
+
+    &:hover,
+    &:active,
+    &:focus {
       border-bottom-color: transparent;
     }
   }
@@ -209,9 +255,10 @@ header.main-header {
     text-align: center;
     padding: 15px;
   }
+
   ul li {
     display: inline-block;
-    position:relative;
+    position: relative;
     color: $base-08;
   }
 
@@ -222,15 +269,19 @@ header.main-header {
   }
 
   ul li a {
-    display:inline-block;
+    display: inline-block;
     color: inherit;
     border-bottom: 2px transparent solid;
-    padding-bottom:5px;
+    padding-bottom: 5px;
     @include transition(all, .2s);
+
     @include MQ(M) {
       @include font-size(18px);
     }
-    &:hover, &:focus, &:active {
+
+    &:hover,
+    &:focus,
+    &:active {
       border-bottom-color: inherit;
     }
   }
@@ -239,12 +290,15 @@ header.main-header {
 footer.main-footer {
   background-color: $base-00;
   color: $base-07;
+
   .column {
-    float:left;
+    float: left;
     @include column(1);
 
     @include MQ(M) {
-      &.one, &.two {
+
+      &.one,
+      &.two {
         @include column(.5);
         display: block;
       }
@@ -252,27 +306,30 @@ footer.main-footer {
   }
 
   h6 {
-      position: relative;
-      padding: 10px 0;
-      text-transform: uppercase;
+    position: relative;
+    padding: 10px 0;
+    text-transform: uppercase;
   }
+
   h6::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      width: 2em;
-      height: 2px;
-      background: $base-07;
-      overflow: hidden;
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 2em;
+    height: 2px;
+    background: $base-07;
+    overflow: hidden;
   }
 
   ul.menu {
     padding: 0 0 1em 0;
+
     li {
       @include font-size(12px);
       line-height: 1.6;
       display: inline;
       padding-right: 10px;
+
       @include MQ(M) {
         @include font-size(16px);
       }
@@ -283,64 +340,72 @@ footer.main-footer {
     text-align: center;
   }
 
- ul.social-media {
-  text-align:left;
-  padding: 0 0 10px 0;
-  li {
-    display:inline-block;
-  }
-  li > a {
-    width: 32px;
-    height: 32px;
-    background: $base-07;
-    background-image: url("./images/socials-icons.svg");
-    background-size: 224px 64px;
-    border-radius: 0.25em;
-    @include transition(background-color 0.2s);
-    border-bottom-color: transparent;
+  ul.social-media {
+    text-align: left;
+    padding: 0 0 10px 0;
 
-    &:hover {
-      background-color: $base-08;
+    li {
+      display: inline-block;
     }
-  }
 
-  li a.twitter {
-    background-position: 0 0;
+    li>a {
+      width: 32px;
+      height: 32px;
+      background: $base-07;
+      background-image: url("./images/socials-icons.svg");
+      background-size: 224px 64px;
+      border-radius: 0.25em;
+      @include transition(background-color 0.2s);
+      border-bottom-color: transparent;
+
+      &:hover {
+        background-color: $base-08;
+      }
+    }
+
+    li a.twitter {
+      background-position: 0 0;
+
       &:hover {
         background-position: 0 -32px;
+      }
     }
-  }
 
-  li a.github {
-    background-position: -32px 0;
-    &:hover {
-      background-position: -32px -32px;
+    li a.github {
+      background-position: -32px 0;
+
+      &:hover {
+        background-position: -32px -32px;
+      }
     }
-  }
 
-  li a.facebook {
-    background-position: -64px 0;
-    &:hover {
-      background-position: -64px -32px;
+    li a.facebook {
+      background-position: -64px 0;
+
+      &:hover {
+        background-position: -64px -32px;
+      }
     }
-  }
 
-  li a.dribble {
-    background-position: -96px 0;
-    &:hover {
-      background-position: -96px -32px;
+    li a.dribble {
+      background-position: -96px 0;
+
+      &:hover {
+        background-position: -96px -32px;
+      }
     }
-  }
 
-  li a.google {
-    background-position: -128px 0;
-    &:hover {
-      background-position: -128px -32px;
+    li a.google {
+      background-position: -128px 0;
+
+      &:hover {
+        background-position: -128px -32px;
+      }
     }
-  }
 
-  li a.pinterest {
+    li a.pinterest {
       background-position: -196px 0;
+
       &:hover {
         background-position: -196px -32px;
       }
@@ -350,17 +415,17 @@ footer.main-footer {
 
 .no-svg footer.main-footer ul.social-media li a {
   width: 32px;
-    height: 32px;
-    background-color: $base-07;
-    background-image: url("./images/socials-icons.png");
-    background-size: 224px 64px;
-    border-radius: 0.25em;
-    @include transition(background-color 0.2s);
-    border-bottom-color: transparent;
+  height: 32px;
+  background-color: $base-07;
+  background-image: url("./images/socials-icons.png");
+  background-size: 224px 64px;
+  border-radius: 0.25em;
+  @include transition(background-color 0.2s);
+  border-bottom-color: transparent;
 
-    &:hover {
-      background-color: $base-08;
-    }
+  &:hover {
+    background-color: $base-08;
+  }
 }
 
 div.page-content {
@@ -375,6 +440,7 @@ div.page-content {
 div.page-content {
   ul {
     padding: 0 0 1em 0;
+
     li {
       @include font-size(14px);
       color: $color-2;
@@ -385,7 +451,8 @@ div.page-content {
       padding: 0 0 5px 15px;
       margin-left: 0;
     }
-    @include MQ(M){
+
+    @include MQ(M) {
       li {
         @include font-size(16px);
         line-height: 1.5;
@@ -393,21 +460,25 @@ div.page-content {
       }
     }
   }
+
   ol {
     @include font-size(12px);
     // padding-top: 1em;
     padding-bottom: 1em;
     list-style: decimal;
     margin-left: 0;
+
     li {
       color: $color-2;
       line-height: 1.6;
       padding: 0 0 5px 0px;
       margin-left: 2em;
-      position:relative;
+      position: relative;
     }
-    @include MQ(M){
+
+    @include MQ(M) {
       @include font-size(16px);
+
       li {
         line-height: 1.5;
         background-position: 0 7px;
@@ -417,7 +488,9 @@ div.page-content {
 
   dl {
     padding-bottom: 1em;
-    dt, dd {
+
+    dt,
+    dd {
       @include font-size(12px);
       line-height: 1.5;
     }
@@ -437,7 +510,9 @@ div.page-content {
     }
 
     @include MQ(M) {
-      dt, dd {
+
+      dt,
+      dd {
         @include font-size(16px);
         line-height: 1.6;
       }
@@ -452,7 +527,12 @@ div.page-content {
     margin-bottom: 1em;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     padding-bottom: 5px;
   }
 }
@@ -482,13 +562,22 @@ body.theme-base-01 {
 
   header.main-header {
     color: $base-01;
+
     ul li {
       color: $base-08;
     }
   }
 
   div.page-content {
-    h1, h2, h3, h4, h5, h6 { color: $base-01; }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $base-01;
+    }
   }
 
 
@@ -502,15 +591,26 @@ body.theme-base-01 {
 
 header.main-header {
   padding: 1em 0;
-  @include MQ(M) { padding: 2em 0; }
+
+  @include MQ(M) {
+    padding: 2em 0;
+  }
 }
+
 footer.main-footer {
   padding: 1em 0;
-  @include MQ(M) { padding: 2em 0; }
+
+  @include MQ(M) {
+    padding: 2em 0;
+  }
 }
+
 .page-content {
   padding: 1em 0;
-  @include MQ(M) { padding: 2em 0; }
+
+  @include MQ(M) {
+    padding: 2em 0;
+  }
 }
 
 
@@ -525,9 +625,11 @@ blockquote {
   color: #7a7a7a;
   border-left: .25em solid #e5e5e5;
 }
+
 blockquote p:last-child {
   margin-bottom: 0;
 }
+
 @include MQ(M) {
   blockquote {
     padding-right: 5em;
@@ -540,15 +642,18 @@ blockquote p:last-child {
 Code snippets
 
 --------------------------------- */
-code, pre {
-  font-family: Menlo, Monaco, "Courier New", monospace;
+code,
+pre {
+  font-family: $code-font;
 }
+
 code {
   padding: .25em .5em;
   font-size: 85%;
   color: $base-08;
   background-color: rgba($base-08, .1);
 }
+
 pre {
   display: block;
   margin-top: 0;
@@ -562,6 +667,7 @@ pre {
   word-wrap: break-word;
   background-color: $color-white;
   border: 1px solid $base-05;
+
   code {
     padding: 0;
     font-size: 100%;
@@ -577,6 +683,7 @@ pre {
 .highlight {
   margin-bottom: 1em;
   margin-top: 1em;
+
   pre {
     margin-bottom: 0;
   }
@@ -584,28 +691,27 @@ pre {
 
 /* Gist via GitHub Pages */
 .gist .gist-file {
-  font-family: Menlo, Monaco, "Courier New", monospace !important;
+  font-family: $code-font !important;
   margin: 1em 0;
 }
+
 .gist .markdown-body {
   padding: 15px;
 }
+
 .gist pre {
   padding: 0;
   background-color: transparent;
 }
+
 .gist .gist-file .gist-data {
   font-size: 12px;
+
   @include MQ(M) {
     font-size: 14px !important;
   }
+
   line-height: 1.4;
-}
-.gist code {
-  padding: 0;
-  color: inherit;
-  background-color: transparent;
-  border-radius: 0;
 }
 
 /* --------------------------------
@@ -615,14 +721,14 @@ Post styles
 --------------------------------- */
 
 div.posts {
-  .div.post {
-
-  }
+  .div.post {}
 }
+
 div.post {
   padding-top: .5em;
   padding-bottom: 1em;
   border-bottom: 1px $base-05 solid;
+
   @include MQ(M) {
 
     padding-bottom: 2em;
@@ -632,6 +738,7 @@ div.post {
     border-bottom: none;
   }
 }
+
 span.post-date {
   line-height: 1.6;
   letter-spacing: 2px;
@@ -661,92 +768,26 @@ span.post-date {
     padding-bottom: 2em;
   }
 }
+
 .related-posts {
   padding-left: 0;
   list-style: none;
 }
+
 .related-posts h3 {
   margin-top: 0;
 }
+
 .related-posts li small {
   font-size: 75%;
   color: #999;
 }
+
 .related-posts li a:hover {
   color: #268bd2;
   text-decoration: none;
 }
+
 .related-posts li a:hover small {
   color: inherit;
-}
-
-/* --------------------------------
-
- Post footer
-
---------------------------------- */
-.post-footer {
-
-  border-top: 1px solid $base-05;
-  border-bottom: 1px solid $base-05;
-  height: 40px;
-  display: table;
-  width: 100%;
-  position: relative;
-
-  @include MQ(M) {
-    height: 80px;
-  }
-
-  .column-1, .column-2, .column-3, .column-full {
-    padding-top: 10px;
-    @include MQ(M) {
-      padding-top: 30px;
-    }
-    span { color: $base-04; }
-    a,span {
-      @include font-size(12px);
-      @include MQ(M) {
-        @include font-size(16px);
-      }
-    }
-  }
-
-  .column-1 {
-    text-align: left;
-    @include column(.3333);
-  }
-  .column-2 {
-    text-align: center;
-    @include column(.3333);
-  }
-  .column-3 {
-    text-align: right;
-    @include column(.3333);
-  }
-  .column-full {
-    text-align: center;
-    width: 100%;
-  }
-}
-
-/* -----------------------------------
-
-  Table
-
------------------------------------ */
-table {
-  margin: 1em 0;
-  width: 100%;
-  border: 1px solid $base-04;
-  border-collapse: collapse;
-}
-td,
-th {
-  padding: .25em .5em;
-  border: 1px solid $base-04;
-}
-tbody tr:nth-child(odd) td,
-tbody tr:nth-child(odd) th {
-  background-color: $base-05;
 }

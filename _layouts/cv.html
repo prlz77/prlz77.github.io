@@ -1,0 +1,204 @@
+---
+layout: default
+---
+<style>
+  .text-justify {
+    text-align: justify;
+  }
+
+  table,
+  th,
+  td,
+  tbody {
+    border: 0px solid black;
+    background-color: none;
+    vertical-align: middle;
+  }
+
+  tbody tr:nth-child(odd) td,
+  tbody tr:nth-child(odd) th {
+    background-color: white;
+    vertical-align: top;
+  }
+
+  .first-col {
+    text-align: right;
+    padding-right: 15px;
+    padding-bottom: 20px;
+  }
+
+  .second-col {
+    text-align: left;
+    padding-left: 15px;
+    padding-bottom: 20px;
+  }
+
+  b {
+    color: rgba(255, 110, 110, 1);
+  }
+</style>
+<div class="page-content wc-container">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div
+    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 300px;">
+      <h1 style="margin: 0;">{{ site.data.cv.name }}</h1>
+    </div>
+    <div style="display: flex; align-items: center; gap: 20px;" id="contact-info">
+      <a href="#" id="email-link" title="Email me" style="color: inherit; text-decoration: none;">
+        <i class="fa fa-envelope fa-2x"></i>
+      </a>
+      <a href="http://www.github.com/{{site.data.cv.github}}" target="_blank" title="GitHub"
+        style="color: inherit; text-decoration: none;">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var user = '{{ site.data.cv.mail | split: " at " | first }}';
+      var domain = '{{ site.data.cv.mail | split: " at " | last | replace: " dot ", "." }}';
+      var emailLink = document.getElementById('email-link');
+
+      emailLink.addEventListener('click', function (e) {
+        if (this.getAttribute('href') === '#') {
+          e.preventDefault();
+          var email = user + '@' + domain;
+          window.location.href = 'mailto:' + email;
+          // Optionally show the email as a tooltip or in the console
+          this.setAttribute('title', email);
+          this.setAttribute('href', 'mailto:' + email);
+        }
+      });
+    })();
+  </script>
+  {{ site.data.cv.description }}
+  <hr style="border-width:5px;">
+  <h3><i class="fa fa-briefcase"></i> Work Experience</h3>
+  <hr style="margin-top:0px;">
+  <table style="width: 100%;">
+    {% for work in site.data.cv.work %}
+    <tr>
+      <td class="first-col" style="width: 20%; border-right:2px solid black;">{{ work.when }}</td>
+      <td class="second-col">
+        <h4 style='display:inline;'>{{ work.name }}</h4><br>
+        <b>{{ work.where }}</b><br>
+        {{ work.description }}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <h3><i class="fa fa-graduation-cap"></i> Studies</h3>
+  <hr style="margin-top:0px;">
+  <table style="width: 100%;">
+    {% for study in site.data.cv.studies %}
+    <tr>
+      <td class="first-col" style="width: 20%; border-right:2px solid black;">{{ study.when }}</td>
+      <td class="second-col">
+        <h4 style='color: rgba(0,0,0,1); display:inline;'>{{ study.name }}</h4><br>
+        <b>{{ study.where }}</b><br>
+        {{ study.description }}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <h3><i class="fa fa-pencil"></i> Projects</h3>
+  <hr style="margin-top:0px;">
+  <table style="width: 100%;">
+    {% for project in site.data.cv.projects %}
+    <tr>
+      <td class="first-col" style="width: 20%; border-right:2px solid black;">{{ project.when }}</td>
+      <td class="second-col">
+        <h4 style='display:inline;'>{{ project.name }}</h4><br>
+        <b>{{ project.where }}</b><br>
+        <span style="display: block; font-weight: bold; margin-bottom: 5px;">Director: {{ project.director }} /
+          Supervisor: {{project.supervisor}}</span>
+        {{ project.description }}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <h3><i class="fa fa-trophy"></i> Awards and merits</h3>
+  <hr style="margin-top:0px;">
+  <table style="width: 100%;">
+    {% for award in site.data.cv.awards %}
+    <tr>
+      <td class="first-col" style="width: 20%; border-right:2px solid black;">{{ award.when }}</td>
+      <td class="second-col">
+        <h4 style='display:inline;'>{{ award.name }}</h4><br>
+        <b>{{ award.who }}</b><br>
+        {{award.description}}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <h3><i class="fa fa-comment"></i> Teaching and Seminars </h3>
+  <hr style="margin-top:0px;">
+  <table style="width: 100%;">
+    {% for seminar in site.data.cv.seminars %}
+    <tr>
+      <td class="first-col" style="width: 20%; border-right:2px solid black;">{{ seminar.when }}</td>
+      <td class="second-col">
+        <h4 style='display:inline;'>{{ seminar.name }}</h4><br>
+        <b>{{ seminar.where }}</b>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <h3><i class="fa fa-certificate"></i> Other courses</h3>
+  <hr style="margin-top:0px;">
+  <table style="width: 100%;">
+    {% for course in site.data.cv.courses %}
+    <tr>
+      <td class="first-col" style="width: 20%; border-right:2px solid black;">{{ course.when }}</td>
+      <td class="second-col">
+        <h4 style='display:inline;'>{{ course.name }}</h4><br>
+        <b>{{ course.where }}</b>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <h3><i class="fa fa-check-square"></i> Reviewing</h3>
+  <hr style="margin-top:0px;">
+  {% assign reviewing = site.data.cv.reviewing | first %}
+  <table style="width: 100%;">
+    <tr>
+      <td class="first-col" style="width: 20%; border-right:2px solid black;"><b>Journals</b></td>
+      <td class="second-col">{{ reviewing.journals }}</td>
+    </tr>
+    <tr>
+      <td class="first-col" style="width: 20%; border-right:2px solid black;"><b>Conferences</b></td>
+      <td class="second-col">{{ reviewing.conferences }}</td>
+    </tr>
+  </table>
+  <h3><i class="fa fa-users"></i> Mentoring</h3>
+  <hr style="margin-top:0px;">
+  <table style="width: 100%;">
+    {% for mentor in site.data.cv.mentoring %}
+    <tr>
+      <td class="first-col" style="width: 20%; border-right:2px solid black;">{{ mentor.when }}</td>
+      <td class="second-col">
+        <h4 style='display:inline;'>{{ mentor.name }}</h4><br>
+        <b>{{ mentor.who }}</b>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <h3><i class="fa fa-microphone"></i> In the Media</h3>
+  <hr style="margin-top:0px;">
+  <table style="width: 100%;">
+    {% for item in site.data.cv.media %}
+    <tr>
+      <td class="first-col" style="width: 20%; border-right:2px solid black;">{{ item.when }}</td>
+      <td class="second-col">
+        <h4 style='display:inline;'>{{ item.name }}</h4><br>
+        <b>{{ item.where }}</b>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <h3><i class="fa fa-book"></i> Publications</h3>
+  <hr style="margin-top:0px;">
+  You can visit my <a href="https://scholar.google.com/citations?user=IwBx73wAAAAJ">Google Scholar</a>
+</div>

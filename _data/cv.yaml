@@ -1,0 +1,164 @@
+# Copyright 2016 by Pau Rodríguez
+# This is personal data, all rights reserved.
+name: Pau Rodríguez López
+description: "Research Scientist at Apple Machine Learning Research.<BR>
+Adjunct professor at Universitat Autònoma de Barcelona.<BR>
+<a href=\"https://ellis.eu/\">ELLIS</a> member."
+mail: pau.rodri1 at gmail.com
+github: prlz77
+work:
+  - name: Research Scientist
+    where: Apple Machine Learning Research
+    when: "Nov 2022 - present"
+    description: Full-time researcher led by Samy Bengio.
+  - name: Adjunct Professor
+    where: Universitat Autònoma de Barcelona
+    when: "May 2020 - Present"
+    description: Supervising students as "colaborador docente".
+  - name: Research Lead
+    where: ServiceNow Research, Montreal
+    when: "April 2022 - Oct 2022"
+    description: Low-data learning in the fundamental research group.
+  - name: Research Scientist
+    where: ServiceNow Research, Montreal
+    when: "Jan 2021 - April 2022"
+    description: Low-data learning in the fundamental research group.
+  - name: Research Scientist
+    where: Element AI, Montreal
+    when: "June 2019 - Jan 2021"
+    description: Machine learning and computer vision.
+  - name: Research Internship
+    where: Element AI
+    when: "Feb 2018 - June 2019"
+    description: Designing new machine learning algorithms that generalize from scarce data.
+  - name: Research Assistant
+    where: Visual Tagging Services, Computer Vision Center
+    when: "March 2014 - Sep 2014"
+    description: Developing learning algorithms for image classification.
+  - name: Research Assistant
+    where: Universitat Autònoma de Barcelona
+    when: Oct 2013 - May 2014
+    description: Engineering on large-scale image classification and retrieval techniques using state-of-the-art Convolutional Neural Networks.
+  - name: Member of the Chalearn Organization Committee
+    where: Computer Vision Center, Universitat Autònoma de Barcelona
+    when: Jun. 2013 - Oct. 2013
+    description: Research assistant on designing, capturing, labelling and organizing the human gesture databases used in the ChaLearn Multimodal Gesture Recognition Challenge 2013, and in the ChaLearn Looking at People 2014.
+  - name: Research Assistant
+    where: Department of Information and Communications Engineering, Universitat Autònoma de Barcelona.
+    when: Sep. 2012
+    description: Extension of a standard proposal for the Consultative Commitee for Space Data Systems for the Group on Interactive Coding of Images. Implementation based on the NASA's CSSDS-122 Public Release Version.
+studies:
+  - name: PhD researcher
+    where: Computer Vision Center, Universitat Autònoma de Barcelona
+    description: "Towards Robust Neural Models for Fine Grained Image Recognition. Best PhD award from UAB, Cum Laude, International distinction. <a href=\"https://www.tdx.cat/handle/10803/667196\">Thesis link</a>"
+    when: 2015 - 2019
+  - name: Advanced master of Artificial Intelligence
+    where: KU Leuven
+    description: "Magna Cum Laude. Thesis: Reducing Redundancy in Deep Convolutional Neural Networks, supervised by Peter Roelants and Bart de Moor. <a href=\"https://github.com/prlz77/prlz77.github.io/blob/master/assets/thesis.pdf\">Thesis link</a>"
+    when: 2014 - 2015
+  - name: BSc + MSc in Computer Engineering
+    where: Universitat Autònoma de Barcelona
+    description: "Top-1 student Extraordinary Degree Award. Thesis on deep learning applied to Big Data analytics."
+    when: 2009 - 2014
+projects:
+  - name: "MASTER THESIS - Reducing Redundancy in Convolutional Neural Networks"
+    where: STADIUS, KU Leuven
+    director: Prof. Bart de Moor
+    supervisor: Peter Roelants
+    description: Successfully reduced the redundancy of CNNs by pruning redundant filters.
+    when: Jun. 2015
+  - name: "DEGREE THESIS - A Big Data approximation with deep neural networks"
+    where: Computer Science department, Universitat Autònoma de Barcelona
+    director: Jordi Gonzàlez Sabaté
+    supervisor: Pep Gonfaus
+    when: Jun. 2014
+    description: Designed and deployed a deep learning system for big data applications.
+awards:
+  - name: "NeurIPS Top Reviewer"
+    who: "NeurIPS"
+    when: "2022"
+  - name: "Recognition to Young Researchers in AI"
+    who: "AI-Network & Big Data Magazine"
+    when: "2021"
+  - name: "National Prize to Young Researchers"
+    who: "BBVA Foundation, Spanish Society of Computer Science Research (SCIE)"
+    when: "2021"
+  - name: "ICLR2021 Best Reviewer Award"
+    who: "ICLR"
+    when: "2021"
+  - name: "Extraordinary PhD Award"
+    who: "Universitat Autònoma de Barcelona"
+    when: "2021"
+  - name: "NeurIPS2020 Top 10% Best Reviewer Award"
+    who: "NeurIPS"
+    when: "2020"
+  - name: "ICML2020 Top 33% Best Reviewer Award"
+    who: "ICML"
+    when: "2020"
+  - name: "Google Summer of Code"
+    who: "tiny-dnn - OpenCV"
+    description: "Long short-term memory networks on tiny-dnn."
+    when: 2017
+  - name: "FI Doctoral scholarship"
+    who: "Government of Catalonia"
+    description: "Ajuts per a la contractació de personal investigador novell."
+    when: 2016
+  - name: "Extraordinary degree award"
+    who: "Universitat Autònoma de Barcelona"
+    when: 2014
+    description: "Award for the top average grading of the class."
+  - name: "Kaggle Galaxy Zoo"
+    who: "kaggle.com"
+    description: "15th out of +300 recognizing galaxies with CNNs."
+    when: 2014
+seminars:
+  - name: "Continual Learning"
+    where: "Universitat Politècnica de Catalunya"
+    when: "Mar. 2022"
+    description: Lecturer at the postgraduate course on AI with Deep Learning.
+  - name: "Image Classification"
+    where: "Computer Vision Center, UAB"
+    when: "2019 - 2025"
+    description: Lecturer at the Master in Computer Vision.
+  - name: "Machine Learning Seminars"
+    where: "Engineering school, UAB"
+    when: "2016 - 2019"
+    description: Assistant teacher at the Computer Engineering bachelor.
+  - name: "Invited Talk: From Experts to Distributions"
+    where: "ELLIS Doctoral Symposium / ServiceNow / PrAIR-Stanford"
+    when: "2025"
+  - name: "Invited Talk: Deep Learning in the Low Data Regime"
+    where: "Apple"
+    when: "Mar. 2023"
+  - name: "Invited Talk: Continual Learning via Local Module Composition"
+    where: "Barcelona Deep Learning Symposium"
+    when: "Dec. 2022"
+mentoring:
+  - name: "DLBCN Mentorship Program"
+    who: "Mentoring Jordi Morales and Alex Serrano"
+    when: "2024 - 2025"
+  - name: "Women in ML / LatinX in AI"
+    who: "ICML Mentor"
+    when: "2024"
+  - name: "Student Supervision"
+    who: "Aditya Arora (PhD), Alex Ferrando (MSc), Pau Vallespi (MSc), Diego Velazquez (PhD), Sergi Masip (MSc), Alexey Ostapenko (Intern), Parichehr Behjati (PhD), Rim Assouel (Intern), Gabriel Huang (Intern), Oscar Mañas (Intern), Massimo Caccia (Intern)"
+    when: "2019 - 2025"
+courses:
+  - name: "Machine Learning"
+    where: "Coursera - Standford, Andrew NG."
+    description: "Completed with max score."
+    when: "2014"
+reviewing:
+  - conferences: "Area Chair (NeurIPS2024+, ICLR2025+, ICML2025+). Reviewer: NeurIPS2016+, ICLR2020+, ICML2020+, CVPR2021+, ICCV2021+, WACV2021+, COLLAS2022+, MAIS2020+."
+    journals: "TPAMI, EAAI, PAAA, IEEE-JBHI, IEEE-TM, IMAVIS."
+media:
+  - name: "Interview about pain recognition"
+    where: "Radio Nacional de España"
+    when: "2022"
+  - name: "Interview about BBVA award"
+    where: "Informativos Telecinco / XL Semanal / El País / El Español"
+    when: "2021 - 2023"
+  - name: "El teléfono se queda con tu cara"
+    where: "La Vanguardia"
+    when: "2017"
+

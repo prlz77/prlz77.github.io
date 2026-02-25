@@ -23,15 +23,15 @@ Research Scientist at Apple Machine Learning Research, adjunct professor at Univ
 
 <script>
   (function() {
-    var user = 'pau.rodri1';
-    var domain = 'gmail.com';
+    var rawEmail = '{{ site.data.cv.mail }}';
+    var email = rawEmail.replace(/\[\s*at\s*\]/g, '@').replace(/\[\s*dot\s*\]/g, '.').replace(/\s/g, '');
     var emailLink = document.getElementById('about-email');
     emailLink.addEventListener('click', function(e) {
       if (this.getAttribute('href') === '#') {
         e.preventDefault();
-        var email = user + '@' + domain;
+        this.innerHTML = email;
+        this.href = 'mailto:' + email;
         window.location.href = 'mailto:' + email;
-        this.setAttribute('href', 'mailto:' + email);
       }
     });
   })();

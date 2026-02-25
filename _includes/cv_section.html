@@ -1,0 +1,19 @@
+<table class="cv-table">
+    {% for item in include.items %}
+    <tr>
+        <td class="first-col">{{ item.when }}</td>
+        <td class="second-col">
+            <h4 style="display:inline;">{{ item.name }}</h4><br>
+            {% if item.where %}<b>{{ item.where }}</b>{% endif %}
+            {% if item.who %}<b>{{ item.who }}</b>{% endif %}
+            {% if item.where or item.who %}<br>{% endif %}
+            {% if item.director or item.supervisor %}
+            <span class="supervisor-info">Director: {{ item.director }} / Supervisor: {{ item.supervisor }}</span>
+            {% endif %}
+            {% if item.description %}
+            {{ item.description }}
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>

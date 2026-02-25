@@ -2,6 +2,7 @@
 ---
 @use "partials/reset" as *;
 
+
 // Import colors, fonts etc...
 @use "partials/variables" as *;
 
@@ -248,6 +249,20 @@ header.main-header {
     &:focus {
       border-bottom-color: transparent;
     }
+  }
+
+  .site-description {
+    @include font-size(14px);
+
+    @include MQ(M) {
+      @include font-size(16px);
+    }
+
+    font-weight: 300;
+    color: $color-2;
+    text-align: center;
+    margin: 15px auto 25px auto;
+    max-width: 600px;
   }
 
   ul {

@@ -1,0 +1,53 @@
+---
+layout: default
+title: Blog
+---
+<div class="page-content wc-container">
+    <div class="post">
+        <h1>Blog <a href="{{ '/index.xml' | prepend: site.baseurl }}"><svg class="rss-icon"
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="vertical-align: middle; margin-left: 8px;">
+                    <path d="M4 11a9 9 0 0 1 9 9"></path>
+                    <path d="M4 4a16 16 0 0 1 16 16"></path>
+                    <circle cx="5" cy="19" r="1"></circle>
+                </svg></a></h1>
+    </div>
+    <div class="posts">
+        {% for post in site.posts %}
+        <div class="post">
+            <h3 class="post-title">
+                <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
+                    {{ post.title }}
+                </a>
+            </h3>
+
+            <span class="post-date">{{ post.date | date_to_string }}</span>
+
+            <div class="post-excerpt">
+                {% if forloop.first %}
+                {% assign sp = post.content | split: "<!---->" %}
+                {% if sp.size > 1 %}
+                {{ sp | first }}
+                {% else %}
+                {{ post.content | strip_html | truncatewords:75 }}
+                {% endif %}
+                {% else %}
+                {{ post.content | strip_html | truncatewords:50 }}
+                {% endif %}
+            </div>
+
+            <p>
+                <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title}}">
+                    Read More
+                </a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="post-footer">
+        <div class="column-full"><a href="{{ '/blog-archive/' | prepend: site.baseurl | prepend: site.url }}">Blog
+                archive</a>
+        </div>
+    </div>
+</div>

@@ -1,18 +1,83 @@
+{% assign is_home = false %}
+{% if page.url == '/' or page.url == '/index.html' %}
+{% assign is_home = true %}
+{% endif %}
+
+{% assign is_about = false %}
+{% if page.url == '/about' or page.url == '/about/' %}
+{% assign is_about = true %}
+{% endif %}
+
+{% assign is_blog_index = false %}
+{% if page.url == '/blog' or page.url == '/blog/' %}
+{% assign is_blog_index = true %}
+{% endif %}
+
+{% assign is_blog_category = false %}
+{% if page.url contains '/research' or page.url contains '/diy' or page.url contains '/notes' or page.is_blog == true or
+page.url contains '/blog/' %}
+{% if is_blog_index == false %}
+{% assign is_blog_category = true %}
+{% endif %}
+{% endif %}
+
 <ul>
 	<li>
 		<a href="{{ site.baseurl }}/">Home</a>
 	</li>
+	{% if is_home %}
 	<li>
 		<a href="{{ '/blog' | prepend: site.baseurl }}">Blog</a><span>/</span>
 	</li>
 	<li>
 		<a href="{{ '/about' | prepend: site.baseurl }}">About</a><span>/</span>
 	</li>
+	{% elsif is_blog_index %}
 	<li>
-		<a href="https://scholar.google.com/citations?user=IwBx73wAAAAJ" target="_blank"
-			rel="noopener noreferrer">Scholar</a><span>/</span>
+		<a href="{{ '/research' | prepend: site.baseurl }}">Research</a><span>/</span>
+	</li>
+	<li>
+		<a href="{{ '/diy' | prepend: site.baseurl }}">DIY</a><span>/</span>
+	</li>
+	<li>
+		<a href="{{ '/notes' | prepend: site.baseurl }}">Notes</a><span>/</span>
+	</li>
+	<li>
+		<a href="{{ '/about' | prepend: site.baseurl }}">About</a><span>/</span>
+	</li>
+	{% elsif is_blog_category %}
+	<li>
+		<a href="{{ '/blog' | prepend: site.baseurl }}">Blog</a><span>/</span>
+	</li>
+	<li>
+		<a href="{{ '/research' | prepend: site.baseurl }}">Research</a><span>/</span>
+	</li>
+	<li>
+		<a href="{{ '/diy' | prepend: site.baseurl }}">DIY</a><span>/</span>
+	</li>
+	<li>
+		<a href="{{ '/notes' | prepend: site.baseurl }}">Notes</a><span>/</span>
+	</li>
+	<li>
+		<a href="{{ '/about' | prepend: site.baseurl }}">About</a><span>/</span>
+	</li>
+	{% elsif is_about %}
+	<li>
+		<a href="{{ '/blog' | prepend: site.baseurl }}">Blog</a><span>/</span>
 	</li>
 	<li>
 		<a href="{{ '/cv' | prepend: site.baseurl }}">CV</a><span>/</span>
 	</li>
+	<li>
+		<a href="https://scholar.google.com/citations?user={{ site.harmony.social.scholar }}"
+			target="_blank">Scholar</a><span>/</span>
+	</li>
+	{% else %}
+	<li>
+		<a href="{{ '/blog' | prepend: site.baseurl }}">Blog</a><span>/</span>
+	</li>
+	<li>
+		<a href="{{ '/about' | prepend: site.baseurl }}">About</a><span>/</span>
+	</li>
+	{% endif %}
 </ul>

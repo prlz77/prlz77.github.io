@@ -44,6 +44,11 @@ highlighter: rouge
 # Permalinks
 permalink:        pretty
 
+collections:
+  diy:
+    output: true
+    permalink: /diy/:title/
+
 exclude:
   - CNAME
   - Gemfile

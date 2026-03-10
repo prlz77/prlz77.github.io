@@ -5,7 +5,8 @@ date: 2016-09-27 16:20:00
 description: How to kill all the child processes when interrupting the main bash script.
 comments: true
 categories:
-- blog
+- notes
+is_blog: true
 permalink: killing-process-children
 ---
 

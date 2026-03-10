@@ -5,7 +5,8 @@ date:   2016-04-20 11:09:00
 description: First version of the asynchronous hdf5 reader script released.
 comments: true
 categories:
-- blog
+- research
+is_blog: true
 permalink: torchasync
 ---
 

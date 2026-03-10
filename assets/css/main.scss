@@ -1,7 +1,9 @@
 ---
+# ⚠️  WARNING: The two --- front-matter delimiters (this line and the one below)
+# MUST each remain on their own separate, empty line.
+# If they are ever merged or have content appended to them, Jekyll treats this
+# file as a plain static asset and skips SCSS compilation — main.css disappears.
 ---
-
-
 // Import colors, fonts etc...
 @use "partials/variables" as *;
 
@@ -29,7 +31,7 @@ html * {
 *,
 *:after,
 *:before {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 body {
@@ -366,81 +368,21 @@ footer.main-footer {
       width: 32px;
       height: 32px;
       background: $base-07;
-      background-image: url("./images/socials-icons.svg");
-      background-size: 224px 64px;
       border-radius: 0.25em;
       @include transition(background-color 0.2s);
       border-bottom-color: transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: $base-00;
 
       &:hover {
         background-color: $base-08;
       }
     }
-
-    li a.twitter {
-      background-position: 0 0;
-
-      &:hover {
-        background-position: 0 -32px;
-      }
-    }
-
-    li a.github {
-      background-position: -32px 0;
-
-      &:hover {
-        background-position: -32px -32px;
-      }
-    }
-
-    li a.facebook {
-      background-position: -64px 0;
-
-      &:hover {
-        background-position: -64px -32px;
-      }
-    }
-
-    li a.dribble {
-      background-position: -96px 0;
-
-      &:hover {
-        background-position: -96px -32px;
-      }
-    }
-
-    li a.google {
-      background-position: -128px 0;
-
-      &:hover {
-        background-position: -128px -32px;
-      }
-    }
-
-    li a.pinterest {
-      background-position: -196px 0;
-
-      &:hover {
-        background-position: -196px -32px;
-      }
-    }
   }
 }
 
-.no-svg footer.main-footer ul.social-media li a {
-  width: 32px;
-  height: 32px;
-  background-color: $base-07;
-  background-image: url("./images/socials-icons.png");
-  background-size: 224px 64px;
-  border-radius: 0.25em;
-  @include transition(background-color 0.2s);
-  border-bottom-color: transparent;
-
-  &:hover {
-    background-color: $base-08;
-  }
-}
 
 div.page-content {
   @extend .default-page-content;
@@ -459,6 +401,7 @@ div.page-content {
       @include font-size(14px);
       color: $color-2;
       line-height: 1.6;
+      list-style: none;
       background: url(./images/bullet.svg);
       background-repeat: no-repeat;
       background-position: 0 6px;

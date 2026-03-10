@@ -5,7 +5,8 @@ date: 2017-03-12 22:00
 description: Regularizing CNNs with Locally Constrained Decorrelations
 comments: true
 categories:
-- blog
+- research
+is_blog: true
 permalink: iclr2017-paper/
 ---
 

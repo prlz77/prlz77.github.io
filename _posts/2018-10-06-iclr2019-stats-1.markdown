@@ -5,7 +5,8 @@ date: 2018-10-07 00:00:00
 description: An early overview of ICLR2019 (OpenReview).
 comments: true
 categories:
-- blog
+- research
+is_blog: true
 permalink: iclr2019-stats/
 ---
 <img src='{{ "/assets/images/iclr2019/wordcloud.jpg" | absolute_url }}' style='width: 90%; margin:auto;' />

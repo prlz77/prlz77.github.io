@@ -5,7 +5,8 @@ date: 2017-12-04 00:00:00
 description: An early overview of ICLR2018 (OpenReview)
 comments: true
 categories:
-- blog
+- research
+is_blog: true
 permalink: iclr2018-stats/
 ---
 

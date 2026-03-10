@@ -1,0 +1,42 @@
+---
+layout: default
+title: DIY Projects
+is_blog: true
+---
+<div class="page-content wc-container">
+    <div class="post">
+        <h1>DIY Projects</h1>
+    </div>
+    <div class="posts">
+        {% for project in site.diy %}
+        <div class="post">
+            <h3 class="post-title">
+                <a href="{{ project.url | prepend: site.baseurl | prepend: site.url }}">
+                    {{ project.title }}
+                </a>
+            </h3>
+
+            <span class="post-date">{{ project.date | date_to_string }}</span>
+
+            <div class="post-excerpt">
+                {% if forloop.first %}
+                {% assign sp = project.content | split: "<!---->" %}
+                {% if sp.size > 1 %}
+                {{ sp | first }}
+                {% else %}
+                {{ project.content | strip_html | truncatewords:75 }}
+                {% endif %}
+                {% else %}
+                {{ project.content | strip_html | truncatewords:50 }}
+                {% endif %}
+            </div>
+
+            <p>
+                <a href="{{ project.url | prepend: site.baseurl | prepend: site.url }}" title="{{ project.title}}">
+                    Read More
+                </a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>

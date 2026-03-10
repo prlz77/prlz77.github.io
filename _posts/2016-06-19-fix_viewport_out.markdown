@@ -5,7 +5,8 @@ date: 2016-06-19 16:18:00
 description: How to fix the screen resolution of an unrecognized monitor when it is impossible from nvidia-settings or xorg
 comments: true
 categories:
-- blog
+- notes
+is_blog: true
 permalink: fix-viewport-out
 ---
 

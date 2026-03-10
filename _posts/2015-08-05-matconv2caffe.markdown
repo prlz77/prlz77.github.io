@@ -5,7 +5,8 @@ date:   2015-08-05 17:29:00
 description: First release of the matconv2caffe utility to import matconvnet models from Caffe.
 comments: true
 categories:
-- blog
+- research
+is_blog: true
 permalink: matconv2caffe0.1/
 ---
 

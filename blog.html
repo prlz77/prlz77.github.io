@@ -14,7 +14,8 @@ title: Blog
                 </svg></a></h1>
     </div>
     <div class="posts">
-        {% for post in site.posts %}
+        {% assign all_posts = site.posts | concat: site.diy | sort: 'date' | reverse %}
+        {% for post in all_posts %}
         <div class="post">
             <h3 class="post-title">
                 <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
@@ -44,10 +45,5 @@ title: Blog
             </p>
         </div>
         {% endfor %}
-    </div>
-    <div class="post-footer">
-        <div class="column-full"><a href="{{ '/blog-archive/' | prepend: site.baseurl | prepend: site.url }}">Blog
-                archive</a>
-        </div>
     </div>
 </div>

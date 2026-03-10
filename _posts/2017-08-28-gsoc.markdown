@@ -5,7 +5,8 @@ date: 2017-08-27 18:00:00
 description: My experience of building a RNN API for tiny-dnn for the Google Summer of Code 2017.
 comments: true
 categories:
-- blog
+- research
+is_blog: true
 permalink: gsoc2017/
 ---
 <img style="width:300px; margin:auto; padding:auto;" src="{{ site.url }}/assets/images/tiny-dnn-gsoc.png"/>

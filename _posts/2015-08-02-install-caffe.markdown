@@ -5,7 +5,8 @@ date:   2015-08-02 23:00:00
 description: How I installed Caffe in OS X 10.10 Yosemite
 comments: true
 categories:
-- blog
+- notes
+is_blog: true
 permalink: install-caffe
 ---
 

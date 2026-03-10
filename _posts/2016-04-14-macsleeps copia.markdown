@@ -5,7 +5,8 @@ date:   2016-04-15 18:06:00
 description: Finally I discovered why my laptop randomly suspends.
 comments: true
 categories:
-- blog
+- notes
+is_blog: true
 permalink: macsleeps
 ---
 

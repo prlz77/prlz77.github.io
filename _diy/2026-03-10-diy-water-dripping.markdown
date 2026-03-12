@@ -7,6 +7,7 @@ comments: true
 categories:
 - diy
 is_blog: true
+published: false  # HIDDEN – remove this line to restore this post
 ---
 
 Watering plants consistently can be a real challenge, especially when you're away on vacation or just having a super busy week. While there are plenty of commercial off-the-shelf solutions out there, building one from scratch is not only a fun weekend project, but it also allows for seamless integration into your existing home automation setup! 

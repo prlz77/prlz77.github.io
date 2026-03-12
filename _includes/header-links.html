@@ -14,7 +14,8 @@
 {% endif %}
 
 {% assign is_blog_category = false %}
-{% if page.url contains '/research' or page.url contains '/diy' or page.url contains '/notes' or page.is_blog == true or
+{% if page.url contains '/research' or page.url contains '/notes' or page.is_blog == true or
+<!-- HIDDEN: add "page.url contains '/diy' or" here to restore DIY in category detection -->
 page.url contains '/blog/' %}
 {% if is_blog_index == false %}
 {% assign is_blog_category = true %}
@@ -36,9 +37,11 @@ page.url contains '/blog/' %}
 	<li>
 		<a href="{{ '/research' | prepend: site.baseurl }}">Research</a><span>/</span>
 	</li>
+	<!-- HIDDEN DIY link – uncomment to restore:
 	<li>
 		<a href="{{ '/diy' | prepend: site.baseurl }}">DIY</a><span>/</span>
 	</li>
+	-->
 	<li>
 		<a href="{{ '/notes' | prepend: site.baseurl }}">Notes</a><span>/</span>
 	</li>
@@ -52,9 +55,11 @@ page.url contains '/blog/' %}
 	<li>
 		<a href="{{ '/research' | prepend: site.baseurl }}">Research</a><span>/</span>
 	</li>
+	<!-- HIDDEN DIY link – uncomment to restore:
 	<li>
 		<a href="{{ '/diy' | prepend: site.baseurl }}">DIY</a><span>/</span>
 	</li>
+	-->
 	<li>
 		<a href="{{ '/notes' | prepend: site.baseurl }}">Notes</a><span>/</span>
 	</li>
